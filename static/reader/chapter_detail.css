@@ -1,0 +1,15 @@
+.manga_img{
+    width: 100%;    
+}
+
+.just_container{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+}
+
+.content_block{
+    max-width: 700px;
+    margin: 0 auto;
+    width: 95%;
+}

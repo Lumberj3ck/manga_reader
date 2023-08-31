@@ -1,0 +1,65 @@
+.manga_img{
+    width: 100%;    
+}
+
+.just_container{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+}
+
+.content_block{
+    max-width: 700px;
+    margin: 0 auto;
+    width: 95%;
+}
+.nav_buttons{
+background: var(--Gradient, linear-gradient(26deg, #53389E 8.33%, #6941C6 91.67%)); 
+color: #f6be2c;
+}
+
+.nav_buttons:hover{
+    color: #F4CD00;
+    border-bottom:  4px solid black;
+    border-right:  4px solid black;
+    background: #5B21E3;
+}
+
+.prev_nav_buttons{
+color:#6941c6;
+
+}
+.prev_nav_buttons:hover{
+    background: #F4CD00;
+    color: #5B21E3;
+    border-bottom:  4px solid black;
+    border-right:  4px solid black;
+}
+.custom_input{
+    border: 2px solid black;
+    background-color: #6941C6;
+    color:#f6be2c;
+}
+
+.custom_input::placeholder{
+    color:#f6be2c;
+}
+
+.custom_input:focus{
+    outline: none;
+}
+.comment_submit{
+    color:#6941C6;
+    font-weight: 600;
+}
+.comment_submit:focus{
+    outline: none;
+}
+.submit_block{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: 2px solid black;
+    width: 60%;
+    border-radius: 7px;
+}

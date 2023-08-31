@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 .vscode
 imgs/
-static/
 # C extensions
 *.so
 tailwind.config.js

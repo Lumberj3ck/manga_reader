@@ -1,0 +1,26 @@
+.main_phrase{
+font-family: Montserrat;
+font-size: 23px;
+font-style: normal;
+font-weight: 700;
+line-height: 31px; /* 134.783% */
+letter-spacing: -0.46px;
+background: var(--Gradient, linear-gradient(27deg, #53389E 8.33%, #6941C6 91.67%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.land_butt{
+    border-radius: 16px;
+    border: 2px solid #000;
+    background: var(--Gradient, linear-gradient(27deg, #53389E 8.33%, #6941C6 91.67%));
+    box-shadow: -1px 3px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.land_butt:hover{
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+    background: #5B21E3;
+    color: #F4CD00;
+}
