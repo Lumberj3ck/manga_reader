@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load i18n %} {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base_tailwind.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% block title %} {% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="flex justify-between p-2 m-2 items-center">
+      <div class="hamburger_icon"  data-te-offcanvas-toggle
+      data-te-target="#offcanvasExample"
+      aria-controls="offcanvasExample"
+      data-te-ripple-init
+      data-te-ripple-color="light">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <path d="M3 8.5H21M3 15.5H21" stroke="url(#paint0_linear_12_247)" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <defs>
+            <linearGradient id="paint0_linear_12_247" x1="7.5" y1="15.5" x2="9.13941" y2="7.06877"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#53389E" />
+              <stop offset="1" stop-color="#6941C6" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <a href="{% url 'manga_list' %}"><div class="Logo font-bold text-md leading-5">MangaLove</div></a>
+      <div class="bookmark_icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 19 19" fill="none">
+          <path
+            d="M3.95834 6.175C3.95834 4.84488 3.95834 4.17981 4.2172 3.67177C4.44489 3.22489 4.80822 2.86156 5.25511 2.63386C5.76315 2.375 6.42821 2.375 7.75834 2.375H11.2417C12.5718 2.375 13.2369 2.375 13.7449 2.63386C14.1918 2.86156 14.5551 3.22489 14.7828 3.67177C15.0417 4.17981 15.0417 4.84488 15.0417 6.175V16.625L9.5 13.4583L3.95834 16.625V6.175Z"
+            stroke="url(#paint0_linear_12_252)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <defs>
+            <linearGradient id="paint0_linear_12_252" x1="6.72917" y1="16.625" x2="14.8316" y2="4.02121"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#53389E" />
+              <stop offset="1" stop-color="#6941C6" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      </div>
+    </header>
+    {% block content %} {% endblock %}
+    <div class="flex space-x-2">
+  <div>
+    <div
+      class="invisible fixed bottom-0 left-0 top-0 z-[1045] flex w-96 max-w-full -translate-x-full flex-col border-none  bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out dark:bg-indigo-300 dark:text-neutral-200 [&[data-te-offcanvas-show]]:transform-none"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+      style="background: var(--Gradient, linear-gradient(27deg, #53389E 8.33%, #6941C6 91.67%));"
+      data-te-offcanvas-init>
+      <div class="flex items-center justify-between p-4">
+        <button class="m-2" data-te-offcanvas-dismiss>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path d="M4 8H20M4 16H20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-grow overflow-y-auto p-4 items-center" style="position: absolute; top:30%; left: 20%;">
+        <div class="flex">
+          <ul style="color: #F6BE2C" class="menu_ul flex flex-col gap-5">
+            <li>
+              <a href="{% url 'login' %}">{% trans 'Login' %}</a>
+            </li>
+            <li>
+              <a href="{% url 'login' %}">{% trans 'About' %}</a>
+            </li>
+            <li>
+              <a href="{% url 'manga_list' %}">{% trans 'Manga' %}</a>
+            </li>
+            <li>
+              <a href="{% url 'manga_list' %}">{% trans 'Contact' %}</a>
+            </li>
+            <li>
+              <span>En</span>
+              <span>Ru</span>
+            </li>
+          </ul>
+        </div>
+        <div class="relative mt-4" data-te-dropdown-ref>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Offcanvas -->
+  </body>
+  <script src="{% static 'js/base.js' %}"></script>
+  <script
+  type="text/javascript"
+  src="{% static 'js/tw-elements.umd.min.js' %}"></script>
+</html>

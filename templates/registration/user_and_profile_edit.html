@@ -1,0 +1,23 @@
+{% extends 'reader/base.html' %}
+
+
+{% block title %}
+{% load i18n %}
+<title>{% trans 'Редактировать пользовательские данные' %}</title>
+{% endblock %}
+
+{% block content %}
+
+{% if  profile_photo %}
+{% load static %}
+<img src="{% static profile_photo %}" alt="Profile_photo" style='width: 20%; height: 30%'>
+{% endif %}
+<form action='.' method='post' enctype="multipart/form-data">
+  {% csrf_token %}
+  {{user_form.as_p}}
+  {{profile_form.as_p}}
+  <input type="submit" value='{% trans "Сохранить данные" %}'>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'reader/base.html' %}
+
+{% block title %}
+{% load i18n %}
+<title>{% trans 'Регистрация успешна' %}</title>
+{% endblock %}
+
+{% block content %}
+<h1>{% trans 'Вы успешно Зарегистрировались' %}</h1>
+<a href="{% url 'login' %}">{% trans 'Войти в аккаунт' %}</a>
+{% endblock %}

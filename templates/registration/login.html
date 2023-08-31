@@ -1,0 +1,17 @@
+{% extends 'reader/base.html' %}
+
+{% block title %}
+{% load i18n %}
+<title>{% trans 'Log-in' %}</title>
+{% endblock %}
+
+{% block content %}
+<form action="." method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="hidden" name="next" value="{{next}}">
+    <input type="submit" value="{% trans 'Войти' %}">
+</form>
+<a href="{% url 'password_reset' %}">{% trans 'Забыли пароль?' %}</a>
+<a href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends 'reader/base.html' %}
+
+
+{% block title %}
+{% load i18n %}
+{% load static %}
+<title>{% blocktrans %} Манга {{chapter.manga.name}} {% endblocktrans %}</title>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
+<link rel="stylesheet" href="{% static 'reader/chapter_detail.css' %}">
+<link rel="stylesheet" href="{% static 'output.css' %}">
+{% endblock %}
+
+{% block content %}
+<nav class="w-full rounded-md ml-4 mb-6 ">
+  <ol class="list-reset flex" style="color: #6941C6; font-weight: 500;">
+    <li>
+      <a
+        href="{% url 'landing' %}"
+        class="transition duration-150 ease-in-out "
+        >{% trans 'Home' %}</a
+      >
+    </li>
+    <li>
+      <span class="mx-2">/</span>
+    </li>
+    <li>
+      <a
+        href="{% url 'manga_list' %}"
+        class="transition duration-150 ease-in-out "
+        >{% trans 'Mangas' %}</a
+      >
+    </li>
+    <li>
+      <span class="mx-2">/</span>
+    </li>
+    <li>
+      <a
+        href="{% url 'chapter_list' manga_slug=chapter.manga.slug %}"
+        class="transition duration-150 ease-in-out "
+        >{% trans 'Chapters' %}</a
+      >
+    </li>
+  </ol>
+</nav>
+<div class='just_container mt-6'> 
+    <div class="content_block">
+{% for picture in chapter.images.all %}
+<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{% static picture.img.url %}"  alt="{{picture.img.name}}">
+{% endfor %}
+</div>
+<div class="flex justify-between m-3  text-white" >
+{% if previous %}
+<div class="rounded-md flex gap-2 items-center border-2 border-black prev_nav_buttons">
+<a class="mx-1 font-semibold"  href="{% url 'chapter_detail' manga_slug=previous.manga.slug  chapter_slug=previous.name %}">{% blocktrans %} Previous {{previous.chapter_number}} {% endblocktrans %}</a> 
+</div>
+    {% endif %}
+    {% if next %}
+<div class="nav_buttons border-2 border-black flex gap-3 items-center rounded-md w-32 justify-center">
+<a  class="font-semibold"  href="{% url 'chapter_detail' manga_slug=next.manga.slug  chapter_slug=next.name %}">{% blocktrans %} Next {{next.chapter_number}}{% endblocktrans %}</a>
+</div>
+    {% else %}
+<div class="nav_buttons flex items-center rounded-md border-2 border-black">
+<a class="p-2 font-semibold" href="{% url 'chapter_list' manga_slug=chapter.manga.slug %}">{% trans 'На страницу тайтла' %}</a>
+</div>
+    {% endif %}
+</div>
+
+<div class="flex gap-8 pl-5 place-content-start border-2 m-3  rounded-md border-black">
+<div class="like_panel flex items-center gap-4">
+    {% with total_likes=chapter.likes.count chapter_likes=chapter.likes.all %}
+    <span class='total'>{{total_likes}}</span>
+    <span class="like_pluralize">{% blocktrans %} Like{{total_likes|pluralize}} {% endblocktrans %}</span>
+    {% if request.user not in chapter_likes %}
+    <a data-action='like' data-slug="{{chapter.name}}" class="like btn btn-info">{% trans 'Like' %}</a>
+    {% elif request.user in chapter_likes %}
+    <a data-action='unlike' data-slug="{{chapter.name}}" class="like btn btn-info">{% trans 'Unlike' %}</a>
+    {% endif %}
+    {% endwith %}
+</div>
+   <div class='total_views text-2xl flex items-center gap-4'>{{ total_views }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
+</div> 
+<div class="text-black p-2 m-2" >
+    <div class="font-bold text-lg mb-3">{% trans 'Комментарии' %}</div>
+    <form>
+        {% csrf_token %}
+        <textarea class="mb-2 rounded-md p-2 w-5/6 custom_input" style="height: 100px" required type="text" name="text" maxlength="800" id="id_text" placeholder="Text"></textarea>
+        <div class="submit_block">
+        <input class="comment_submit border-2 rounded-md p-1" type='submit' value="{% trans 'Oставить коммент' %}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+            <path
+                d="M5.38499 9.05314L3.38428 2.55212C8.17016 3.94381 12.6833 6.14241 16.7292 9.05314C12.6836 11.9643 8.17072 14.1634 3.38501 15.5556L5.38499 9.05314ZM5.38499 9.05314H10.8794"
+                stroke="url(#paint0_linear_28_40)" stroke-width="1.46518" stroke-linecap="round" stroke-linejoin="round" />
+            <defs>
+                <linearGradient id="paint0_linear_28_40" x1="6.7205" y1="15.5556" x2="13.1206" y2="2.41942"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#53389E" />
+                    <stop offset="1" stop-color="#6941C6" />
+                </linearGradient>
+            </defs>
+        </svg>
+        </div>
+    </form>
+    <div class='comments mt-4'>
+    {% for comment in comments %}
+        <div class='comment mb-2 rounded-md border-2 border-black p-2'>
+        <div class="font-bold ">{{comment.user}}</div>
+        <div class="text-gray-600">{{comment.created_at}}</div>
+        <div class="font-medium">{{comment.text}}</div>
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+</div>
+</div>
+
+<script>
+var lazyLoadInstance = new LazyLoad({threshold: 400});
+</script>
+<script id="error_invalid_login">
+{% blocktrans %}Пожалуйста войдите или зарегистрируйтесь на сайте{% endblocktrans %} <a class='nav_but' href={% url 'login' %}>{% trans 'Войти' %}</a>
+</script>
+<script id="eror_something_went_wrong">
+    "{% trans 'Something went wrond. Please try again!' %}"
+</script>
+<script>
+function getCookie(name) { let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+function sendAjaxRequest(formdata, onSuccess, onError) {
+    url = '{% url "chapter_user_action" %}'
+    const csrftoken = getCookie('csrftoken');
+    const request = new Request(url, {
+        method: 'POST',
+        body: formdata,
+        headers: { 'X-CSRFToken': csrftoken, 'x-requested-with': 'XMLHttpRequest' },
+        mode: 'same-origin'
+    });
+
+    fetch(request)
+        .then(response => response.json())
+        .then(data => {
+            if (data['status'] === 'ok') {
+                onSuccess(data);
+            } else {
+                onError(data);
+            }
+        });
+}
+
+function updateLikeAction(newAction, newTotal, total_span) {
+    like_but.innerHTML = newAction.charAt(0).toUpperCase() + newAction.slice(1);
+    like_but.dataset.action = newAction;
+    total_span.innerHTML = newTotal + ' ';
+    like_pluralize = document.querySelector('span.like_pluralize')
+    like_pluralize.innerHTML = 'Like {{newTotal | pluralize}}';
+}
+function error_handle(data){
+        like_panell = document.querySelector('div.like_panel')
+        if (data['status'] === 'invalid_login') {
+            error_message = document.createElement('div')
+            erorr_mes_text = document.getElementById('error_invalid_login').innerHTML
+            error_message.innerHTML = erorr_mes_text;
+        } else if (data['status'] === 'error') {
+            error_message = document.createElement('div')
+            erorr_mes_text = document.getElementById('error_something_went_wrong').innerHTML
+            error_message.innerHTML = erorr_mes_text;
+            }
+        if (like_panell.childElementCount < 4){
+            like_panell.appendChild(error_message)
+        }
+}
+
+function handleLikeClick(event) {
+    const prevAction = like_but.dataset.action;
+    event.preventDefault();
+    
+    const formdata = new FormData();
+    formdata.append('action', prevAction);
+    formdata.append('slug', chapter_name);
+
+    sendAjaxRequest(formdata,
+        data => {
+            const newAction = prevAction === 'unlike' ? 'like' : 'unlike';
+            const total_span = document.querySelector('span.total')
+            const newTotal = parseInt(total_span.innerHTML) + (newAction === 'unlike' ? 1 : -1);
+            updateLikeAction(newAction, newTotal, total_span);
+        },
+        data => {
+            error_handle(data)
+        }
+    );
+}
+
+function handleCommentSubmit(event) {
+    event.preventDefault();
+    
+    const formdata = new FormData();
+    formdata.append('slug', chapter_name);
+    formdata.append('action', 'comment');
+    formdata.append('comment_text', comment_text_field.value);
+    
+    if (comment_text_field.value) {
+        sendAjaxRequest(formdata,
+            data => {
+                new_comment = document.createElement('div')
+                new_comment.innerHTML = `${data['user']}, ${data['comment_text']}, ${data['created_at']}`
+                first_child = comment_section.firstElementChild
+                comment_section.insertBefore(new_comment, first_child)
+                comment_text_field.value = ''
+            },
+            data => {
+                error_handle(data)
+            }
+        );
+    }
+}
+
+// Event listeners
+like_but = document.querySelector('a.like');
+like_but.addEventListener('click', handleLikeClick);
+chapter_name = "{{chapter.name}}"
+comment_section = document.querySelector('.comments')
+comment_submit = document.querySelector('.submit_block');
+comment_text_field = document.querySelector('textarea[type=text]');
+comment_submit.addEventListener('click', handleCommentSubmit);
+
+</script>
+<script>
+commentArea = document.querySelector('.custom_input')
+commentArea.addEventListener('keydown', autosize);
+function autosize () {
+    var el = this;
+    setTimeout(function () {
+        el.style.cssText = 'height:auto;';
+        el.style.cssText = 'height:' + el.scrollHeight + 'px';
+    }, 0);
+}
+</script>
+{% endblock %}

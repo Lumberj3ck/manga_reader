@@ -1,0 +1,24 @@
+{% extends 'reader/base.html' %}
+
+{% block title %}
+{% load i18n %}
+<title>{% trans 'Создать аккаунт' %}</title>
+{% endblock %}
+
+{% block content %}
+<h1>{% trans 'Создать аккаунт' %}</h1>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<p>{% trans 'Зарегистрируйтесь с помощью формы ниже' %}</p>
+<form action="." method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="{% trans 'Зарегистрироваться' %}">
+</form>
+<a href="{% url 'password_reset' %}">{% trans 'Забыли пароль?' %}</a>
+{% endblock %}

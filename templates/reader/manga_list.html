@@ -1,0 +1,44 @@
+{% extends 'reader/base.html' %}
+
+{% block title %}
+{% load i18n %}
+{% load static %}
+<title>{% trans 'Вся манга' %}</title>
+{% endblock %}
+
+
+{% block content %}
+<nav class="w-full rounded-md ml-4 ">
+  <ol class="list-reset flex" style="color: #6941C6; font-weight: 500;">
+    <li>
+      <a
+        href="{% url 'landing' %}"
+        class="transition duration-150 ease-in-out "
+        >{% trans 'Home' %}</a
+      >
+    </li>
+    <li>
+      <span class="mx-2">/</span>
+    </li>
+    <li>
+      <a
+        class="transition duration-150 ease-in-out "
+        >{% trans 'Mangas' %}</a
+      >
+    </li>
+  </ol>
+</nav>
+<div style="color: #6941C6" class="font-medium text-xl mx-4 mt-4">Доступная манга :</div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% for manga in mangas %}
+<div class="border-2 border-black m-2 rounded-md">
+<a class="" href="{% url 'chapter_list' manga_slug=manga.slug %}"><img style="height: 10%;" src="{% static manga.poster %}" alt=""></a>
+</div>
+{% endfor %}
+{% endblock %}
