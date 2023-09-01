@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 .vscode
 imgs/
+static/
 # C extensions
 *.so
 tailwind.config.js
@@ -57,7 +58,6 @@ coverage.xml
 cover/
 
 # Translations
-*.mo
 *.pot
 
 # Django stuff:

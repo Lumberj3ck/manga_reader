@@ -45,7 +45,7 @@
 <div class='just_container mt-6'> 
     <div class="content_block">
 {% for picture in chapter.images.all %}
-<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{% static picture.img.url %}"  alt="{{picture.img.name}}">
+<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{{picture.img.url }}"  alt="{{picture.img.name}}">
 {% endfor %}
 </div>
 <div class="flex justify-between m-3  text-white" >

@@ -38,7 +38,7 @@
 {% endif %}
 {% for manga in mangas %}
 <div class="border-2 border-black m-2 rounded-md">
-<a class="" href="{% url 'chapter_list' manga_slug=manga.slug %}"><img style="height: 10%;" src="{% static manga.poster %}" alt=""></a>
+	<a class="" href="{% url 'chapter_list' manga_slug=manga.slug %}"><img style="height: 10%;" src="{{ manga.poster.url }}" alt=""></a>
 </div>
 {% endfor %}
 {% endblock %}
