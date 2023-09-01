@@ -5,10 +5,10 @@ font-style: normal;
 font-weight: 700;
 line-height: 31px; /* 134.783% */
 letter-spacing: -0.46px;
-background: var(--Gradient, linear-gradient(27deg, #53389E 8.33%, #6941C6 91.67%));
+/* background: var(--Gradient, linear-gradient(27deg, #53389E 8.33%, #6941C6 91.67%)); */
+color:  #6941C6;
 background-clip: text;
 -webkit-background-clip: text;
--webkit-text-fill-color: transparent;
 }
 
 .land_butt{
@@ -23,4 +23,25 @@ background-clip: text;
     border-right-width: 4px;
     background: #5B21E3;
     color: #F4CD00;
+}
+.warning{
+    border-radius: 7px;
+    width: max-content;
+    padding: 5px;
+    background: #5300a5;
+    color: #f6be2c;
+    width: 60%;
+    padding-left: 14px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.success{
+    border: 1px solid #5300a5;
+    border-radius: 7px;
+    width: max-content;
+    padding: 5px;
+    color: #5300a5;
+    margin: 0 auto;
+    margin-bottom: 5px;
 }

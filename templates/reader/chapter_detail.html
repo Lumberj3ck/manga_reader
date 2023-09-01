@@ -7,11 +7,11 @@
 <title>{% blocktrans %} Манга {{chapter.manga.name}} {% endblocktrans %}</title>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
 <link rel="stylesheet" href="{% static 'reader/chapter_detail.css' %}">
-<link rel="stylesheet" href="{% static 'output.css' %}">
+<link rel="stylesheet" href="{% static 'reader/tailwind_chapter_detail.css' %}">
 {% endblock %}
 
 {% block content %}
-<nav class="w-full rounded-md ml-4 mb-6 ">
+<nav class="w-full rounded-md pl-4 mb-6 ">
   <ol class="list-reset flex" style="color: #6941C6; font-weight: 500;">
     <li>
       <a
@@ -50,21 +50,16 @@
 </div>
 <div class="flex justify-between m-3  text-white" >
 {% if previous %}
-<div class="rounded-md flex gap-2 items-center border-2 border-black prev_nav_buttons">
-<a class="mx-1 font-semibold"  href="{% url 'chapter_detail' manga_slug=previous.manga.slug  chapter_slug=previous.name %}">{% blocktrans %} Previous {{previous.chapter_number}} {% endblocktrans %}</a> 
-</div>
+<a class="p-1 font-semibold rounded-md flex gap-2 items-center border-2 border-black prev_nav_buttons"  href="{% url 'chapter_detail' manga_slug=previous.manga.slug  chapter_slug=previous.name %}">{% blocktrans %} Previous {{previous.chapter_number}} {% endblocktrans %}</a> 
     {% endif %}
     {% if next %}
-<div class="nav_buttons border-2 border-black flex gap-3 items-center rounded-md w-32 justify-center">
-<a  class="font-semibold"  href="{% url 'chapter_detail' manga_slug=next.manga.slug  chapter_slug=next.name %}">{% blocktrans %} Next {{next.chapter_number}}{% endblocktrans %}</a>
-</div>
+<a  class="p-1 font-semibold nav_buttons border-2 border-black flex gap-3 items-center rounded-md w-32 justify-center"  href="{% url 'chapter_detail' manga_slug=next.manga.slug  chapter_slug=next.name %}">{% blocktrans %} Next {{next.chapter_number}}{% endblocktrans %}</a>
     {% else %}
-<div class="nav_buttons flex items-center rounded-md border-2 border-black">
-<a class="p-2 font-semibold" href="{% url 'chapter_list' manga_slug=chapter.manga.slug %}">{% trans 'На страницу тайтла' %}</a>
-</div>
+<a class="p-1 font-semibold nav_buttons flex items-center rounded-md border-2 border-black" href="{% url 'chapter_list' manga_slug=chapter.manga.slug %}">{% trans 'На страницу тайтла' %}</a>
     {% endif %}
 </div>
-
+<div class="like_errors error_handler pl-2 ml-1"></div>
+<!-- Like error shows here -->
 <div class="flex gap-8 pl-5 place-content-start border-2 m-3  rounded-md border-black">
 <div class="like_panel flex items-center gap-4">
     {% with total_likes=chapter.likes.count chapter_likes=chapter.likes.all %}
@@ -80,7 +75,9 @@
    <div class='total_views text-2xl flex items-center gap-4'>{{ total_views }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
 </div> 
 <div class="text-black p-2 m-2" >
-    <div class="font-bold text-lg mb-3">{% trans 'Комментарии' %}</div>
+    <div class="font-bold text-lg mb-3 ">{% trans 'Комментарии' %}</div>
+    <div class="comments_errors error_handler mb-2"></div>
+    <!-- Comment erorr show -->
     <form>
         {% csrf_token %}
         <textarea class="mb-2 rounded-md p-2 w-5/6 custom_input" style="height: 100px" required type="text" name="text" maxlength="800" id="id_text" placeholder="Text"></textarea>
@@ -117,7 +114,7 @@
 var lazyLoadInstance = new LazyLoad({threshold: 400});
 </script>
 <script id="error_invalid_login">
-{% blocktrans %}Пожалуйста войдите или зарегистрируйтесь на сайте{% endblocktrans %} <a class='nav_but' href={% url 'login' %}>{% trans 'Войти' %}</a>
+{% blocktrans %}Пожалуйста войдите или зарегистрируйтесь на сайте{% endblocktrans %} <a class='error_link' href={% url 'login' %}>{% trans 'Войти' %}</a>
 </script>
 <script id="eror_something_went_wrong">
     "{% trans 'Something went wrond. Please try again!' %}"
@@ -137,6 +134,7 @@ function getCookie(name) { let cookieValue = null;
     }
     return cookieValue;
 }
+
 function sendAjaxRequest(formdata, onSuccess, onError) {
     url = '{% url "chapter_user_action" %}'
     const csrftoken = getCookie('csrftoken');
@@ -165,8 +163,13 @@ function updateLikeAction(newAction, newTotal, total_span) {
     like_pluralize = document.querySelector('span.like_pluralize')
     like_pluralize.innerHTML = 'Like {{newTotal | pluralize}}';
 }
-function error_handle(data){
-        like_panell = document.querySelector('div.like_panel')
+function error_handle(data, type){
+        if (type === 'like'){
+            errors_panel = document.querySelector('.like_errors')
+        }
+        else if (type === 'comment'){
+            errors_panel = document.querySelector('.comments_errors')
+        }
         if (data['status'] === 'invalid_login') {
             error_message = document.createElement('div')
             erorr_mes_text = document.getElementById('error_invalid_login').innerHTML
@@ -176,8 +179,8 @@ function error_handle(data){
             erorr_mes_text = document.getElementById('error_something_went_wrong').innerHTML
             error_message.innerHTML = erorr_mes_text;
             }
-        if (like_panell.childElementCount < 4){
-            like_panell.appendChild(error_message)
+        if (errors_panel.childElementCount == 0){
+            errors_panel.appendChild(error_message)
         }
 }
 
@@ -197,7 +200,7 @@ function handleLikeClick(event) {
             updateLikeAction(newAction, newTotal, total_span);
         },
         data => {
-            error_handle(data)
+            error_handle(data, 'like')
         }
     );
 }
@@ -220,7 +223,7 @@ function handleCommentSubmit(event) {
                 comment_text_field.value = ''
             },
             data => {
-                error_handle(data)
+                error_handle(data, 'comment')
             }
         );
     }

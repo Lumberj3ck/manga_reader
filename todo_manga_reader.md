@@ -1,16 +1,28 @@
 Do not forget that in production share imgs like that {{pict.img.url}}
 
 IN develop via static {% static %}
-
 set required in Cinema project comment form
 
 >[!info] What i am doing right now
 > Today plan is make translations
 > Authentication via social networks 
+1. - [x] Fix next button
+2. Add adaptivity
+3. Change colors on landing page
+4. Design login registration
+5. Fix invalid messages on forms
+6. - [x] Fix horizontal line
+7. Bookmarks page
+8. Menu sections links fix
+9. Privacy policy
+10. Fix languages in menu
+
 
  >[!faq]
  > Read a Mele django for 30 minutes using a pomodoro timer
 1. MangaLove link to home page
+2. fix comments add 
+
 Today ive known new about django model inheritance
 Colors for project : #f6be2c, linear gradient from #583AA7 to #6941C6
 1. Custom authenticate backend for email as login

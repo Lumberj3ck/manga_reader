@@ -1,0 +1,18 @@
+{% extends 'reader/base.html' %}
+
+{% block title %}
+{% load i18n %}
+<title>{% trans 'Ваши закладки' %}</title>
+{% endblock %}
+
+{% block content %}
+{% if bookmarks %}
+<div>{% trans 'Ваши закладки' %}</div>
+{% for bookmark in bookmarks %}
+{{bookmark.manga}}
+{{bookmark.chapter}}
+{% endfor %}
+{% else %}
+<div>У вас пока нет ни одной закладки. Начинайте читать</div>
+{% endif %}
+{% endblock %}

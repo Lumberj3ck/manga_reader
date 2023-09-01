@@ -17,6 +17,14 @@ r = redis.Redis(
     host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB
 )
 
+def contact(request):
+    return render(request, 'reader/contact.html')
+
+@login_required
+def bookmarks(request):
+    bookmarks = request.user.profile.bookmarks.all() 
+    return render(request, 'reader/bookmarks.html', {'bookmarks': bookmarks})
+
 def landing_view(request):
     return render(request, 'reader/landing.html')
 

@@ -2,16 +2,40 @@
 
 {% block title %}
 {% load i18n %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'account/login.css' %}">
 <title>{% trans 'Log-in' %}</title>
 {% endblock %}
 
 {% block content %}
-<form action="." method="post">
+<div class="form_section">
+<form action="." method="post" class="form_login">
     {% csrf_token %}
-    {{form.as_p}}
+    <div class="error_handler">
+    {% for error in form.errors.values %}
+    {{error}}
+    {% endfor %}
+    </div>
+    <input class="input_custom" placeholder="username" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+    <input class="input_custom" placeholder="password" type="password" name="password" autocomplete="current-password" required="" id="id_password">
     <input type="hidden" name="next" value="{{next}}">
-    <input type="submit" value="{% trans 'Войти' %}">
-</form>
-<a href="{% url 'password_reset' %}">{% trans 'Забыли пароль?' %}</a>
-<a href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
+    <div class="another_ways">
+    <a class="registration" href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
+    <a class="forgot_password" href="{% url 'password_reset' %}">{% trans 'Забыли пароль?' %}</a>
+    </div>
+    <div class="submit_button" onclick="submitForm()">
+        <input type="submit" value="{% trans 'Войти' %}" form=".form_login">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+        </svg>
+    </div>
+    </form>
+</div>
+<script>
+    function submitForm() {
+    document.querySelector(".form_login").submit(); // Выполнить сабмит формы
+}
+</script>
 {% endblock %}

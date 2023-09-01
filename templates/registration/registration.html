@@ -2,11 +2,13 @@
 
 {% block title %}
 {% load i18n %}
+{% load static %}
 <title>{% trans 'Создать аккаунт' %}</title>
+<link rel="stylesheet" href="{% static 'account/login.css' %}">
 {% endblock %}
 
 {% block content %}
-<h1>{% trans 'Создать аккаунт' %}</h1>
+<h1 class="paragraph_name" style="font-size: 15px;">{% trans 'Зарегистрируйтесь с помощью формы ниже' %}</h1>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -14,11 +16,17 @@
     {% endfor %}
 </ul>
 {% endif %}
-<p>{% trans 'Зарегистрируйтесь с помощью формы ниже' %}</p>
 <form action="." method="post">
+    <div class="error_handler">
+    {% for error in form.errors.values %}
+        {{error}}
+    {% endfor %}
+    </div>
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="{% trans 'Зарегистрироваться' %}">
+    <input class="input_custom" placeholder="{% trans 'username' %}" type="text" name="username" maxlength="150" required="" id="id_username" autocompleted="">
+    <input class="input_custom" placeholder="{% trans 'email' %}" type="email" name="email" maxlength="254" id="id_email">
+    <input class="input_custom" placeholder="{% trans 'password' %}" type="password" name="password" required="" id="id_password" autocompleted="">
+    <input class="input_custom" placeholder="{% trans 'repeat password' %}" type="password" name="password2" required="" id="id_password2">
+    <input class="submit_button" style="width: 45%; padding: 5px" type="submit" value="{% trans 'Зарегистрироваться' %}">
 </form>
-<a href="{% url 'password_reset' %}">{% trans 'Забыли пароль?' %}</a>
 {% endblock %}

@@ -4,11 +4,11 @@ from django.http import HttpResponseRedirect
 from django.views import View
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
-from .forms import UserRegister, UserEdit, ProfileEdit
+from .forms import UserRegister, UserEdit, ProfileEdit, LoginForm
 from .models import Profile
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.forms import AuthenticationForm
 
 class UserRegistration(View):
     template_name = "registration/registration.html"
@@ -28,14 +28,36 @@ class UserRegistration(View):
             new_user.set_password(form.cleaned_data["password"])
             new_user.save()
             Profile.objects.create(user=new_user)
-            messages.success(request, _("Вы успешно зарегистрировались"))
+            messages.success(request, _("Вы успешно зарегистрировались ✓"))
+            messages.success(request, _("Вы можете войти в аккаунт в меню"))
             return HttpResponseRedirect("/")
             # return render(
             #     request, "registration/registration_done.html", {"form": form}
             # )
         else:
-            messages.warning(request, _("Обнаружены неправильно заполненые поля"))
             return self.render_template(request, form)
+
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            user = authenticate(request,
+                                username=cd['username'],
+                                password=cd['password'])
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    messages.success(request, _('Вы успешно вошли в аккаунт ✓'))
+                    return HttpResponseRedirect('/')
+                else:
+                    messages.warning(request, _('Ваш аккаунт отключен'))
+                    return HttpResponseRedirect('.')
+            else:
+                return render(request, 'registration/login.html', {'form': form})
+    else:
+        form = AuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})
 
 
 class UserEditView(View):
