@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "reader.apps.ReaderConfig",
     "rosetta",
     "account.apps.AccountConfig",
+    "user_actions.apps.UserActionsConfig",
 ]
 
 MIDDLEWARE = [
