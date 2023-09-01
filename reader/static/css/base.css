@@ -33,3 +33,13 @@ button, input, optgroup, select, textarea {
   line-height: 22px; /* 110% */
   letter-spacing: -0.4px;
 }
+
+.for_placeholder::placeholder{
+    color: #5B21E3;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.for_placeholder:focus{
+  outline: none;
+}

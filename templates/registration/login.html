@@ -23,8 +23,8 @@
     <a class="registration" href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
     <a class="forgot_password" href="{% url 'password_reset' %}">{% trans 'Забыли пароль?' %}</a>
     </div>
-    <div class="submit_button" onclick="submitForm()">
-        <input type="submit" value="{% trans 'Войти' %}" form=".form_login">
+    <button type="submit" class="submit_button">
+        {% trans 'Войти' %}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -33,9 +33,4 @@
     </div>
     </form>
 </div>
-<script>
-    function submitForm() {
-    document.querySelector(".form_login").submit(); // Выполнить сабмит формы
-}
-</script>
 {% endblock %}
