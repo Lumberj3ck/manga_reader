@@ -16,29 +16,30 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "account.authentication.EmailBackend",
+]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-gy-p5d*#$fso0fl!9&^e_=e^!8+%n*l-$d6r!$!3pcxrd^2ow%"
-MEDIA_ROOT = "./imgs"
-MEDIA_URL = "imgs/"
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "login"
 LOGOUT_URL = "logout"
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "django-insecure-gy-p5d*#$fso0fl!9&^e_=e^!8+%n*l-$d6r!$!3pcxrd^2ow%"
+MEDIA_ROOT = "./imgs"
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 REDIS_DB = 0
+
 # LOGGING = {
 #     "version": 1,
 #     "handlers": {"console": {"class": "logging.StreamHandler"}},
 #     "loggers": {"django.db.backends": {"handlers": ["console"], "level": "DEBUG"}},
 # }
-ALLOWED_HOSTS = ["143.198.224.109"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -95,7 +96,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "manga_project",
-        "USER": "lumberjack",
+        "USER": "lumberjack1",
         "PASSWORD": "h*99IgJdEc8*",
         "HOST": "localhost",
         "PORT": "",
@@ -146,7 +147,7 @@ LOGOUT_URL = "logout"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-STATIC_ROOT = "./static"
+
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "imgs",
