@@ -1,7 +1,7 @@
 from PIL import Image
 import os, logging, django
 
-os.environ["DJANGO_SETTINGS_MODULE"] = "manga_reader.settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "manga_reader.settings_prod"
 django.setup()
 from reader.models import Picture
 

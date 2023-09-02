@@ -55,7 +55,7 @@ class Picture(models.Model):
         verbose_name=_("Глава"),
     )
     img = models.ImageField(upload_to=upload_to)
-    medium_img = models.ImageField(upload_to=upload_to_medium)
+    medium_img = models.ImageField(upload_to=upload_to_medium, max_length=200)
 
     def __str__(self):
         return self.img.name
