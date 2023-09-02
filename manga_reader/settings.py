@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "reader.apps.ReaderConfig",
     "rosetta",
     "account.apps.AccountConfig",
+    "django.contrib.humanize",
     "user_actions.apps.UserActionsConfig",
 ]
 

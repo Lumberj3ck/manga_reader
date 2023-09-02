@@ -44,8 +44,8 @@
 </nav>
 <div class='just_container mt-6'> 
     <div class="content_block">
-{% for picture in chapter.images.all %}
-<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{{picture.img.url }}"  alt="{{picture.img.name}}">
+{% for picture in images %}
+<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{% static picture.img.url %}"  alt="{{picture.img.name}}" srcset="{% static picture.medium_img.url %} 650w" sizes="(max-width: 500px) 650px">
 {% endfor %}
 </div>
 <div class="flex justify-between m-3  text-white" >
@@ -64,11 +64,19 @@
 <div class="like_panel flex items-center gap-4">
     {% with total_likes=chapter.likes.count chapter_likes=chapter.likes.all %}
     <span class='total'>{{total_likes}}</span>
-    <span class="like_pluralize">{% blocktrans %} Like{{total_likes|pluralize}} {% endblocktrans %}</span>
+    <span class="like_pluralize">{% blocktrans %} Like {{ total_likes|pluralize }} {% endblocktrans %}</span>
     {% if request.user not in chapter_likes %}
-    <a data-action='like' data-slug="{{chapter.name}}" class="like btn btn-info">{% trans 'Like' %}</a>
+    <svg xmlns="http://www.w3.org/2000/svg" data-action='like' data-slug="{{chapter.name}}" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-7 h-7 like_svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+    </svg>
     {% elif request.user in chapter_likes %}
-    <a data-action='unlike' data-slug="{{chapter.name}}" class="like btn btn-info">{% trans 'Unlike' %}</a>
+    <svg xmlns="http://www.w3.org/2000/svg" data-action='unlike' data-slug="{{chapter.name}}" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-7 h-7 like_svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+    </svg>
     {% endif %}
     {% endwith %}
 </div>
@@ -77,12 +85,12 @@
 <div class="text-black p-2 m-2" >
     <div class="font-bold text-lg mb-3 ">{% trans 'Комментарии' %}</div>
     <div class="comments_errors error_handler mb-2"></div>
-    <!-- Comment erorr show -->
+    <!-- Comment error shows here -->
     <form>
         {% csrf_token %}
         <textarea class="mb-2 rounded-md p-2 w-5/6 custom_input" style="height: 100px" required type="text" name="text" maxlength="800" id="id_text" placeholder="Text"></textarea>
-        <div class="submit_block">
-        <input class="comment_submit border-2 rounded-md p-1" type='submit' value="{% trans 'Oставить коммент' %}">
+        <button class="submit_block comment_submit border-2 rounded-md p-1" type='submit' style="display: flex; justify-content: space-between;">
+        {% trans 'Oставить коммент' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
             <path
                 d="M5.38499 9.05314L3.38428 2.55212C8.17016 3.94381 12.6833 6.14241 16.7292 9.05314C12.6836 11.9643 8.17072 14.1634 3.38501 15.5556L5.38499 9.05314ZM5.38499 9.05314H10.8794"
@@ -95,13 +103,14 @@
                 </linearGradient>
             </defs>
         </svg>
-        </div>
+        </button>
     </form>
     <div class='comments mt-4'>
+        {% load humanize %}
     {% for comment in comments %}
         <div class='comment mb-2 rounded-md border-2 border-black p-2'>
         <div class="font-bold ">{{comment.user}}</div>
-        <div class="text-gray-600">{{comment.created_at}}</div>
+        <div class="text-gray-600">{{comment.created_at|naturaltime}}</div>
         <div class="font-medium">{{comment.text}}</div>
         </div>
     {% endfor %}
@@ -157,7 +166,14 @@ function sendAjaxRequest(formdata, onSuccess, onError) {
 }
 
 function updateLikeAction(newAction, newTotal, total_span) {
-    like_but.innerHTML = newAction.charAt(0).toUpperCase() + newAction.slice(1);
+    // Here newAction is opposite xD
+    if (newAction === 'like') {
+        fill = 'none'
+    }
+    else{
+        fill = 'black'
+    }
+    like_but.setAttribute('fill', fill)
     like_but.dataset.action = newAction;
     total_span.innerHTML = newTotal + ' ';
     like_pluralize = document.querySelector('span.like_pluralize')
@@ -216,10 +232,30 @@ function handleCommentSubmit(event) {
     if (comment_text_field.value) {
         sendAjaxRequest(formdata,
             data => {
-                new_comment = document.createElement('div')
-                new_comment.innerHTML = `${data['user']}, ${data['comment_text']}, ${data['created_at']}`
+                const commentContainer = document.createElement('div');
+                commentContainer.classList.add('comment', 'mb-2', 'rounded-md', 'border-2', 'border-black', 'p-2');
+
+                // Create a username element
+                const usernameElement = document.createElement('div');
+                usernameElement.classList.add('font-bold');
+                usernameElement.textContent = data['user'];
+
+                // Create a timestamp element
+                const timestampElement = document.createElement('div');
+                timestampElement.classList.add('text-gray-600');
+                timestampElement.textContent = data['created_at'];
+
+                // Create a comment text element
+                const commentTextElement = document.createElement('div');
+                commentTextElement.classList.add('font-medium');
+                commentTextElement.textContent = data['comment_text'];
+
+                commentContainer.appendChild(usernameElement);
+                commentContainer.appendChild(timestampElement);
+                commentContainer.appendChild(commentTextElement);
                 first_child = comment_section.firstElementChild
-                comment_section.insertBefore(new_comment, first_child)
+                comment_section.insertBefore(commentContainer, first_child)
+                // reset textarea text
                 comment_text_field.value = ''
             },
             data => {
@@ -230,7 +266,7 @@ function handleCommentSubmit(event) {
 }
 
 // Event listeners
-like_but = document.querySelector('a.like');
+like_but = document.querySelector('.like_svg');
 like_but.addEventListener('click', handleLikeClick);
 chapter_name = "{{chapter.name}}"
 comment_section = document.querySelector('.comments')

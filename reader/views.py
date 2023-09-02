@@ -11,6 +11,7 @@ from django.shortcuts import get_object_or_404
 from account.models import Bookmark
 from .forms import CommentForm
 from django.db.models import Count
+from django.contrib.humanize.templatetags import humanize
 import redis
 
 r = redis.Redis(
@@ -68,7 +69,7 @@ def chapter_action(request):
                         "status": "ok",
                         "user": new_comment.user.username,
                         "comment_text": new_comment.text,
-                        "created_at": new_comment.created_at,
+                        "created_at": humanize.naturaltime(new_comment.created_at),
                     }
                 )
             return JsonResponse({"status": "ok"})
@@ -110,8 +111,9 @@ class ChapterDetail(View):
         self.context["next"] = self.next[0] if self.next else None
         self.context["previous"] = self.previous[0] if self.previous else None
         self.context[self.context_object_name] = self.current_chapter
+        self.context['images'] = Picture.objects.filter(chapter=self.current_chapter).order_by('id')
         self.context["form"] = self.form_class()
-        self.context["comments"] = self.current_chapter.comment_set.all()
+        self.context["comments"] = self.current_chapter.comment_set.order_by('-created_at').all()
         self.context["total_views"] = self.total_views
 
     def get_next_previous_chapter(self) -> None:
