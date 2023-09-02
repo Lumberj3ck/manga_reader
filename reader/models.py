@@ -18,7 +18,7 @@ class Chapter(models.Model):
     name = models.CharField(
         max_length=200, verbose_name=_("Название главы"), unique=True
     )
-    chapter_number = models.PositiveIntegerField(unique=True)
+    chapter_number = models.FloatField(unique=True)
     ## name is unique hence i thought is would be redudant to save both of them slug and name
     # slug = models.SlugField(max_length=200, blank=True)
     manga = models.ForeignKey(
@@ -40,6 +40,13 @@ def upload_to(instance, filename):
     return os.path.join(folder_name, filename)
 
 
+def upload_to_medium(instance, filename):
+    """function called every time models img saved"""
+    folder_name = instance.chapter.name.replace(" ", "-")
+    filename = filename.replace('.', '_medium.') 
+    return os.path.join(folder_name, filename)
+
+
 class Picture(models.Model):
     chapter = models.ForeignKey(
         "Chapter",
@@ -48,6 +55,7 @@ class Picture(models.Model):
         verbose_name=_("Глава"),
     )
     img = models.ImageField(upload_to=upload_to)
+    medium_img = models.ImageField(upload_to=upload_to_medium)
 
     def __str__(self):
         return self.img.name

@@ -111,6 +111,7 @@ class ChapterDetail(View):
         self.context["next"] = self.next[0] if self.next else None
         self.context["previous"] = self.previous[0] if self.previous else None
         self.context[self.context_object_name] = self.current_chapter
+        self.context['images'] = Picture.objects.filter(chapter=self.current_chapter).order_by('id')
         self.context["form"] = self.form_class()
         self.context["comments"] = self.current_chapter.comment_set.order_by('-created_at').all()
         self.context["total_views"] = self.total_views
