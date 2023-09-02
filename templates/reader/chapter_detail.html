@@ -81,8 +81,8 @@
     <form>
         {% csrf_token %}
         <textarea class="mb-2 rounded-md p-2 w-5/6 custom_input" style="height: 100px" required type="text" name="text" maxlength="800" id="id_text" placeholder="Text"></textarea>
-        <div class="submit_block">
-        <input class="comment_submit border-2 rounded-md p-1" type='submit' value="{% trans 'Oставить коммент' %}">
+        <button class="submit_block comment_submit border-2 rounded-md p-1" type='submit' style="display: flex; justify-content: space-between;">
+        {% trans 'Oставить коммент' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
             <path
                 d="M5.38499 9.05314L3.38428 2.55212C8.17016 3.94381 12.6833 6.14241 16.7292 9.05314C12.6836 11.9643 8.17072 14.1634 3.38501 15.5556L5.38499 9.05314ZM5.38499 9.05314H10.8794"
@@ -95,13 +95,14 @@
                 </linearGradient>
             </defs>
         </svg>
-        </div>
+        </button>
     </form>
     <div class='comments mt-4'>
+        {% load humanize %}
     {% for comment in comments %}
         <div class='comment mb-2 rounded-md border-2 border-black p-2'>
         <div class="font-bold ">{{comment.user}}</div>
-        <div class="text-gray-600">{{comment.created_at}}</div>
+        <div class="text-gray-600">{{comment.created_at|naturaltime}}</div>
         <div class="font-medium">{{comment.text}}</div>
         </div>
     {% endfor %}
@@ -216,10 +217,30 @@ function handleCommentSubmit(event) {
     if (comment_text_field.value) {
         sendAjaxRequest(formdata,
             data => {
-                new_comment = document.createElement('div')
-                new_comment.innerHTML = `${data['user']}, ${data['comment_text']}, ${data['created_at']}`
+                const commentContainer = document.createElement('div');
+                commentContainer.classList.add('comment', 'mb-2', 'rounded-md', 'border-2', 'border-black', 'p-2');
+
+                // Create a username element
+                const usernameElement = document.createElement('div');
+                usernameElement.classList.add('font-bold');
+                usernameElement.textContent = data['user'];
+
+                // Create a timestamp element
+                const timestampElement = document.createElement('div');
+                timestampElement.classList.add('text-gray-600');
+                timestampElement.textContent = data['created_at'];
+
+                // Create a comment text element
+                const commentTextElement = document.createElement('div');
+                commentTextElement.classList.add('font-medium');
+                commentTextElement.textContent = data['comment_text'];
+
+                commentContainer.appendChild(usernameElement);
+                commentContainer.appendChild(timestampElement);
+                commentContainer.appendChild(commentTextElement);
                 first_child = comment_section.firstElementChild
-                comment_section.insertBefore(new_comment, first_child)
+                comment_section.insertBefore(commentContainer, first_child)
+                // reset textarea text
                 comment_text_field.value = ''
             },
             data => {

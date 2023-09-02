@@ -4,6 +4,7 @@
 
 {% block title %}
 {% load static %}
+{% load i18n %}
 <title>Фанатский сайт манги</title>
 <link rel="stylesheet" href="{% static 'css/landing.css' %}">
 <link rel="stylesheet" href="{% static 'css/landing_specific.css' %}">
@@ -18,12 +19,12 @@
     {% endfor %}
 </ul>
 {% endif %}
-<div class="main_phrase p-3 mx-4 mb-2">Фанатский сайт для чтения любимой манги</div>
+<div class="main_phrase p-3 mx-4 mb-2">{% trans 'Фанатский сайт для чтения любимой манги' %}</div>
 <img src="{% static 'senkus_art2.png' %}" alt="senku_art" class="mx-auto">
-<div class="main_phrase mx-2 " style="font-weight: 500; font-size: 20px;">Этот сайт создан для приятного время провождения</div>
+<div class="main_phrase mx-2 " style="font-weight: 500; font-size: 20px;">{% trans 'Этот сайт создан для приятного время провождения' %}</div>
 <a href="{% url 'manga_list' %}">
 <div class="land_butt flex justify-start items-center p-2 mx-2 mt-2 gap-2 hover:bg-slate-900 hover:border-r-2">
-    <span class="text-lg ml-2" style="color: #F6BE2C">Начать читать прямо сейчас</span>
+    <span class="text-lg ml-2" style="color: #F6BE2C">{% trans 'Начать читать прямо сейчас' %}</span>
     <span><svg xmlns="http://www.w3.org/2000/svg" width="36" height="16" viewBox="0 0 36 16" fill="none">
             <path d="M6 8H30M30 8L21 4.25M30 8L21 11.75" stroke="#F7BE2C" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
