@@ -8,7 +8,7 @@ from reader.models import Picture
 logging.basicConfig(
     level=logging.INFO,
     filename="reducer.log",
-    encoding='utf8',
+    encoding="utf8",
     filemode="w",
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
@@ -27,10 +27,12 @@ def image_reduce(img_path: str) -> str:
     with Image.open(img_path) as im:
         new_width = int(im.size[0] * 0.85)
         new_height = int(im.size[1] * 0.85)
-        try:   
-            im.resize([new_width, new_height], Image.BILINEAR).save(updated_path, format="jpeg")
+        try:
+            im.resize([new_width, new_height], Image.BILINEAR).save(
+                updated_path, format="jpeg"
+            )
         except OSError:
-            logging.warning(f'This img has problem with rgb {img_path}')
+            logging.warning(f"This img has problem with rgb {img_path}")
         else:
             return updated_path
 
@@ -38,12 +40,14 @@ def image_reduce(img_path: str) -> str:
 def directories_walker():
     for picture in Picture.objects.all():
         try:
-            medium_img_path = image_reduce(picture.img.path)
+            image_reduce(picture.img.path)
         except DoNotExistException:
             logging.warning(f"{picture.img.path} failed to load")
             logging.info("This path does not exists or it is not file")
         else:
             logging.debug("Successfuly reduced image")
+            media_img_path = picture.medium_img.url.replace("/", os.path.sep)[1:]
+            medium_img_path = media_img_path.replace(".jpg", "_medium.jpg")
             picture.medium_img = medium_img_path
             picture.save()
 
