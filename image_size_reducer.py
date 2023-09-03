@@ -33,8 +33,6 @@ def image_reduce(img_path: str) -> str:
             )
         except OSError:
             logging.warning(f"This img has problem with rgb {img_path}")
-        else:
-            return updated_path
 
 
 def directories_walker():
