@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-30 14:48+0600\n"
-"PO-Revision-Date: 2023-08-30 09:01+0000\n"
-"Last-Translator: Lumberj Alan <alanuldashev@gmail.com>\n"
+"POT-Creation-Date: 2023-09-01 17:15+0000\n"
+"PO-Revision-Date: 2023-09-01 17:25+0000\n"
+"Last-Translator:   <alanuldashev@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -69,22 +69,33 @@ msgid "Профиль пользователя %(username)s"
 msgstr "User %(username)s profile"
 
 #: account/views.py:31
-msgid "Вы успешно зарегистрировались"
-msgstr "You succesfuly registered"
+#| msgid "Вы успешно зарегистрировались"
+msgid "Вы успешно зарегистрировались ✓"
+msgstr "You succesfuly registered ✓"
 
-#: account/views.py:37
-msgid "Обнаружены неправильно заполненые поля"
-msgstr "Invalid entered fields detected "
+#: account/views.py:32
+#| msgid "Вы можете войти в свой аккаунт"
+msgid "Вы можете войти в аккаунт в меню"
+msgstr "You can login into your account"
 
-#: account/views.py:70
+#: account/views.py:51
+#| msgid "Вы вышли из аккаунта"
+msgid "Вы успешно вошли в аккаунт ✓"
+msgstr "You have successfully logged in to your account ✓"
+
+#: account/views.py:54
+msgid "Ваш аккаунт отключен"
+msgstr "Your account has been blocked"
+
+#: account/views.py:92
 msgid "Изменения сохранены успешно"
 msgstr "Сhanges saved successfully"
 
-#: manga_reader/settings.py:131 manga_reader/settings_prod.py:130
+#: manga_reader/settings.py:132 manga_reader/settings_prod.py:131
 msgid "Russian"
 msgstr ""
 
-#: manga_reader/settings.py:132 manga_reader/settings_prod.py:131
+#: manga_reader/settings.py:133 manga_reader/settings_prod.py:132
 msgid "English"
 msgstr ""
 
@@ -92,80 +103,117 @@ msgstr ""
 msgid "Название манги"
 msgstr "Mangas name"
 
-#: reader/models.py:18
+#: reader/models.py:19
 msgid "Название главы"
 msgstr "Chapters name"
 
-#: reader/models.py:24
+#: reader/models.py:25
 msgid "chapters"
 msgstr ""
 
-#: reader/models.py:29
+#: reader/models.py:30
 msgid "Понравилось"
 msgstr "Likes "
 
-#: reader/models.py:47 reader/models.py:60
+#: reader/models.py:48 reader/models.py:61
 msgid "Глава"
 msgstr "Chapter"
 
-#: templates/reader/base.html:25
-msgid "Выйти"
-msgstr "Log-out"
+#: templates/reader/base.html:67
+#| msgid "Название главы"
+msgid "Введите главу"
+msgstr "Chapters name"
 
-#: templates/reader/base.html:33
-msgid "Закладка ->"
-msgstr "Bookmark"
+#: templates/reader/base.html:84
+msgid "Login"
+msgstr ""
 
-#: templates/reader/base.html:37 templates/reader/chapter_detail.html:69
-#: templates/registration/login.html:13
-msgid "Войти"
-msgstr "Login"
+#: templates/reader/base.html:91
+msgid "Bookmarks"
+msgstr ""
+
+#: templates/reader/base.html:95
+msgid "Manga"
+msgstr ""
+
+#: templates/reader/base.html:98
+msgid "Contact"
+msgstr ""
+
+#: templates/reader/base.html:110
+msgid "Logout"
+msgstr ""
+
+#: templates/reader/bookmarks.html:5 templates/reader/bookmarks.html:10
+#| msgid "Закладка ->"
+msgid "Ваши закладки"
+msgstr "Bookmarks"
 
 #: templates/reader/chapter_detail.html:7
 #, python-format
 msgid " Манга %(chapter.manga.name)s "
 msgstr "Manga %(chapter.manga.name)s"
 
-#: templates/reader/chapter_detail.html:22
+#: templates/reader/chapter_detail.html:20
+#: templates/reader/chapter_list.html:15 templates/reader/manga_list.html:17
+msgid "Home"
+msgstr ""
+
+#: templates/reader/chapter_detail.html:30
+#: templates/reader/chapter_list.html:25 templates/reader/manga_list.html:26
+msgid "Mangas"
+msgstr ""
+
+#: templates/reader/chapter_detail.html:40
+#: templates/reader/chapter_list.html:34
+msgid "Chapters"
+msgstr ""
+
+#: templates/reader/chapter_detail.html:53
 #, python-format
 msgid " Previous %(previous.chapter_number)s "
 msgstr ""
 
-#: templates/reader/chapter_detail.html:25
+#: templates/reader/chapter_detail.html:56
 #, python-format
 msgid " Next %(next.chapter_number)s"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:27
+#: templates/reader/chapter_detail.html:58
 msgid "На страницу тайтла"
 msgstr "Title's page"
 
-#: templates/reader/chapter_detail.html:35
+#: templates/reader/chapter_detail.html:67
 #, python-format
 msgid " Like%(total_likes|pluralize)s "
 msgstr ""
 
-#: templates/reader/chapter_detail.html:37
+#: templates/reader/chapter_detail.html:69
 msgid "Like"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:39
+#: templates/reader/chapter_detail.html:71
 msgid "Unlike"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:46
+#: templates/reader/chapter_detail.html:78
 msgid "Комментарии"
 msgstr "Comments"
 
-#: templates/reader/chapter_detail.html:50
+#: templates/reader/chapter_detail.html:85
 msgid "Oставить коммент"
 msgstr "Leave a comment"
 
-#: templates/reader/chapter_detail.html:69
+#: templates/reader/chapter_detail.html:117
 msgid "Пожалуйста войдите или зарегистрируйтесь на сайте"
 msgstr "Please log in or register on the website"
 
-#: templates/reader/chapter_detail.html:72
+#: templates/reader/chapter_detail.html:117
+#: templates/registration/login.html:27
+msgid "Войти"
+msgstr "Login"
+
+#: templates/reader/chapter_detail.html:120
 msgid "Something went wrond. Please try again!"
 msgstr ""
 
@@ -173,7 +221,11 @@ msgstr ""
 msgid "Главы"
 msgstr "Chapters"
 
-#: templates/reader/manga_list.html:5
+#: templates/reader/contact.html:5
+msgid "Данные"
+msgstr "Data"
+
+#: templates/reader/manga_list.html:6
 msgid "Вся манга"
 msgstr "All mangas"
 
@@ -201,18 +253,17 @@ msgstr "Account logged-out"
 msgid "Вы вышли из аккаунта"
 msgstr "You have logged out of your account"
 
-#: templates/registration/login.html:5
+#: templates/registration/login.html:7
 msgid "Log-in"
 msgstr ""
 
-#: templates/registration/login.html:15
-#: templates/registration/registration.html:23
-msgid "Забыли пароль?"
-msgstr "Forget password?"
-
-#: templates/registration/login.html:16
+#: templates/registration/login.html:23
 msgid "Регистрация"
 msgstr "Registration"
+
+#: templates/registration/login.html:24
+msgid "Забыли пароль?"
+msgstr "Forget password?"
 
 #: templates/registration/password_change_done.html:5
 msgid "Вы успешно сменили пароль"
@@ -226,18 +277,36 @@ msgstr "Password changed successfully"
 msgid "Ваш пароль был изменен"
 msgstr "Password is successfully changed"
 
-#: templates/registration/password_change_form.html:5
-#: templates/registration/password_change_form.html:9
+#: templates/registration/password_change_form.html:6
 msgid "Сменить пароль"
 msgstr "Change password"
 
-#: templates/registration/password_change_form.html:13
+#: templates/registration/password_change_form.html:11
+msgid "Для смены пароля введите ваш старый пароль"
+msgstr "For password change please enter your old password"
+
+#: templates/registration/password_change_form.html:18
+#| msgid "Забыли пароль?"
+msgid "Ваш старый пароль"
+msgstr "old password"
+
+#: templates/registration/password_change_form.html:19
+#| msgid "Забыли пароль?"
+msgid "Ваш новый пароль"
+msgstr "new password"
+
+#: templates/registration/password_change_form.html:20
+#| msgid "Сменить пароль"
+msgid "Повторите новый пароль"
+msgstr "repeat new password"
+
+#: templates/registration/password_change_form.html:22
 msgid "Поменять"
 msgstr "Submit"
 
 #: templates/registration/password_reset_complete.html:5
-#: templates/registration/password_reset_confirm.html:5
-#: templates/registration/password_reset_form.html:5
+#: templates/registration/password_reset_confirm.html:6
+#: templates/registration/password_reset_form.html:6
 msgid "Сброс пароля"
 msgstr "Password reset"
 
@@ -249,17 +318,16 @@ msgstr "New password set"
 msgid "Вы можете войти в свой аккаунт"
 msgstr "You can login into your account"
 
-#: templates/registration/password_reset_confirm.html:10
+#: templates/registration/password_reset_confirm.html:12
 msgid "Пожалуйста введите свой новый пароль дважды"
 msgstr "Please repeat your password two times"
 
-#: templates/registration/password_reset_confirm.html:14
-#, fuzzy
+#: templates/registration/password_reset_confirm.html:17
 #| msgid "Сменить пароль"
 msgid "Поменять мой пароль"
-msgstr "Change password"
+msgstr "change my password"
 
-#: templates/registration/password_reset_confirm.html:17
+#: templates/registration/password_reset_confirm.html:20
 msgid ""
 "Ссылка для востановления неверна, возможно из за по причине того что она уже"
 " была использована"
@@ -299,24 +367,39 @@ msgid ""
 "Your username, in case you've forgotten: %(user.get_username)s\n"
 msgstr ""
 
-#: templates/registration/password_reset_form.html:9
-msgid "Забыли свой пароль?"
-msgstr "Forgot password?"
+#: templates/registration/password_reset_form.html:11
+msgid "Для востановления пароля введите ваш Email"
+msgstr "For password reset please enter your email"
 
-#: templates/registration/password_reset_form.html:13
+#: templates/registration/password_reset_form.html:15
 msgid "Выслать письмо"
 msgstr "Send mail "
 
-#: templates/registration/registration.html:5
-#: templates/registration/registration.html:9
+#: templates/registration/registration.html:6
 msgid "Создать аккаунт"
 msgstr "Create an account"
 
-#: templates/registration/registration.html:17
+#: templates/registration/registration.html:11
 msgid "Зарегистрируйтесь с помощью формы ниже"
 msgstr "Please, register via form bellow"
 
-#: templates/registration/registration.html:21
+#: templates/registration/registration.html:26
+msgid "username"
+msgstr ""
+
+#: templates/registration/registration.html:27
+msgid "email"
+msgstr ""
+
+#: templates/registration/registration.html:28
+msgid "password"
+msgstr ""
+
+#: templates/registration/registration.html:29
+msgid "repeat password"
+msgstr ""
+
+#: templates/registration/registration.html:30
 msgid "Зарегистрироваться"
 msgstr "Register"
 
@@ -339,6 +422,20 @@ msgstr "Edit user's data"
 #: templates/registration/user_and_profile_edit.html:19
 msgid "Сохранить данные"
 msgstr "Save changes"
+
+#: templates/user_actions/search_results.html:6
+msgid "Вот что мы нашли по вашему запросу"
+msgstr "Here's what we found for your query"
+
+#: templates/user_actions/search_results.html:11
+#, python-format
+msgid " Вот что нашлось по вашему запросу %(query)s "
+msgstr "Here's what was found for your query %(query)string"
+
+#: templates/user_actions/search_results.html:24
+#, python-format
+msgid " 'Ничего не найдено по вашему запросу' %(query)s "
+msgstr "Nothing was found for your query' %(query)string"
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
@@ -1549,6 +1646,15 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Обнаружены неправильно заполненые поля"
+#~ msgstr "Invalid entered fields detected "
+
+#~ msgid "Выйти"
+#~ msgstr "Log-out"
+
+#~ msgid "Забыли свой пароль?"
+#~ msgstr "Forgot password?"
 
 #~ msgid "Привет"
 #~ msgstr "Hello"

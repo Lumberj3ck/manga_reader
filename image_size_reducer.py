@@ -1,7 +1,7 @@
 from PIL import Image
 import os, logging, django
 
-os.environ["DJANGO_SETTINGS_MODULE"] = "manga_reader.settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "manga_reader.settings_prod"
 django.setup()
 from reader.models import Picture
 
@@ -29,7 +29,7 @@ def image_reduce(img_path: str) -> str:
         new_height = int(im.size[1] * 0.85)
         try:
             im.resize([new_width, new_height], Image.BILINEAR).save(
-                updated_path, format="jpeg"
+                updated_path, format=im.format
             )
         except OSError:
             logging.warning(f"This img has problem with rgb {img_path}")
@@ -44,11 +44,14 @@ def directories_walker():
             logging.info("This path does not exists or it is not file")
         else:
             logging.debug("Successfuly reduced image")
-            media_img_path = picture.medium_img.url.replace("/", os.path.sep)[1:]
+            media_img_path = picture.img.path.split('imgs')[1]
             medium_img_path = media_img_path.replace(".jpg", "_medium.jpg")
-            picture.medium_img = medium_img_path
-            picture.save()
+            try:
+                picture.medium_img = medium_img_path
+                picture.save()
+            except:
 
+                logging.warning(f'we do not have such path medium {medium_img_path}')
 
 if __name__ == "__main__":
     directories_walker()
