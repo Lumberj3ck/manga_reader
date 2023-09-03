@@ -11,6 +11,7 @@ class Bookmark(models.Model):
         verbose_name=_("Последняя глава"),
         on_delete=models.CASCADE,
         related_name="bookmarks",
+        blank=True,
     )
     profile = models.ForeignKey(
         "Profile",
