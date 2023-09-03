@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-01 17:15+0000\n"
-"PO-Revision-Date: 2023-09-01 17:25+0000\n"
+"POT-Creation-Date: 2023-09-03 16:17+0000\n"
+"PO-Revision-Date: 2023-09-03 16:20+0000\n"
 "Last-Translator:   <alanuldashev@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -69,17 +69,14 @@ msgid "Профиль пользователя %(username)s"
 msgstr "User %(username)s profile"
 
 #: account/views.py:31
-#| msgid "Вы успешно зарегистрировались"
 msgid "Вы успешно зарегистрировались ✓"
 msgstr "You succesfuly registered ✓"
 
 #: account/views.py:32
-#| msgid "Вы можете войти в свой аккаунт"
 msgid "Вы можете войти в аккаунт в меню"
 msgstr "You can login into your account"
 
 #: account/views.py:51
-#| msgid "Вы вышли из аккаунта"
 msgid "Вы успешно вошли в аккаунт ✓"
 msgstr "You have successfully logged in to your account ✓"
 
@@ -91,11 +88,11 @@ msgstr "Your account has been blocked"
 msgid "Изменения сохранены успешно"
 msgstr "Сhanges saved successfully"
 
-#: manga_reader/settings.py:132 manga_reader/settings_prod.py:131
+#: manga_reader/settings.py:133 manga_reader/settings_prod.py:132
 msgid "Russian"
 msgstr ""
 
-#: manga_reader/settings.py:133 manga_reader/settings_prod.py:132
+#: manga_reader/settings.py:134 manga_reader/settings_prod.py:133
 msgid "English"
 msgstr ""
 
@@ -115,37 +112,35 @@ msgstr ""
 msgid "Понравилось"
 msgstr "Likes "
 
-#: reader/models.py:48 reader/models.py:61
+#: reader/models.py:55 reader/models.py:69
 msgid "Глава"
 msgstr "Chapter"
 
-#: templates/reader/base.html:67
-#| msgid "Название главы"
-msgid "Введите главу"
-msgstr "Chapters name"
-
-#: templates/reader/base.html:84
+#: templates/reader/base.html:36 templates/reader/base.html:118
 msgid "Login"
 msgstr ""
 
-#: templates/reader/base.html:91
+#: templates/reader/base.html:43 templates/reader/base.html:125
 msgid "Bookmarks"
 msgstr ""
 
-#: templates/reader/base.html:95
+#: templates/reader/base.html:47 templates/reader/base.html:129
 msgid "Manga"
 msgstr ""
 
-#: templates/reader/base.html:98
-msgid "Contact"
-msgstr ""
-
-#: templates/reader/base.html:110
+#: templates/reader/base.html:59 templates/reader/base.html:144
 msgid "Logout"
 msgstr ""
 
+#: templates/reader/base.html:101 templates/reader/site_navigation.html:6
+msgid "Введите главу"
+msgstr "Chapters name"
+
+#: templates/reader/base.html:132
+msgid "Contact"
+msgstr ""
+
 #: templates/reader/bookmarks.html:5 templates/reader/bookmarks.html:10
-#| msgid "Закладка ->"
 msgid "Ваши закладки"
 msgstr "Bookmarks"
 
@@ -154,18 +149,18 @@ msgstr "Bookmarks"
 msgid " Манга %(chapter.manga.name)s "
 msgstr "Manga %(chapter.manga.name)s"
 
-#: templates/reader/chapter_detail.html:20
-#: templates/reader/chapter_list.html:15 templates/reader/manga_list.html:17
+#: templates/reader/chapter_detail.html:19
+#: templates/reader/chapter_list.html:16 templates/reader/manga_list.html:15
 msgid "Home"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:30
-#: templates/reader/chapter_list.html:25 templates/reader/manga_list.html:26
+#: templates/reader/chapter_detail.html:29
+#: templates/reader/chapter_list.html:26 templates/reader/manga_list.html:21
 msgid "Mangas"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:40
-#: templates/reader/chapter_list.html:34
+#: templates/reader/chapter_detail.html:39
+#: templates/reader/chapter_list.html:35
 msgid "Chapters"
 msgstr ""
 
@@ -185,35 +180,27 @@ msgstr "Title's page"
 
 #: templates/reader/chapter_detail.html:67
 #, python-format
-msgid " Like%(total_likes|pluralize)s "
+msgid " Like %(total_likes|pluralize)s "
 msgstr ""
 
-#: templates/reader/chapter_detail.html:69
-msgid "Like"
-msgstr ""
-
-#: templates/reader/chapter_detail.html:71
-msgid "Unlike"
-msgstr ""
-
-#: templates/reader/chapter_detail.html:78
+#: templates/reader/chapter_detail.html:86
 msgid "Комментарии"
 msgstr "Comments"
 
-#: templates/reader/chapter_detail.html:85
+#: templates/reader/chapter_detail.html:93
 msgid "Oставить коммент"
 msgstr "Leave a comment"
 
-#: templates/reader/chapter_detail.html:117
+#: templates/reader/chapter_detail.html:130
 msgid "Пожалуйста войдите или зарегистрируйтесь на сайте"
 msgstr "Please log in or register on the website"
 
-#: templates/reader/chapter_detail.html:117
+#: templates/reader/chapter_detail.html:130
 #: templates/registration/login.html:27
 msgid "Войти"
 msgstr "Login"
 
-#: templates/reader/chapter_detail.html:120
+#: templates/reader/chapter_detail.html:133
 msgid "Something went wrond. Please try again!"
 msgstr ""
 
@@ -221,13 +208,38 @@ msgstr ""
 msgid "Главы"
 msgstr "Chapters"
 
+#: templates/reader/chapter_list.html:44
+msgid ""
+"Dr. Stone is a Japanese manga series written by Riichiro Inagaki and "
+"illustrated by Boichi, serialized in Weekly Shōnen Jump since March 6, 2017,"
+" with the individual chapters collected and published by Shueisha into ten "
+"tankōbon volumes as of April 2019. Shueisha began to simul publish the "
+"series in English on the website and app Manga Plus since January 2019."
+msgstr ""
+
 #: templates/reader/contact.html:5
 msgid "Данные"
 msgstr "Data"
 
+#: templates/reader/landing.html:23
+msgid "Фанатский сайт для чтения любимой манги"
+msgstr "Funs site for manga reading!"
+
+#: templates/reader/landing.html:24
+msgid "Этот сайт создан для приятного время провождения"
+msgstr "This site is created for a pleasant pastime"
+
+#: templates/reader/landing.html:27
+msgid "Начать читать прямо сейчас"
+msgstr "Start reading right now"
+
 #: templates/reader/manga_list.html:6
 msgid "Вся манга"
 msgstr "All mangas"
+
+#: templates/reader/manga_list.html:27
+msgid "Доступная манга :"
+msgstr "All manga"
 
 #: templates/reader/most_viewed_chapters.html:6
 msgid "Самые читаемые главы"
@@ -286,17 +298,14 @@ msgid "Для смены пароля введите ваш старый пар�
 msgstr "For password change please enter your old password"
 
 #: templates/registration/password_change_form.html:18
-#| msgid "Забыли пароль?"
 msgid "Ваш старый пароль"
 msgstr "old password"
 
 #: templates/registration/password_change_form.html:19
-#| msgid "Забыли пароль?"
 msgid "Ваш новый пароль"
 msgstr "new password"
 
 #: templates/registration/password_change_form.html:20
-#| msgid "Сменить пароль"
 msgid "Повторите новый пароль"
 msgstr "repeat new password"
 
@@ -323,7 +332,6 @@ msgid "Пожалуйста введите свой новый пароль дв
 msgstr "Please repeat your password two times"
 
 #: templates/registration/password_reset_confirm.html:17
-#| msgid "Сменить пароль"
 msgid "Поменять мой пароль"
 msgstr "change my password"
 
@@ -432,7 +440,7 @@ msgstr "Here's what we found for your query"
 msgid " Вот что нашлось по вашему запросу %(query)s "
 msgstr "Here's what was found for your query %(query)string"
 
-#: templates/user_actions/search_results.html:24
+#: templates/user_actions/search_results.html:23
 #, python-format
 msgid " 'Ничего не найдено по вашему запросу' %(query)s "
 msgstr "Nothing was found for your query' %(query)string"

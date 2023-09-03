@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-01 17:15+0000\n"
-"PO-Revision-Date: 2023-09-01 17:28+0000\n"
+"POT-Creation-Date: 2023-09-03 16:17+0000\n"
+"PO-Revision-Date: 2023-09-03 16:21+0000\n"
 "Last-Translator:   <alanuldashev@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -88,11 +88,11 @@ msgstr ""
 msgid "Изменения сохранены успешно"
 msgstr ""
 
-#: manga_reader/settings.py:132 manga_reader/settings_prod.py:131
+#: manga_reader/settings.py:133 manga_reader/settings_prod.py:132
 msgid "Russian"
 msgstr "Русский"
 
-#: manga_reader/settings.py:133 manga_reader/settings_prod.py:132
+#: manga_reader/settings.py:134 manga_reader/settings_prod.py:133
 msgid "English"
 msgstr "Английский"
 
@@ -112,34 +112,33 @@ msgstr "Главы"
 msgid "Понравилось"
 msgstr ""
 
-#: reader/models.py:48 reader/models.py:61
+#: reader/models.py:55 reader/models.py:69
 msgid "Глава"
 msgstr ""
 
-#: templates/reader/base.html:67
-#| msgid "Последняя глава"
-msgid "Введите главу"
-msgstr " "
-
-#: templates/reader/base.html:84
+#: templates/reader/base.html:36 templates/reader/base.html:118
 msgid "Login"
 msgstr "Войти"
 
-#: templates/reader/base.html:91
+#: templates/reader/base.html:43 templates/reader/base.html:125
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: templates/reader/base.html:95
+#: templates/reader/base.html:47 templates/reader/base.html:129
 msgid "Manga"
 msgstr "Манга"
 
-#: templates/reader/base.html:98
-msgid "Contact"
-msgstr "Контакты"
-
-#: templates/reader/base.html:110
+#: templates/reader/base.html:59 templates/reader/base.html:144
 msgid "Logout"
 msgstr "Выйти"
+
+#: templates/reader/base.html:101 templates/reader/site_navigation.html:6
+msgid "Введите главу"
+msgstr " "
+
+#: templates/reader/base.html:132
+msgid "Contact"
+msgstr "Контакты"
 
 #: templates/reader/bookmarks.html:5 templates/reader/bookmarks.html:10
 msgid "Ваши закладки"
@@ -150,19 +149,18 @@ msgstr ""
 msgid " Манга %(chapter.manga.name)s "
 msgstr ""
 
-#: templates/reader/chapter_detail.html:20
-#: templates/reader/chapter_list.html:15 templates/reader/manga_list.html:17
+#: templates/reader/chapter_detail.html:19
+#: templates/reader/chapter_list.html:16 templates/reader/manga_list.html:15
 msgid "Home"
 msgstr "Главная"
 
-#: templates/reader/chapter_detail.html:30
-#: templates/reader/chapter_list.html:25 templates/reader/manga_list.html:26
+#: templates/reader/chapter_detail.html:29
+#: templates/reader/chapter_list.html:26 templates/reader/manga_list.html:21
 msgid "Mangas"
 msgstr "Манги"
 
-#: templates/reader/chapter_detail.html:40
-#: templates/reader/chapter_list.html:34
-#| msgid "chapters"
+#: templates/reader/chapter_detail.html:39
+#: templates/reader/chapter_list.html:35
 msgid "Chapters"
 msgstr "Главы"
 
@@ -173,7 +171,6 @@ msgstr "Предыдущая %(previous.chapter_number)s"
 
 #: templates/reader/chapter_detail.html:56
 #, python-format
-#| msgid " Next %(next.chapter_number)s "
 msgid " Next %(next.chapter_number)s"
 msgstr "Следущая %(next.chapter_number)s"
 
@@ -183,35 +180,27 @@ msgstr ""
 
 #: templates/reader/chapter_detail.html:67
 #, python-format
-msgid " Like%(total_likes|pluralize)s "
-msgstr ""
+msgid " Like %(total_likes|pluralize)s "
+msgstr "Лайк%(total_likes|pluralize)s"
 
-#: templates/reader/chapter_detail.html:69
-msgid "Like"
-msgstr "Лайк"
-
-#: templates/reader/chapter_detail.html:71
-msgid "Unlike"
-msgstr "Отменить лайк"
-
-#: templates/reader/chapter_detail.html:78
+#: templates/reader/chapter_detail.html:86
 msgid "Комментарии"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:85
+#: templates/reader/chapter_detail.html:93
 msgid "Oставить коммент"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:117
+#: templates/reader/chapter_detail.html:130
 msgid "Пожалуйста войдите или зарегистрируйтесь на сайте"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:117
+#: templates/reader/chapter_detail.html:130
 #: templates/registration/login.html:27
 msgid "Войти"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:120
+#: templates/reader/chapter_detail.html:133
 msgid "Something went wrond. Please try again!"
 msgstr "Что то пошло не так, попробуйте снова!"
 
@@ -219,12 +208,43 @@ msgstr "Что то пошло не так, попробуйте снова!"
 msgid "Главы"
 msgstr ""
 
+#: templates/reader/chapter_list.html:44
+msgid ""
+"Dr. Stone is a Japanese manga series written by Riichiro Inagaki and "
+"illustrated by Boichi, serialized in Weekly Shōnen Jump since March 6, 2017,"
+" with the individual chapters collected and published by Shueisha into ten "
+"tankōbon volumes as of April 2019. Shueisha began to simul publish the "
+"series in English on the website and app Manga Plus since January 2019."
+msgstr ""
+"\"Доктор Стоун\" - японская серия манги, написанная Риитиро Инагаки и "
+"проиллюстрированная Бойчи, публикуемая в еженедельнике Shōnen Jump с 6 марта"
+" 2017 года, отдельные главы собраны и опубликованы Shueisha в десяти томах "
+"танкобон по состоянию на апрель 2019 года. Shueisha начала одновременно "
+"публиковать сериал на английском языке на веб-сайте и в приложении Manga "
+"Plus с января 2019 года."
+
 #: templates/reader/contact.html:5
 msgid "Данные"
 msgstr ""
 
+#: templates/reader/landing.html:23
+msgid "Фанатский сайт для чтения любимой манги"
+msgstr ""
+
+#: templates/reader/landing.html:24
+msgid "Этот сайт создан для приятного время провождения"
+msgstr ""
+
+#: templates/reader/landing.html:27
+msgid "Начать читать прямо сейчас"
+msgstr ""
+
 #: templates/reader/manga_list.html:6
 msgid "Вся манга"
+msgstr ""
+
+#: templates/reader/manga_list.html:27
+msgid "Доступная манга :"
 msgstr ""
 
 #: templates/reader/most_viewed_chapters.html:6
@@ -383,12 +403,10 @@ msgid "email"
 msgstr "почта"
 
 #: templates/registration/registration.html:28
-#| msgid "Password"
 msgid "password"
 msgstr "Пароль"
 
 #: templates/registration/registration.html:29
-#| msgid "Repeat password"
 msgid "repeat password"
 msgstr "Повторите пароль"
 
@@ -425,7 +443,7 @@ msgstr ""
 msgid " Вот что нашлось по вашему запросу %(query)s "
 msgstr ""
 
-#: templates/user_actions/search_results.html:24
+#: templates/user_actions/search_results.html:23
 #, python-format
 msgid " 'Ничего не найдено по вашему запросу' %(query)s "
 msgstr ""
@@ -1639,3 +1657,9 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Like"
+#~ msgstr "Лайк"
+
+#~ msgid "Unlike"
+#~ msgstr "Отменить лайк"

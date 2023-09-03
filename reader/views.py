@@ -81,7 +81,7 @@ def chapter_list(request, manga_slug):
     chapters = Chapter.objects.filter(manga__slug=manga_slug)
     if not chapters:
         raise Http404()
-    chapters = get_object_or_404(Chapter, manga__slug=manga_slug)
+    #chapters = get_object_or_404(Chapter, manga__slug=manga_slug)
     # queryset1 = Manga.objects.filter(name=manga_slug).chapters
     return render(request, "reader/chapter_list.html", {"chapters": chapters})
 
