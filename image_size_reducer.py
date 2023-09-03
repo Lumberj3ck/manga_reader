@@ -53,5 +53,6 @@ def directories_walker():
 
                 logging.warning(f'we do not have such path medium {medium_img_path}')
 
+
 if __name__ == "__main__":
     directories_walker()

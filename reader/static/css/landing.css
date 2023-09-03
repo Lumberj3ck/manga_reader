@@ -709,10 +709,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   display: flex;
 }
 
-.hidden {
-  display: none;
-}
-
 .h-6 {
   height: 1.5rem;
 }

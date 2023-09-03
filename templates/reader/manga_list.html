@@ -8,27 +8,23 @@
 
 
 {% block content %}
-<nav class="w-full rounded-md" style="padding-left: 1rem;">
-  <ol class="list-reset flex" style="color: #6941C6; font-weight: 500;">
+<div class="flex gap-8 relative">
+<nav class="w-full sm:w-max rounded-md" style="padding-left: 1rem;">
+  <ol class="list-reset flex sm:text-lg text-base sm:mx-5" style="color: #6941C6; font-weight: 600;">
     <li>
-      <a
-        href="{% url 'landing' %}"
-        class="transition duration-150 ease-in-out "
-        >{% trans 'Home' %}</a
-      >
+      <a href="{% url 'landing' %}" class="transition duration-150 ease-in-out ">{% trans 'Home' %}</a>
     </li>
     <li>
       <span class="mx-2">/</span>
     </li>
     <li>
-      <a
-        class="transition duration-150 ease-in-out "
-        >{% trans 'Mangas' %}</a
-      >
+      <a class="transition duration-150 ease-in-out ">{% trans 'Mangas' %}</a>
     </li>
   </ol>
 </nav>
-<div style="color: #6941C6" class="font-medium text-xl mx-4 mt-4">Доступная манга :</div>
+{% include 'reader/site_navigation.html' %}
+</div>
+<div style="color: #6941C6" class="font-medium text-xl mx-4 mt-4">{% trans 'Доступная манга :' %}</div>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}

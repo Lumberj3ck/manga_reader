@@ -9,9 +9,9 @@
     {% block title %} {% endblock %}
   </head>
   <body>
-    <header>
-      <div class="flex justify-between p-2 m-2 items-center">
-      <div class="hamburger_icon"  data-te-offcanvas-toggle
+    <header class="max-w-5xl 2xl:max-w-6xl mx-auto">
+      <div class="flex justify-between p-2 m-2 sm:m-5 items-center">
+      <div class="hamburger_icon sm:hidden"  data-te-offcanvas-toggle
       data-te-target="#offcanvasExample"
       aria-controls="offcanvasExample"
       data-te-ripple-init
@@ -28,8 +28,40 @@
           </defs>
         </svg>
       </div>
-      <a href="{% url 'manga_list' %}"><div class="Logo font-bold text-md leading-5">MangaLove</div></a>
-      <a href='{% url "bookmarks" %}' class="bookmark_icon">
+      <a href="{% url 'manga_list' %}"><div class="Logo font-bold text-md leading-5 sm:text-lg md:text-xl">MangaLove</div></a>
+      <div class="sm:flex hidden">
+          <ul style="color: #6941C6" class="flex  gap-5 sm:text-lg font-semibold md:text-xl">
+            {% if not request.user.is_authenticated %}
+            <li>
+              <a href="{% url 'login' %}">{% trans 'Login' %}</a>
+            </li>
+            {% else %}
+            <li>
+              {{request.user.username}}
+            </li>
+            <li>
+              <a href='{% url "bookmarks" %}' class="bookmark_icon">{% trans 'Bookmarks' %}</a>
+            </li>
+            {% endif %}
+            <li>
+              <a href="{% url 'manga_list' %}">{% trans 'Manga' %}</a>
+            </li>
+            <li>
+                  <form method="POST" action="{% url 'set_language' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <button type="submit" name="language" value="en">En</button>
+                    <button type="submit" name="language" value="ru">Ru</button>
+                  </form>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li>
+              <a href="{% url 'logout' %}">{% trans 'Logout' %}</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      <a href='{% url "bookmarks" %}' class="bookmark_icon sm:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 19 19" fill="none">
           <path
             d="M3.95834 6.175C3.95834 4.84488 3.95834 4.17981 4.2172 3.67177C4.44489 3.22489 4.80822 2.86156 5.25511 2.63386C5.76315 2.375 6.42821 2.375 7.75834 2.375H11.2417C12.5718 2.375 13.2369 2.375 13.7449 2.63386C14.1918 2.86156 14.5551 3.22489 14.7828 3.67177C15.0417 4.17981 15.0417 4.84488 15.0417 6.175V16.625L9.5 13.4583L3.95834 16.625V6.175Z"
@@ -45,7 +77,9 @@
       </a>
       </div>
     </header>
+    <div class="max-w-4xl mx-auto">
     {% block content %} {% endblock %}
+    </div>
     <div class="flex space-x-2">
   <div>
     <div
@@ -120,7 +154,6 @@
 </div>
 <!-- Offcanvas -->
   </body>
-  <script src="{% static 'js/base.js' %}"></script>
   <script
   type="text/javascript"
   src="{% static 'js/tw-elements.umd.min.js' %}"></script>

@@ -7,12 +7,11 @@
 <title>{% blocktrans %} Манга {{chapter.manga.name}} {% endblocktrans %}</title>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
 <link rel="stylesheet" href="{% static 'reader/chapter_detail.css' %}">
-<link rel="stylesheet" href="{% static 'reader/tailwind_chapter_detail.css' %}">
 {% endblock %}
 
 {% block content %}
 <nav class="w-full rounded-md pl-4 mb-6 ">
-  <ol class="list-reset flex" style="color: #6941C6; font-weight: 500;">
+  <ol class="list-reset flex sm:text-lg text-base sm:mx-5" style="color: #6941C6; font-weight: 600;">
     <li>
       <a
         href="{% url 'landing' %}"
@@ -42,15 +41,16 @@
     </li>
   </ol>
 </nav>
-<div class='just_container mt-6'> 
+<div class='mt-6'> 
     <div class="content_block">
 {% for picture in images %}
-<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{{picture.img.url }}"  alt="{{picture.img.name}}" srcset="{{picture.medium_img.url}} 650w" sizes="(max-width: 500px) 650px">
+<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{% static picture.img.url %}"  alt="{{picture.img.name}}" data-srcset="{% static picture.medium_img.url %} 650w" data-sizes="(max-width: 500px) 650px">
 {% endfor %}
 </div>
+<div class="flex flex-col md:mx-5">
 <div class="flex justify-between m-3  text-white" >
 {% if previous %}
-<a class="p-1 font-semibold rounded-md flex gap-2 items-center border-2 border-black prev_nav_buttons"  href="{% url 'chapter_detail' manga_slug=previous.manga.slug  chapter_slug=previous.name %}">{% blocktrans %} Previous {{previous.chapter_number}} {% endblocktrans %}</a> 
+<a class="w-32 justify-center p-1 font-semibold rounded-md flex gap-2 items-center border-2 border-black prev_nav_buttons"  href="{% url 'chapter_detail' manga_slug=previous.manga.slug  chapter_slug=previous.name %}">{% blocktrans %} Previous {{previous.chapter_number}} {% endblocktrans %}</a> 
     {% endif %}
     {% if next %}
 <a  class="p-1 font-semibold nav_buttons border-2 border-black flex gap-3 items-center rounded-md w-32 justify-center"  href="{% url 'chapter_detail' manga_slug=next.manga.slug  chapter_slug=next.name %}">{% blocktrans %} Next {{next.chapter_number}}{% endblocktrans %}</a>
@@ -83,13 +83,13 @@
    <div class='total_views text-2xl flex items-center gap-4'>{{ total_views }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
 </div> 
 <div class="text-black p-2 m-2" >
-    <div class="font-bold text-lg mb-3 ">{% trans 'Комментарии' %}</div>
+    <div class="font-bold text-lg mb-3 md:text-xl">{% trans 'Комментарии' %}</div>
     <div class="comments_errors error_handler mb-2"></div>
     <!-- Comment error shows here -->
     <form>
         {% csrf_token %}
         <textarea class="mb-2 rounded-md p-2 w-5/6 custom_input" style="height: 100px" required type="text" name="text" maxlength="800" id="id_text" placeholder="Text"></textarea>
-        <button class="submit_block comment_submit border-2 rounded-md p-1" type='submit' style="display: flex; justify-content: space-between;">
+        <button class="submit_block comment_submit border-2 rounded-md p-1 max-w-xs" type='submit' style="display: flex; justify-content: space-between;">
         {% trans 'Oставить коммент' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
             <path
@@ -105,7 +105,7 @@
         </svg>
         </button>
     </form>
-    <div class='comments mt-4'>
+    <div class='comments mt-4 md:w-5/6'>
         {% load humanize %}
     {% for comment in comments %}
         <div class='comment mb-2 rounded-md border-2 border-black p-2'>
@@ -116,7 +116,11 @@
     {% endfor %}
     </div>
     </div>
+    <!-- Comments -->
 </div>
+<!-- user actions section flex col -->
+</div>
+<!-- just container -->
 </div>
 
 <script>

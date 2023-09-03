@@ -43,3 +43,7 @@ button, input, optgroup, select, textarea {
 .for_placeholder:focus{
   outline: none;
 }
+
+.hide{
+  display: none;
+}
