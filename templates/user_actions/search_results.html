@@ -12,7 +12,6 @@
 {% for chapter in chapters %}
 <div>
 <a class='font-semibold' style="color: #6941C6;" href="{% url 'chapter_detail' manga_slug=chapter.manga.slug chapter_slug=chapter.name %}">{{chapter}}</a>
-{{chapter.name}}
 </div>
 {% endfor %}
 {% for chapter in second_chapters %}
