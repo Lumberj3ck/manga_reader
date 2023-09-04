@@ -5,6 +5,7 @@ from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 
+
 class Manga(models.Model):
     name = models.CharField(max_length=200, verbose_name=_("Название манги"))
     slug = models.SlugField(max_length=200, unique=True)

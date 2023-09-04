@@ -3,7 +3,9 @@
 
 {% block title %}
 {% load i18n %}
+{% load static %}
 <title>{% trans 'Редактировать пользовательские данные' %}</title>
+<link rel="stylesheet" href="{% static 'account/login.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -14,7 +16,10 @@
 {% endif %}
 <form action='.' method='post' enctype="multipart/form-data">
   {% csrf_token %}
-  {{user_form.as_p}}
+  {% for field in user_form %}
+    <div class="error_handler">{{field.errors.as_text}}</div>
+    {{field}}
+  {% endfor %}
   {{profile_form.as_p}}
   <input type="submit" value='{% trans "Сохранить данные" %}'>
 </form>

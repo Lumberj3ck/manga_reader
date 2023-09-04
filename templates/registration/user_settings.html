@@ -1,0 +1,13 @@
+{% extends 'reader/base.html' %}
+
+
+{% block title %}
+{% load i18n %}
+<title>{% trans 'Настройки пользователя' %}</title>
+{% endblock %}
+
+
+{% block content %}
+<a href="{% url 'password_change' %}">Change password</a>
+<a href="{% url 'user_edit' %}">User edit</a>
+{% endblock %}

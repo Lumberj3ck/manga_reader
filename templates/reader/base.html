@@ -119,7 +119,7 @@
             </li>
             {% else %}
             <li>
-              {{request.user.username}}
+              <a href="{% url 'user_settings' %}">{{request.user.username}}</a>
             </li>
             <li>
               <a href='{% url "bookmarks" %}' class="bookmark_icon">{% trans 'Bookmarks' %}</a>

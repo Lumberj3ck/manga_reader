@@ -10,6 +10,16 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 
+
+class UserSettings(View):
+    template_name = 'registration/user_settings.html'
+
+    @method_decorator(login_required)
+    def get(self, request):
+        return render(request, self.template_name)
+
+
+
 class UserRegistration(View):
     template_name = "registration/registration.html"
     form_class = UserRegister

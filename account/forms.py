@@ -1,4 +1,8 @@
+from typing import Any, Dict, Mapping, Optional, Type, Union
 from django import forms
+from django.core.files.base import File
+from django.db.models.base import Model
+from django.forms.utils import ErrorList
 from .models import Profile
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
@@ -34,9 +38,24 @@ class UserRegister(forms.ModelForm):
 
 
 class UserEdit(forms.ModelForm):
+    error_class = 'error_handler'
     class Meta:
         model = User
         fields = ("first_name", "last_name", "email")
+        widgets = {
+            'first_name': forms.TextInput(attrs={
+                'class': "input_custom",
+                'placeholder': _('First name')
+            }), 
+            'last_name': forms.TextInput(attrs={
+                'class': "input_custom",
+                'placeholder': _('Last name') 
+            }), 
+            'email': forms.TextInput(attrs={
+                'class': "input_custom",
+                'placeholder': _('Email'),
+            }), 
+        }
 
     def clean_email(self):
         data = self.cleaned_data["email"]
