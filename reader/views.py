@@ -98,7 +98,7 @@ class ChapterDetail(View):
         current_chapter = self.current_chapter
         manga = current_chapter.manga
         if request.user.is_authenticated:
-            query = Bookmark.objects.get_or_create(profile=request.user.profile)
+            query = Bookmark.objects.get_or_create(profile=request.user.profile, chapter=self.current_chapter, manga=manga)
             if query:
                 bookmark = query[0]
                 bookmark.manga = manga
