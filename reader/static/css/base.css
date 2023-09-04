@@ -2,7 +2,8 @@
 body {
   font-family: "montserrat", roboto;
   margin: -1;
-  background-color: #F5BE2C;
+  /* background-color: #F5BE2C; */
+  background-color: #F4CD00;
 }
 .non_scroll{
   overflow-y: hidden;
@@ -25,7 +26,7 @@ button, input, optgroup, select, textarea {
     border: none;
 }
 .menu_ul{
-  color: var(--Annotations, #F6BE2C);
+  color: var(--Annotations, #F4CD00);
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;

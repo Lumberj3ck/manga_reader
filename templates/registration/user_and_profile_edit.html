@@ -14,14 +14,18 @@
 {% load static %}
 <img src="{% static profile_photo %}" alt="Profile_photo" style='width: 20%; height: 30%'>
 {% endif %}
-<form action='.' method='post' enctype="multipart/form-data">
+<h1 class="w-max text-base mx-auto font-bold md:text-xl">{% trans 'You can choose your profile image and other options' %}</h1>
+<form action='.' method='post' enctype="multipart/form-data" class="max-w-xl mt-5 md:mt-8">
   {% csrf_token %}
   {% for field in user_form %}
     <div class="error_handler">{{field.errors.as_text}}</div>
     {{field}}
   {% endfor %}
-  {{profile_form.as_p}}
-  <input type="submit" value='{% trans "Сохранить данные" %}'>
+  {% for field in profile_form %}
+  {{field.errors}}
+  {{field}}
+  {% endfor %}
+  <input class="submit_button" type="submit" value='{% trans "Сохранить данные" %}'>
 </form>
 
 

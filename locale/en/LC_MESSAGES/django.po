@@ -326,7 +326,7 @@ msgstr "You can login into your account"
 
 #: templates/registration/password_reset_confirm.html:12
 msgid "Пожалуйста введите свой новый пароль дважды"
-msgstr "Please repeat your password two times"
+msgstr "Please repeat your new password two times"
 
 #: templates/registration/password_reset_confirm.html:17
 msgid "Поменять мой пароль"

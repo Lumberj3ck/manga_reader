@@ -9,7 +9,8 @@
 
 {% block content %}
 <div class="form_section">
-<form action="." method="post" class="form_login">
+<h1 class="w-max text-base mx-auto font-bold md:text-xl">{% trans 'Login' %}</h1>
+<form action="." method="post" class="form_login max-w-xl md:mt-8 mt-5 mx-auto">
     {% csrf_token %}
     <div class="error_handler">
     {% for error in form.errors.values %}

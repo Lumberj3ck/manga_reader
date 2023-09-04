@@ -3,11 +3,15 @@
 
 {% block title %}
 {% load i18n %}
+{% load static %}
 <title>{% trans 'Настройки пользователя' %}</title>
+<link rel="stylesheet" href="{% static 'account/login.css' %}">
 {% endblock %}
 
 
 {% block content %}
-<a href="{% url 'password_change' %}">Change password</a>
-<a href="{% url 'user_edit' %}">User edit</a>
+<ul class="max-w-xl mx-auto">
+<a style="color:#6941c6; " class='font-bold h-20 block p-3' href="{% url 'password_change' %}">{% trans 'Change password' %}</a>
+<a style="color:#6941c6;" class='font-bold  h-20 block p-3' href="{% url 'user_edit' %}">{% trans "User's profile edit" %}</a>
+</ul>
 {% endblock %}

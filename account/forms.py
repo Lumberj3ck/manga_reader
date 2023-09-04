@@ -6,6 +6,16 @@ from django.forms.utils import ErrorList
 from .models import Profile
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.forms import PasswordChangeForm
+
+class CustomPasswordChangeForm(PasswordChangeForm):
+    old_password = forms.CharField(
+        label=_("Old password"),
+        strip=False,
+        widget=forms.PasswordInput(
+            attrs={"autocomplete": "current-password", "autofocus": True, 'class': 'input_custom'}
+        ),
+    )
 
 
 class LoginForm(forms.Form):
@@ -16,12 +26,22 @@ class LoginForm(forms.Form):
 
 
 class UserRegister(forms.ModelForm):
-    password = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
-    password2 = forms.CharField(label=_("Repeat password"), widget=forms.PasswordInput)
+    password = forms.CharField(label=_("Password"), widget=forms.PasswordInput(attrs={'class': "input_custom", 'placeholder': _('password')}))
+    password2 = forms.CharField(label=_("Repeat password"), widget=forms.PasswordInput(attrs={'class': "input_custom", 'placeholder': _('repeat password')}))
 
     class Meta:
         model = User
         fields = ("username", "email")
+        widgets = widgets = {
+            'username': forms.TextInput(attrs={
+                'class': "input_custom",
+                'placeholder': _('username')
+            }), 
+            'email': forms.TextInput(attrs={
+                'class': "input_custom",
+                'placeholder': _('email'),
+            }), 
+        }
 
     def clean_password2(self):
         cd = self.cleaned_data
@@ -68,4 +88,4 @@ class UserEdit(forms.ModelForm):
 
 
 class ProfileEdit(forms.Form):
-    profile_photo = forms.ImageField(required=False)
+    profile_photo = forms.ImageField(required=False, widget=forms.FileInput(attrs={'placeholder': 'asdf'}))

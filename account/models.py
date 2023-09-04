@@ -29,7 +29,7 @@ class Profile(models.Model):
         help_text=_("Выберите пользователя"),
     )
     photo = models.ImageField(
-        upload_to="users/%Y/%m/%d/", blank=True, verbose_name=_("Фото")
+        upload_to="users/%Y/%m/%d/", blank=True, verbose_name=_("Фото"), default='users/default.jpg'
     )
 
     def __str__(self):

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="paragraph_name" style="font-size: 15px;">{% trans 'Зарегистрируйтесь с помощью формы ниже' %}</h1>
+<h1 class="w-max text-base mx-auto font-bold md:text-xl">{% trans 'Зарегистрируйтесь с помощью формы ниже' %}</h1>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -16,17 +16,18 @@
     {% endfor %}
 </ul>
 {% endif %}
-<form action="." method="post">
+<form action="." method="post" class="max-w-xl md:mt-8 mt-5 mx-auto">
     <div class="error_handler">
     {% for error in form.errors.values %}
         {{error}}
     {% endfor %}
     </div>
     {% csrf_token %}
-    <input class="input_custom" placeholder="{% trans 'username' %}" type="text" name="username" maxlength="150" required="" id="id_username" autocompleted="">
-    <input class="input_custom" placeholder="{% trans 'email' %}" type="email" name="email" maxlength="254" id="id_email">
-    <input class="input_custom" placeholder="{% trans 'password' %}" type="password" name="password" required="" id="id_password" autocompleted="">
-    <input class="input_custom" placeholder="{% trans 'repeat password' %}" type="password" name="password2" required="" id="id_password2">
-    <input class="submit_button" style="width: 45%; padding: 5px" type="submit" value="{% trans 'Зарегистрироваться' %}">
+    {% for field in form %}
+    {{field.errors}}
+        <div class="error_handler">{{field.error}}</div>
+        {{field}}
+    {% endfor %}
+    <input class="submit_button" style="width: 45%; padding: 5px" type="submit" value="{% trans 'Зарегистрироваться' %}">  
 </form>
 {% endblock %}

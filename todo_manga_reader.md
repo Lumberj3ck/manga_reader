@@ -24,7 +24,7 @@ set required in Cinema project comment form
 2. fix comments add 
 
 Today ive known new about django model inheritance
-Colors for project : #f6be2c, linear gradient from #583AA7 to #6941C6
+Colors for project : #f4cd00, linear gradient from #583AA7 to #6941C6
 1. Custom authenticate backend for email as login
 2. Authentication via social networks
 3. Use django messages for showing erorrs and success
