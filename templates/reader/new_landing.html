@@ -1,0 +1,33 @@
+{% extends 'reader/base.html' %}
+
+
+{% block title %}
+{% load static %}
+{% load i18n %}
+<title>Фанатский сайт манги</title>
+<link rel="stylesheet" href="{% static 'css/landing_specific1.css' %}">
+{% endblock %}
+
+
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<div class="" style="background: radial-gradient(circle, rgba(255,241,165,1) 0%, rgba(255,241,165,1) 35%, rgba(244,205,0,1) 75%);">
+<img src="{% static 'new_colage1.png' %}" alt="Dr Stone Colage" class="object-cover " style="margin: 0px 17px 0px 7px; width: 90%; height: 340px; background: url({% static 'star.png' %}) ">
+<!-- <img src="{% static 'star.png' %}" alt="Dr Stone Colage" class="object-cover" style="margin-left: 20px; width: 80%; height: 340px;"> -->
+</div>
+<div style="margin-left: 36px; width: 280px;">
+<div class="main_phrase  mt-2" style="margin-bottom: 12px;">
+    Фанатский сайт для чтения любимой манги
+</div>
+<div style="margin-bottom: 24px;">Этот сайт создан для приятного времяпрепровождения</div>
+<div class="land_butt flex justify-start items-center p-3 gap-2 hover:bg-slate-900 hover:border-r-2 text-lg" style="width: 190px;">
+    <span class="text-base sm:text-xl mx-auto" style="color: #F4CD00">{% trans 'Начать читать' %}</span>
+</div>
+</div>
+{% endblock %}

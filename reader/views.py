@@ -27,7 +27,8 @@ def bookmarks(request):
     return render(request, 'reader/bookmarks.html', {'bookmarks': bookmarks})
 
 def landing_view(request):
-    return render(request, 'reader/landing.html')
+    # return render(request, 'reader/landing.html')
+    return render(request, 'reader/new_landing.html')
 
 def most_viewed_chapters(request, manga_slug):
     """Gets chapter_ranking from redis and renders it in -views"""
