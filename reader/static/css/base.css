@@ -1,6 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:100,300,500,400,399,700);
+/* @import url(https://fonts.googleapis.com/css?family=Montserrat:100,300,500,400,399,700); */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&display=swap');
 body {
-  font-family: "montserrat", roboto;
+  /* font-family: "montserrat", roboto; */
+  font-family: 'Exo 2', sans-serif;
   margin: -1;
   /* background-color: #F5BE2C; */
   background-color: #F4CD00;
@@ -72,4 +74,8 @@ button, input, optgroup, select, textarea {
 
 .dropdown_text:hover{
   background-color: #ffde36;
+}
+.dropdown_button{
+  color: #6941C6;
+  font-weight: 600;
 }

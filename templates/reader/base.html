@@ -1,231 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% load i18n %} {% load static %}
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/base_tailwind.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
-    {% block title %} {% endblock %}
-  </head>
-  <body>
-    <div class="max-w-4xl mx-auto">
+
+<head>
+  {% load i18n %} {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/base_tailwind.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+  {% block title %} {% endblock %}
+</head>
+
+<body>
+  <div class="max-w-4xl mx-auto">
     <header class="max-w-5xl 2xl:max-w-6xl mx-auto">
       <div class="flex gap-2 p-2 m-2  items-center justify-between sm:justify-normal">
-      <div class="hamburger_icon sm:hidden"  data-te-offcanvas-toggle
-      data-te-target="#offcanvasExample"
-      aria-controls="offcanvasExample"
-      data-te-ripple-init
-      data-te-ripple-color="light">
-        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
-          <path d="M3 8.5H21M3 15.5H21" stroke="url(#paint0_linear_12_247)" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <defs>
-            <linearGradient id="paint0_linear_12_247" x1="7.5" y1="15.5" x2="9.13941" y2="7.06877"
-              gradientUnits="userSpaceOnUse">
-              <stop stop-color="#53389E" />
-              <stop offset="1" stop-color="#6941C6" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <a href="{% url 'manga_list' %}"><div class="Logo font-bold text-md leading-5 sm:text-lg md:text-xl">MangaLove</div></a>
-      <div class="sm:flex hidden">
-          <ul style="color: #6941C6" class="flex gap-2 text-sm font-semibold md:text-xl">
-            {% if not request.user.is_authenticated %}
+        <div class="hamburger_icon sm:hidden" data-te-offcanvas-toggle data-te-target="#offcanvasExample"
+          aria-controls="offcanvasExample" data-te-ripple-init data-te-ripple-color="light">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path d="M3 8.5H21M3 15.5H21" stroke="url(#paint0_linear_12_247)" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <defs>
+              <linearGradient id="paint0_linear_12_247" x1="7.5" y1="15.5" x2="9.13941" y2="7.06877"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#53389E" />
+                <stop offset="1" stop-color="#6941C6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <a href="{% url 'manga_list' %}">
+          <div class="Logo font-bold text-md leading-5 sm:text-lg md:text-xl">MangaLove</div>
+        </a>
+        <div class="sm:flex hidden">
+          <ul style="color: #6941C6" class="flex gap-2 text-base font-semibold md:text-xl items-center">
+            <li>
+              {% if not request.user.is_authenticated %}
             <li>
               <a href="{% url 'login' %}">{% trans 'Login' %}</a>
             </li>
-            {% else %}
-            <li>
-              {{request.user.username}}
-            </li>
-            <li>
-              <a href='{% url "bookmarks" %}' class="bookmark_icon">{% trans 'Bookmarks' %}</a>
-            </li>
             {% endif %}
-            <li>
-              <a href="{% url 'manga_list' %}">{% trans 'Manga' %}</a>
-            </li>
-            <li>
-                  <form method="POST" action="{% url 'set_language' %}">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                    <button type="submit" name="language" value="en">En</button>
-                    <button type="submit" name="language" value="ru">Ru</button>
-                  </form>
             </li>
             {% if request.user.is_authenticated %}
             <li>
-              <a href="{% url 'logout' %}">{% trans 'Logout' %}</a>
+              <div class="relative" data-te-dropdown-ref>
+                <button
+                  class="text-base flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 md:text-xs font-medium uppercase leading-normal dropdown_button"
+                  type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false">
+                  {{request.user.username}}
+                  <span class="ml-2 w-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                      <path fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none  bg-clip-padding text-left text-base shadow-lg  [&[data-te-dropdown-show]]:block"
+                  aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref style="background-color: #F4CD00;">
+                  <li>
+                    <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text  active:text-neutral-800 active:no-underline disabled:pointer-events-none"
+                      href='{% url "bookmarks" %}' data-te-dropdown-item-ref>Bookmarks</a>
+                  </li>
+                  <li>
+                    <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text   active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent  "
+                      href="{% url 'user_settings' %}" data-te-dropdown-item-ref>Settings</a>
+                  </li>
+                  <li>
+                    <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text  active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 "
+                      href="{% url 'logout' %}" data-te-dropdown-item-ref>Log-out</a>
+                  </li>
+                </ul>
+              </div>
             </li>
+            <!-- dropdown -->
             {% endif %}
-          </ul>
-
-    <div class="relative" data-te-dropdown-ref>
-  <button
-    class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white"
-    type="button"
-    id="dropdownMenuButton1"
-    data-te-dropdown-toggle-ref
-    aria-expanded="false"
-    >
-    Dropdown button
-    <span class="ml-2 w-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        class="h-5 w-5">
-        <path
-          fill-rule="evenodd"
-          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-          clip-rule="evenodd" />
-      </svg>
-    </span>
-  </button>
-  <ul
-    class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none  bg-clip-padding text-left text-base shadow-lg  [&[data-te-dropdown-show]]:block"
-    aria-labelledby="dropdownMenuButton1"
-    data-te-dropdown-menu-ref>
-    <li>
-      <a
-        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text  active:text-neutral-800 active:no-underline disabled:pointer-events-none"
-        href="#"
-        data-te-dropdown-item-ref
-        >Action</a
-      >
-    </li>
-    <li>
-      <a
-        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text   active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent  "
-        href="#"
-        data-te-dropdown-item-ref
-        >Another action</a
-      >
-    </li>
-    <li>
-      <a
-        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text  active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 "
-        href="#"
-        data-te-dropdown-item-ref
-        >Something else here</a
-      >
-    </li>
-  </ul>
-</div>
-          <!-- dropdown -->
-        </div>
-      <a href='{% url "bookmarks" %}' class="bookmark_icon sm:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 19 19" fill="none">
-          <path
-            d="M3.95834 6.175C3.95834 4.84488 3.95834 4.17981 4.2172 3.67177C4.44489 3.22489 4.80822 2.86156 5.25511 2.63386C5.76315 2.375 6.42821 2.375 7.75834 2.375H11.2417C12.5718 2.375 13.2369 2.375 13.7449 2.63386C14.1918 2.86156 14.5551 3.22489 14.7828 3.67177C15.0417 4.17981 15.0417 4.84488 15.0417 6.175V16.625L9.5 13.4583L3.95834 16.625V6.175Z"
-            stroke="url(#paint0_linear_12_252)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <defs>
-            <linearGradient id="paint0_linear_12_252" x1="6.72917" y1="16.625" x2="14.8316" y2="4.02121"
-              gradientUnits="userSpaceOnUse">
-              <stop stop-color="#53389E" />
-              <stop offset="1" stop-color="#6941C6" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </a>
-      </div>
-    </header>
-    {% block content %} {% endblock %}
-    </div>
-    <div class="flex space-x-2">
-  <div>
-    <div
-      class="invisible fixed bottom-0 left-0 top-0 z-[1045] flex w-96 max-w-full -translate-x-full flex-col border-none  bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out dark:bg-indigo-300 dark:text-neutral-200 [&[data-te-offcanvas-show]]:transform-none"
-      tabindex="-1"
-      id="offcanvasExample"
-      aria-labelledby="offcanvasExampleLabel"
-      style="background: var(--Gradient, linear-gradient(27deg, #53389E 8.33%, #6941C6 91.67%));"
-      data-te-offcanvas-init>
-      <div class="flex items-center justify-between p-4">
-        <button class="m-2" data-te-offcanvas-dismiss>
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
-            <path d="M4 8H20M4 16H20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-        <form class="d-flex" role="search" action='{% url "search" %}' method='post'>
-          {% csrf_token %}
-          <div class='search_input border-2 border-black flex' style="border-radius: 1rem;">
-            <input style="background-color: #F4CD00; border-radius: 1rem 0 0 1rem; color: #6941C6" class="reset_input for_placeholder" placeholder="{% trans 'Глава' %}" name='query' type='search'>
-            <button class="search_button" type="submit" style="background-color: #F4CD00; border-radius: 0 1rem 1rem 0;">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#6941c6"
-                class="w-3 h-3" style='padding:5px; width: 34px; height: 37px; border-radius: 0 0 1rem 1rem;'>
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-              <!--    <button class="btn" type="submit">Поиск</button> -->
-            </button>
-          </div>
-        </form>
-      </div>
-      <div class="flex-grow overflow-y-auto p-4 items-center" style="position: absolute; top:50%; left:20%; transform: translate(0, -50%);">
-        <div class="flex">
-          <ul style="color: #F4CD00" class="menu_ul flex flex-col gap-5">
-            {% if not request.user.is_authenticated %}
-            <li>
-              <a href="{% url 'login' %}">{% trans 'Login' %}</a>
-            </li>
-            {% else %}
-            <li class="">
-              {% with photo=request.user.profile.photo %}
-              {% if photo %}
-              <img src="{% static photo.url %}" alt="Profile photo" class="w-24 h-24 object-cover">
-              {% endif %}
-              {% endwith %}
-            </li>
-            <li>
-              <a href="{% url 'user_settings' %}">{{request.user.username}}</a>
-            </li>
-            <li>
-              <a href='{% url "bookmarks" %}' class="bookmark_icon">{% trans 'Bookmarks' %}</a>
-            </li>
-            {% endif %}
-            <li>
-              <a href="{% url 'manga_list' %}">{% trans 'Manga' %}</a>
-            </li>
-            <li>
+            <li class="mx-2">
               <a href="{% url 'contact' %}">{% trans 'Contact' %}</a>
             </li>
             <li>
-                  <form method="POST" action="{% url 'set_language' %}">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                    <button type="submit" name="language" value="en">En</button>
-                    <button type="submit" name="language" value="ru">Ru</button>
-                  </form>
+              <form method="POST" action="{% url 'set_language' %}">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <button type="submit" name="language" value="en">En</button>
+                <button type="submit" name="language" value="ru">Ru</button>
+              </form>
             </li>
-            {% if request.user.is_authenticated %}
-            <li>
-              <a href="{% url 'logout' %}">{% trans 'Logout' %}</a>
-            </li>
-            {% endif %}
           </ul>
         </div>
-        <div class="relative mt-4" data-te-dropdown-ref>
+        <a href='{% url "bookmarks" %}' class="bookmark_icon sm:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 19 19" fill="none">
+            <path
+              d="M3.95834 6.175C3.95834 4.84488 3.95834 4.17981 4.2172 3.67177C4.44489 3.22489 4.80822 2.86156 5.25511 2.63386C5.76315 2.375 6.42821 2.375 7.75834 2.375H11.2417C12.5718 2.375 13.2369 2.375 13.7449 2.63386C14.1918 2.86156 14.5551 3.22489 14.7828 3.67177C15.0417 4.17981 15.0417 4.84488 15.0417 6.175V16.625L9.5 13.4583L3.95834 16.625V6.175Z"
+              stroke="url(#paint0_linear_12_252)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <defs>
+              <linearGradient id="paint0_linear_12_252" x1="6.72917" y1="16.625" x2="14.8316" y2="4.02121"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#53389E" />
+                <stop offset="1" stop-color="#6941C6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+      </div>
+    </header>
+    {% block content %} {% endblock %}
+  </div>
+  <div class="flex space-x-2">
+    <div>
+      <div
+        class="invisible fixed bottom-0 left-0 top-0 z-[1045] flex w-96 max-w-full -translate-x-full flex-col border-none  bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out dark:bg-indigo-300 dark:text-neutral-200 [&[data-te-offcanvas-show]]:transform-none"
+        tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+        style="background: var(--Gradient, linear-gradient(27deg, #53389E 8.33%, #6941C6 91.67%));"
+        data-te-offcanvas-init>
+        <div class="flex items-center justify-between p-4">
+          <button class="m-2" data-te-offcanvas-dismiss>
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <path d="M4 8H20M4 16H20" stroke="black" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <form class="d-flex" role="search" action='{% url "search" %}' method='post'>
+            {% csrf_token %}
+            <div class='search_input border-2 border-black flex' style="border-radius: 1rem;">
+              <input style="background-color: #F4CD00; border-radius: 1rem 0 0 1rem; color: #6941C6"
+                class="reset_input for_placeholder" placeholder="{% trans 'Глава' %}" name='query' type='search'>
+              <button class="search_button" type="submit"
+                style="background-color: #F4CD00; border-radius: 0 1rem 1rem 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="#6941c6" class="w-3 h-3"
+                  style='padding:5px; width: 34px; height: 37px; border-radius: 0 0 1rem 1rem;'>
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+                <!--    <button class="btn" type="submit">Поиск</button> -->
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="flex-grow overflow-y-auto p-4 items-center"
+          style="position: absolute; top:50%; left:20%; transform: translate(0, -50%);">
+          <div class="flex">
+            <ul style="color: #F4CD00" class="menu_ul flex flex-col gap-5">
+              {% if not request.user.is_authenticated %}
+              <li>
+                <a href="{% url 'login' %}">{% trans 'Login' %}</a>
+              </li>
+              {% else %}
+              <li class="">
+                {% with photo=request.user.profile.photo %}
+                {% if photo %}
+                <img src="{% static photo.url %}" alt="Profile photo" class="w-24 h-24 object-cover">
+                {% endif %}
+                {% endwith %}
+              </li>
+              <li>
+                <a href="{% url 'user_settings' %}">{{request.user.username}}</a>
+              </li>
+              <li>
+                <a href='{% url "bookmarks" %}' class="bookmark_icon">{% trans 'Bookmarks' %}</a>
+              </li>
+              {% endif %}
+              <li>
+                <a href="{% url 'manga_list' %}">{% trans 'Manga' %}</a>
+              </li>
+              <li >
+                <a href="{% url 'contact' %}">{% trans 'Contact' %}</a>
+              </li>
+              <li>
+                <form method="POST" action="{% url 'set_language' %}">
+                  {% csrf_token %}
+                  <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                  <button type="submit" name="language" value="en">En</button>
+                  <button type="submit" name="language" value="ru">Ru</button>
+                </form>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li>
+                <a href="{% url 'logout' %}">{% trans 'Logout' %}</a>
+              </li>
+              {% endif %}
+            </ul>
+            <!-- mobile menu -->
+          </div>
+          <div class="relative mt-4" data-te-dropdown-ref>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Offcanvas -->
-  </body>
-  <script
-  type="text/javascript"
-  src="{% static 'js/tw-elements.umd.min.js' %}">
+  <!-- Offcanvas -->
+</body>
+<script type="text/javascript" src="{% static 'js/tw-elements.umd.min.js' %}">
 </script>
 <script>
   import {
-  Dropdown,
-  Ripple,
-  initTE,
-} from "tw-elements";
+    Dropdown,
+    Ripple,
+    initTE,
+  } from "tw-elements";
 
-initTE({ Dropdown, Ripple });
+  initTE({ Dropdown, Ripple });
 </script>
+
 </html>
