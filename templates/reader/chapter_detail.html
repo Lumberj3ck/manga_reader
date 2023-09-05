@@ -44,7 +44,7 @@
 <div class='mt-6'> 
     <div class="content_block">
 {% for picture in images %}
-<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{% static picture.img.url %}"  alt="{{picture.img.name}}" data-srcset="{% static picture.medium_img.url %} 650px" data-sizes="(max-width: 650px) 650px">
+<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{{ picture.img.url }}"  alt="{{picture.img.name}}" data-srcset="{{ static picture.medium_img.url }} 650px" data-sizes="(max-width: 650px) 650px">
 {% endfor %}
 </div>
 <div class="flex flex-col md:mx-5">

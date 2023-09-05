@@ -1,0 +1,22 @@
+.main_phrase{
+    color: #000;
+    font-family: Exo 2;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 115%; 
+}
+
+.land_butt{
+    border-radius: 16px;
+    border: 2px solid #000;
+    box-shadow: -1px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #6941C6;
+}
+
+.land_butt:hover{
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+    background: #5B21E3;
+    color: #F4CD00;
+}

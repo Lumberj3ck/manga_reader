@@ -6,7 +6,6 @@ __pycache__/
 imgs/
 # C extensions
 *.so
-static/
 tailwind.config.js
 src.css
 package-lock.json
