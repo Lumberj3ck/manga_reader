@@ -48,3 +48,28 @@ button, input, optgroup, select, textarea {
 .hide{
   display: none;
 }
+@media(min-width: 640px){
+.poster{
+  transform: translate(39%, 5%);
+}
+}
+
+
+@media(min-width: 1200px){
+.poster{
+  transform: translate(8%, 4%);
+}
+}
+.main_paragraph{
+  max-width: 540px;
+}
+
+.dropdown_text{
+  color: #6941C6;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.dropdown_text:hover{
+  background-color: #ffde36;
+}
