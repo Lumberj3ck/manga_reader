@@ -10,8 +10,10 @@
 {% endblock %}
 
 {% block content %}
+<div class="bookmark_errors error_handler pl-2 ml-1 mb-2"></div>
+<div class="flex">
 <nav class="w-full rounded-md pl-4 mb-6 ">
-  <ol class="list-reset flex sm:text-lg text-base sm:mx-5" style="color: #6941C6; font-weight: 600;">
+  <ol class="list-reset flex sm:text-lg text-base sm:mx-5 items-center" style="color: #6941C6; font-weight: 600;">
     <li>
       <a
         href="{% url 'landing' %}"
@@ -39,8 +41,25 @@
         >{% trans 'Chapters' %}</a
       >
     </li>
+    <li class="ml-5">
+        <a class="bookmark_icon cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 19 19" fill="none">
+            <path
+              d="M3.95834 6.175C3.95834 4.84488 3.95834 4.17981 4.2172 3.67177C4.44489 3.22489 4.80822 2.86156 5.25511 2.63386C5.76315 2.375 6.42821 2.375 7.75834 2.375H11.2417C12.5718 2.375 13.2369 2.375 13.7449 2.63386C14.1918 2.86156 14.5551 3.22489 14.7828 3.67177C15.0417 4.17981 15.0417 4.84488 15.0417 6.175V16.625L9.5 13.4583L3.95834 16.625V6.175Z"
+              stroke="url(#paint0_linear_12_252)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <defs>
+              <linearGradient id="paint0_linear_12_252" x1="6.72917" y1="16.625" x2="14.8316" y2="4.02121"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#53389E" />
+                <stop offset="1" stop-color="#6941C6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+    </li>
   </ol>
 </nav>
+</div>
 <div class='mt-6'> 
     <div class="content_block">
 {% for picture in images %}
@@ -142,11 +161,14 @@
 <script>
 var lazyLoadInstance = new LazyLoad({threshold: 800});
 </script>
+<script id="success">
+    {% trans 'Закладка создана!' %}
+</script>
 <script id="error_invalid_login">
 {% blocktrans %}Пожалуйста войдите или зарегистрируйтесь на сайте{% endblocktrans %} <a class='error_link' href={% url 'login' %}>{% trans 'Войти' %}</a>
 </script>
 <script id="eror_something_went_wrong">
-    "{% trans 'Something went wrond. Please try again!' %}"
+    {% trans 'Something went wrond. Please try again!' %}
 </script>
 <script>
 function getCookie(name) { let cookieValue = null;
@@ -316,11 +338,32 @@ function autosize () {
         fetch(request)
             .then(response => response.json())
             .then(data => {
-            if (data['status'] === 'ok') {
-                console.log(data);
-            } else {
-                console.log(data);
+            bookmark_error_panel = document.querySelector('.bookmark_errors')
+            error_message = ''
+            success_message = ''
+            if (data['status'] === 'ok'){
+                success_message = document.createElement('div') 
+                success_text = document.getElementById('success').innerText
+                success_message.innerHTML = success_text;
             }
+            else if (data['status'] === 'invalid_login') {
+                error_message = document.createElement('div')
+                erorr_mes_text = document.getElementById('error_invalid_login').innerHTML
+                error_message.innerHTML = erorr_mes_text;
+            }else if (data['status'] === 'error') {
+                error_message = document.createElement('div')
+                erorr_mes_text = document.getElementById('error_something_went_wrong').innerHTML
+                error_message.innerHTML = erorr_mes_text;
+            }
+            if (bookmark_error_panel.childElementCount == 0){
+                if (error_message){
+                    message = error_message
+                }
+                else if (success_message){
+                    message = success_message
+                }
+                bookmark_error_panel.appendChild(message)
+        }
         });
 }
 </script>

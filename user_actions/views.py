@@ -33,15 +33,16 @@ def search(request):
     return render(request, "user_actions/search_results.html", {"empty": True})
 
 @require_POST
-@login_required
 def bookmark(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'status': 'invalid_login'})
     chapter_slug = request.POST['chapter_slug']
     manga_slug = request.POST['manga_slug']
     try:
         manga = Manga.objects.get(slug=manga_slug)
         chapter = Chapter.objects.get(name=chapter_slug)
     except:
-        raise Http404()
+        return JsonResponse({'status': 'error'})
     if manga_slug and chapter_slug:
         previous_bookmark = Bookmark.objects.filter(manga=manga, profile=request.user.profile)
         if previous_bookmark:

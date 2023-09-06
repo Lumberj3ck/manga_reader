@@ -13,27 +13,145 @@
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
+    {% if message.tags == 'success' %}
+    <li>
+    <div
+  class="m-3 pointer-events-auto mx-auto sm:ml-0 sm:mr-auto md:ml-5 mb-4 hidden w-96 max-w-full rounded-lg  bg-clip-padding text-sm text-success-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+  id="static-example"
+  role="alert"
+  style="border: 1px solid rgb(14 117 55 / var(--tw-text-opacity))"
+  aria-live="assertive"
+  aria-atomic="true"
+  data-te-autohide="false"
+  data-te-toast-init
+  data-te-toast-show>
+  <div
+    class="flex items-center justify-between rounded-t-lg border-b-2 border-success/20  bg-clip-padding px-4 pb-2 pt-2.5">
+    <p class="flex items-center font-bold text-success-700">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fas"
+        data-icon="check-circle"
+        class="mr-2 h-4 w-4 fill-current"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512">
+        <path
+          fill="currentColor"
+          d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+      </svg>
+    </p>
+    <div class="flex items-center">
+      <button
+        type="button"
+        class="ml-2 box-content rounded-none border-none opacity-80 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+        data-te-toast-dismiss
+        aria-label="Close">
+        <span
+          class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="break-words rounded-b-lg  px-4 py-4 text-success-700">
+    {{message}}
+  </div>
+  {% else %}
+  <div
+  class="pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-clip-padding text-sm text-danger-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+  id="static-example"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+  data-te-autohide="false"
+  data-te-toast-init
+  data-te-toast-show>
+  <div
+    class="flex items-center justify-between rounded-t-lg border-b-2 bg-clip-padding px-4 pb-2 pt-2.5 text-danger-700">
+    <p class="flex items-center font-bold text-danger-700">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fas"
+        data-icon="times-circle"
+        class="mr-2 h-4 w-4 fill-current"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512">
+        <path
+          fill="currentColor"
+          d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path>
+      </svg>
+      MDBootstrap
+    </p>
+    <div class="flex items-center">
+      <p class="text-xs text-danger-700">11 mins ago</p>
+      <button
+        type="button"
+        class="ml-2 box-content rounded-none border-none opacity-80 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+        data-te-toast-dismiss
+        aria-label="Close">
+        <span
+          class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="break-words rounded-b-lg  px-4 py-4 text-danger-700">
+    {{message}}
+  </div>
+</div>
+</li>
+{% endif %}
+   {% endfor %}
 </ul>
 {% endif %}
 <div class="sm:absolute sm:bottom-0 sm:right-0 star_background" style=" overflow: hidden; z-index: -2;">
-<picture>
-<source srcset='{% static "colage_336.png" %}' media="(max-width: 336px)">
-<source srcset='{% static "colage_504.png" %}' media="(max-width: 639px)">
-<source srcset='{% static "colage_962.png" %}' media="(min-width: 640px)">
-<img src="{% static 'new_colage1.png' %}" alt="Dr Stone Colage" class="poster object-cover h-[88vw] min-[480px]:h-[78vw] min-[550px]:h-[70vw] w-[90%] sm:w-[750px] sm:h-[1097px] xl:max-w-full" >
-</picture>
+    <picture>
+        <source srcset='{% static "colage_336.png" %}' media="(max-width: 336px)">
+        <source srcset='{% static "colage_504.png" %}' media="(max-width: 639px)">
+        <source srcset='{% static "colage_962.png" %}' media="(min-width: 640px)">
+        <img src="{% static 'new_colage1.png' %}" alt="Dr Stone Colage"
+            class="poster object-cover h-[88vw] min-[480px]:h-[78vw] min-[550px]:h-[70vw] w-[90%] sm:w-[750px] sm:h-[1097px] xl:max-w-full">
+    </picture>
 </div>
-<div class="main_paragraph w-[75vw] ml-[10%] sm:w-[51vw] sm:absolute sm: top-[20%] sm:ml-[5%] lg:right-[43%]">
-<div class="main_phrase  mt-2" style="margin-bottom: 12px;">
-    Фанатский сайт для чтения любимой манги
-</div>
-<div style="margin-bottom: 24px;" class="text-base">Этот сайт создан для приятного времяпрепровождения</div>
-<a href="{% url 'manga_list' %}">
-<div class="land_butt flex justify-start items-center p-3 gap-2 hover:bg-slate-900 hover:border-r-2 text-lg" style="width: 190px;">
-    <span class="text-base sm:text-xl mx-auto" style="color: #F4CD00">{% trans 'Начать читать' %}</span>
-</div>
-</a>
+<div class="main_paragraph w-[75vw] ml-[10%] sm:w-[51vw] sm:absolute sm:top-[30%] sm:ml-[5%] lg:right-[43%]">
+    <div class="main_phrase  mt-2" style="margin-bottom: 12px;">
+        Фанатский сайт для чтения любимой манги
+    </div>
+    <div style="margin-bottom: 24px;" class="text-base">Этот сайт создан для приятного времяпрепровождения</div>
+    <a href="{% url 'manga_list' %}">
+        <div class="land_butt flex justify-start items-center p-3 gap-2 hover:bg-slate-900 hover:border-r-2 text-lg"
+            style="width: 190px;">
+            <span class="text-base sm:text-xl mx-auto" style="color: #F4CD00">{% trans 'Начать читать' %}</span>
+        </div>
+    </a>
 </div>
 {% endblock %}
