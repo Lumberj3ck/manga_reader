@@ -9,10 +9,9 @@
 {% if bookmarks %}
 <div>{% trans 'Ваши закладки' %}</div>
 {% for bookmark in bookmarks %}
-{{bookmark.manga}}
-{{bookmark.chapter}}
+<a class='font-semibold' style="color: #6941C6;" href="{% url 'chapter_detail' manga_slug=bookmark.manga.slug chapter_slug=bookmark.chapter.name %}">{{bookmark.chapter}}</a>
 {% endfor %}
 {% else %}
-<div>У вас пока нет ни одной закладки. Начинайте читать</div>
+<div>{% trans 'У вас пока нет ни одной закладки. Начните читать и сделайте свою первую закладку!' %}</div>
 {% endif %}
 {% endblock %}
