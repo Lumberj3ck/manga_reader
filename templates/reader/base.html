@@ -13,7 +13,7 @@
 <body>
   <div class="max-w-4xl mx-auto">
     <header class="max-w-5xl 2xl:max-w-6xl mx-auto">
-      <div class="flex gap-2 p-2 m-2  items-center justify-between sm:justify-normal">
+      <div class="flex p-2 m-2  items-center justify-start gap-[20vw] sm:gap-2 sm:justify-normal">
         <div class="hamburger_icon sm:hidden" data-te-offcanvas-toggle data-te-target="#offcanvasExample"
           aria-controls="offcanvasExample" data-te-ripple-init data-te-ripple-color="light">
           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
@@ -88,20 +88,6 @@
             </li>
           </ul>
         </div>
-        <a href='{% url "bookmarks" %}' class="bookmark_icon sm:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 19 19" fill="none">
-            <path
-              d="M3.95834 6.175C3.95834 4.84488 3.95834 4.17981 4.2172 3.67177C4.44489 3.22489 4.80822 2.86156 5.25511 2.63386C5.76315 2.375 6.42821 2.375 7.75834 2.375H11.2417C12.5718 2.375 13.2369 2.375 13.7449 2.63386C14.1918 2.86156 14.5551 3.22489 14.7828 3.67177C15.0417 4.17981 15.0417 4.84488 15.0417 6.175V16.625L9.5 13.4583L3.95834 16.625V6.175Z"
-              stroke="url(#paint0_linear_12_252)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <defs>
-              <linearGradient id="paint0_linear_12_252" x1="6.72917" y1="16.625" x2="14.8316" y2="4.02121"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#53389E" />
-                <stop offset="1" stop-color="#6941C6" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </a>
       </div>
     </header>
     {% block content %} {% endblock %}
@@ -194,11 +180,12 @@
 <script>
   import {
     Dropdown,
+    Toast,
     Ripple,
     initTE,
   } from "tw-elements";
 
-  initTE({ Dropdown, Ripple });
+  initTE({ Dropdown, Ripple, Toast });
 </script>
 
 </html>

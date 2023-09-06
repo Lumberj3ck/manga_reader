@@ -96,20 +96,20 @@ class ChapterDetail(View):
     ## name is unique hence i thought is would be redudant to save both of them slug and name
     slug_field = "name"
 
-    def make_bookmark(self, request):
-        current_chapter = self.current_chapter
-        manga = current_chapter.manga
-        if request.user.is_authenticated:
-            query = Bookmark.objects.get_or_create(profile=request.user.profile, chapter=self.current_chapter, manga=manga)
-            if query:
-                bookmark = query[0]
-                bookmark.manga = manga
-                bookmark.chapter = current_chapter
-                bookmark.save()
-            else:
-                Bookmark.objects.create(
-                    profile=request.user.profile, chapter=current_chapter, manga=manga
-                )
+    # def make_bookmark(self, request):
+    #     current_chapter = self.current_chapter
+    #     manga = current_chapter.manga
+    #     if request.user.is_authenticated:
+    #         query = Bookmark.objects.get_or_create(profile=request.user.profile, chapter=self.current_chapter, manga=manga)
+    #         if query:
+    #             bookmark = query[0]
+    #             bookmark.manga = manga
+    #             bookmark.chapter = current_chapter
+    #             bookmark.save()
+    #         else:
+    #             Bookmark.objects.create(
+    #                 profile=request.user.profile, chapter=current_chapter, manga=manga
+    #             )
 
     def get_context_data(self):
         self.context = {}
@@ -140,7 +140,7 @@ class ChapterDetail(View):
         self.get_next_previous_chapter()
         self.update_views()
         self.get_context_data()
-        self.make_bookmark(request)
+        # self.make_bookmark(request)
         return render(request, self.template_name, self.context)
 
 
