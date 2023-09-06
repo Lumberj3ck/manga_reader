@@ -26,3 +26,16 @@ body{
     background: #5B21E3;
     color: #F4CD00;
 }
+
+.star_background{
+    background: url(/static/star.png), radial-gradient(281.29% 37% at 50% 45.4%, #FFF1A5 0%, #F4CD00 100%), #F4CD00;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (min-width: 639px) {
+    .star_background{
+        background: unset;
+
+    }
+}
