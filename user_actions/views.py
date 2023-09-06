@@ -49,7 +49,7 @@ def bookmark(request):
             previous_bookmark[0].chapter = chapter
             previous_bookmark[0].save()
         else:
-            Bookmark.objects.create(manga=manga, profile=request, chapter=chapter)
+            Bookmark.objects.create(manga=manga, profile=request.user.profile, chapter=chapter)
         return JsonResponse({'status': 'ok'})
     else:
         raise Http404(_('Manga and chapter required parameters'))
