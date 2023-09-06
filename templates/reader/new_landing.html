@@ -19,6 +19,8 @@
 {% endif %}
 <div class="sm:absolute sm:bottom-0 sm:right-0" style=" overflow: hidden; z-index: -2;">
 <picture>
+<source srcset='{% static "colage_336.png" %}' media="(max-width: 336px)">
+<source srcset='{% static "colage_504.png" %}' media="(max-width: 640px)">
 <source srcset='{% static "colage_962.png" %}' media="(min-width: 640px)">
 <img src="{% static 'new_colage1.png' %}" alt="Dr Stone Colage" class="poster object-cover h-[88vw] min-[480px]:h-[78vw] min-[550px]:h-[70vw] w-[90%] sm:w-[750px] sm:h-[1097px] xl:max-w-full" >
 </picture>
