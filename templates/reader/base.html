@@ -149,9 +149,7 @@
               {% else %}
               <li class="">
                 {% with photo=request.user.profile.photo %}
-                {% if photo %}
                 <img src="{{ photo.url }}" alt="Profile photo" class="w-24 h-24 object-cover">
-                {% endif %}
                 {% endwith %}
               </li>
               <li>

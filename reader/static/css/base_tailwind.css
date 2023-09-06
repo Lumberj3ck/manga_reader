@@ -801,6 +801,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   height: 88vw;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .w-2 {
   width: 0.5rem;
 }
@@ -862,6 +866,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   width: max-content;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
 .min-w-max {
   min-width: -moz-max-content;
   min-width: max-content;
@@ -902,6 +910,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .list-none {
   list-style-type: none;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {

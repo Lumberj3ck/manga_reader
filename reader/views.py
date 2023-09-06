@@ -69,6 +69,7 @@ def chapter_action(request):
                     {
                         "status": "ok",
                         "user": new_comment.user.username,
+                        "user_photo": new_comment.user.profile.photo.url,
                         "comment_text": new_comment.text,
                         "created_at": humanize.naturaltime(new_comment.created_at),
                     }
