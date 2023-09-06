@@ -122,7 +122,7 @@
         {% load humanize %}
     {% for comment in comments %}
         <div class='comment mb-2 rounded-md border-2 border-black p-2 flex flex-row gap-5'>
-        <img src="{% static comment.user.profile.photo.url %}" alt="User photo" class="w-16 h-16 object-cover">
+        <img src="{{ comment.user.profile.photo.url }}" alt="User photo" class="w-16 h-16 object-cover">
         <div>
         <div class="font-bold ">{{comment.user}}</div>
         <div class="text-gray-600">{{comment.created_at|naturaltime}}</div>
