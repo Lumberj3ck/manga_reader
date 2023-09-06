@@ -33,6 +33,28 @@ body{
     background-size: contain;
 }
 
+.warning{
+    border-radius: 7px;
+    width: max-content;
+    padding: 5px;
+    background: #5300a5;
+    color: #F4CD00;
+    width: 60%;
+    padding-left: 14px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.success{
+    border: 1px solid #5300a5;
+    border-radius: 7px;
+    width: max-content;
+    padding: 5px;
+    color: #5300a5;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
 @media (min-width: 639px) {
     .star_background{
         background: unset;
