@@ -32,7 +32,7 @@
           <div class="Logo font-bold text-md leading-5 sm:text-lg md:text-xl">MangaLove</div>
         </a>
         <div class="sm:flex hidden">
-          <ul style="color: #6941C6" class="flex gap-2 text-base font-semibold md:text-xl items-center">
+          <ul style="color: #6941C6" class="flex gap-2 text-base font-semibold items-center">
             <li>
               {% if not request.user.is_authenticated %}
             <li>
@@ -44,7 +44,7 @@
             <li>
               <div class="relative" data-te-dropdown-ref>
                 <button
-                  class="text-base flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 md:text-xs font-medium uppercase leading-normal dropdown_button"
+                  class="text-base flex items-center whitespace-nowrap rounded md:px-6 md:pb-2 md:pt-2.5  font-medium uppercase leading-normal dropdown_button"
                   type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false">
                   {{request.user.username}}
                   <span class="ml-2 w-2">
@@ -149,9 +149,7 @@
               {% else %}
               <li class="">
                 {% with photo=request.user.profile.photo %}
-                {% if photo %}
                 <img src="{{ photo.url }}" alt="Profile photo" class="w-24 h-24 object-cover">
-                {% endif %}
                 {% endwith %}
               </li>
               <li>

@@ -44,7 +44,20 @@
 <div class='mt-6'> 
     <div class="content_block">
 {% for picture in images %}
-<img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{{ picture.img.url }}"  alt="{{picture.img.name}}" data-srcset="{{ picture.medium_img.url }} 650px" data-sizes="(max-width: 650px) 650px">
+<!-- <img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{{ picture.img.url }}"  alt="{{picture.img.name}}" data-srcset="{{ picture.medium_img.url }} 650px" data-sizes="(max-width: 650px) 650px"> -->
+{% if forloop.counter > 2 %}
+<picture>
+  <source media="(max-width: 640px)" data-srcset="{{ picture.medium_img.url }}" />
+  <source media="(min-width: 641px)" data-srcset="{{picture.img.url}}" />
+  <img alt="{{picture.img.name}}" class="lazy" data-src="{{picture.img.url}}" />
+</picture>
+{% else %}
+<picture>
+  <source media="(max-width: 640px)" srcset="{{ picture.medium_img.url }}" />
+  <source media="(min-width: 641px)" srcset="{{picture.img.url}}" />
+  <img alt="{{picture.img.name}}" data-src="{{picture.img.url}}" />
+</picture>
+{% endif %}
 {% endfor %}
 </div>
 <div class="flex flex-col md:mx-5">
@@ -108,10 +121,13 @@
     <div class='comments mt-4 md:w-5/6'>
         {% load humanize %}
     {% for comment in comments %}
-        <div class='comment mb-2 rounded-md border-2 border-black p-2'>
+        <div class='comment mb-2 rounded-md border-2 border-black p-2 flex flex-row gap-5'>
+        <img src="{{ comment.user.profile.photo.url }}" alt="User photo" class="w-16 h-16 object-cover">
+        <div>
         <div class="font-bold ">{{comment.user}}</div>
         <div class="text-gray-600">{{comment.created_at|naturaltime}}</div>
         <div class="font-medium">{{comment.text}}</div>
+        </div>
         </div>
     {% endfor %}
     </div>
@@ -237,26 +253,32 @@ function handleCommentSubmit(event) {
         sendAjaxRequest(formdata,
             data => {
                 const commentContainer = document.createElement('div');
-                commentContainer.classList.add('comment', 'mb-2', 'rounded-md', 'border-2', 'border-black', 'p-2');
-
+                commentContainer.classList.add('comment', 'mb-2', 'rounded-md', 'border-2', 'border-black', 'p-2', 'flex', 'flex-row', 'gap-5');
                 // Create a username element
-                const usernameElement = document.createElement('div');
-                usernameElement.classList.add('font-bold');
-                usernameElement.textContent = data['user'];
+                // const usernameElement = document.createElement('div');
+                // usernameElement.classList.add('font-bold');
+                // usernameElement.textContent = data['user'];
 
-                // Create a timestamp element
-                const timestampElement = document.createElement('div');
-                timestampElement.classList.add('text-gray-600');
-                timestampElement.textContent = data['created_at'];
+                // // Create a timestamp element
+                // const timestampElement = document.createElement('div');
+                // timestampElement.classList.add('text-gray-600');
+                // timestampElement.textContent = data['created_at'];
 
-                // Create a comment text element
-                const commentTextElement = document.createElement('div');
-                commentTextElement.classList.add('font-medium');
-                commentTextElement.textContent = data['comment_text'];
+                // // Create a comment text element
+                // const commentTextElement = document.createElement('div');
+                // commentTextElement.classList.add('font-medium');
+                // commentTextElement.textContent = data['comment_text'];
 
-                commentContainer.appendChild(usernameElement);
-                commentContainer.appendChild(timestampElement);
-                commentContainer.appendChild(commentTextElement);
+                // commentContainer.appendChild(usernameElement);
+                // commentContainer.appendChild(timestampElement);
+                // commentContainer.appendChild(commentTextElement);
+                commentContainer.innerHTML = `
+                            <img src="${data['user_photo']}" alt="User photo" class="w-16 h-16 object-cover">
+                            <div>
+                            <div class="font-bold ">${data['user']}</div>
+                            <div class="text-gray-600">${data['created_at']}</div>
+                            <div class="font-medium">${data['comment_text']}</div>
+                            </div>`;
                 first_child = comment_section.firstElementChild
                 comment_section.insertBefore(commentContainer, first_child)
                 // reset textarea text

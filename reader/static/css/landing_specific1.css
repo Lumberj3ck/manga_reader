@@ -1,3 +1,9 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&display=swap');
+
+body{
+  font-family: 'Exo 2', sans-serif;
+} */
+
 .main_phrase{
     color: #000;
     font-family: Exo 2;
@@ -19,4 +25,17 @@
     border-right-width: 4px;
     background: #5B21E3;
     color: #F4CD00;
+}
+
+.star_background{
+    background: url(/static/star.png), radial-gradient(281.29% 37% at 50% 45.4%, #FFF1A5 0%, #F4CD00 100%), #F4CD00;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (min-width: 639px) {
+    .star_background{
+        background: unset;
+
+    }
 }
