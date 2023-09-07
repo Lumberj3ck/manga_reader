@@ -3,6 +3,7 @@
 {% block title %}
 {% load i18n %}
 {% load static %}
+{% load humanize %}
 <title>{% trans 'Вся манга' %}</title>
 {% endblock %}
 
@@ -10,7 +11,7 @@
 {% block content %}
 <div class="flex gap-8 relative">
 <nav class="w-full sm:w-max rounded-md" style="padding-left: 1rem;">
-  <ol class="list-reset flex sm:text-lg text-base sm:mx-5" style="color: #6941C6; font-weight: 600;">
+  <ol class="list-reset flex sm:text-lg text-base" style="color: #6941C6; font-weight: 600;">
     <li>
       <a href="{% url 'landing' %}" class="transition duration-150 ease-in-out ">{% trans 'Home' %}</a>
     </li>
@@ -33,8 +34,15 @@
 </ul>
 {% endif %}
 {% for manga in mangas %}
-<div class="border-2 border-black m-2 rounded-md">
-	<a class="" href="{% url 'chapter_list' manga_slug=manga.slug %}"><img style="height: 10%;" src="{{ manga.poster.url }}" alt=""></a>
+<div class="border-2 border-black m-2 rounded-md sm:w-3/4 flex flex-row gap-3">
+	<img class="w-[150px] h-[200px] object-cover" src="{% static manga.poster.url %}" alt="">
+  <div class="flex flex-col gap-2">
+  <p class="text-[#6941c6] font-[500] text-base my-1">{{manga.name}} / {{manga.slug}}</p>
+  <p class="text-gray-500 text-sm mb-3">{{manga.created|naturaltime}}</p>
+  <div class="mt-2 text-lg text-[#6941c6] font-[550]">
+  <a  href="{% url 'chapter_list' manga_slug=manga.slug %}">{% trans 'Начать читать' %}</a>
+  </div>
+  </div>
 </div>
 {% endfor %}
 {% endblock %}
