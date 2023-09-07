@@ -39,7 +39,7 @@ def most_viewed_chapters(request, manga_slug):
     manga = Manga.objects.get(slug=manga_slug)
     chapters = list(Chapter.objects.filter(name__in=most_viewed_chapters, manga=manga))
     chapters.sort(key=lambda x: most_viewed_chapters.index(x.name))
-    most_liked_chapters = Chapter.objects.annotate(total_likes=Count("likes")).order_by(
+    most_liked_chapters = Chapter.objects.annotate(total_likes=Count("likes")).filter(manga=manga).order_by(
         "total_likes"
     )
     return render(
