@@ -2,15 +2,30 @@
 
 {% block title %}
 {% load i18n %}
+{% load static %}
 <title>{% trans 'Ваши закладки' %}</title>
 {% endblock %}
 
 {% block content %}
 {% if bookmarks %}
-<div>{% trans 'Ваши закладки' %}</div>
+<div class="sm:ml-3 lg:ml-0">
+<div class="font-bold ml-[10px]">{% trans 'Ваши закладки' %}</div>
 {% for bookmark in bookmarks %}
-<a class='font-semibold' style="color: #6941C6;" href="{% url 'chapter_detail' manga_slug=bookmark.manga.slug chapter_slug=bookmark.chapter.name %}">{{bookmark.chapter}}</a>
+{% with manga=bookmark.manga chapter=bookmark.chapter %}
+<div class="border-2 border-black m-2 rounded-md sm:w-3/4 flex flex-row gap-3">
+	<img class="w-[150px] h-[200px] object-cover" src="{% static manga.poster.url %}" alt="">
+  <div class="flex flex-col gap-2">
+    
+  <p class="text-[#6941c6] font-[500] text-base my-1"><a href="{% url 'chapter_list' manga_slug=manga.slug %}">{{manga.name}}</a>/ {{manga.slug}}</p>
+  <p class="text-gray-500 text-sm mb-3">{{manga.created|date:' d M Y'}}</p>
+  <div class="mt-2 text-base sm:text-lg text-[#6941c6] font-[550]">
+  <a  href="{% url 'chapter_detail' manga_slug=manga.slug  chapter_slug=chapter.name %}">{{chapter.name}}</a>
+  </div>
+  </div>
+</div>
+{% endwith %}
 {% endfor %}
+</div>
 {% else %}
 <div>{% trans 'У вас пока нет ни одной закладки. Начните читать и сделайте свою первую закладку!' %}</div>
 {% endif %}

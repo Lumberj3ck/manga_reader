@@ -36,9 +36,10 @@ def most_viewed_chapters(request, manga_slug):
     most_viewed_chapters = [
         chapter_b.decode("utf8") for chapter_b in most_viewed_chapters
     ]
-    chapters = list(Chapter.objects.filter(name__in=most_viewed_chapters))
+    manga = Manga.objects.get(slug=manga_slug)
+    chapters = list(Chapter.objects.filter(name__in=most_viewed_chapters, manga=manga))
     chapters.sort(key=lambda x: most_viewed_chapters.index(x.name))
-    most_liked_chapters = Chapter.objects.annotate(total_likes=Count("likes")).order_by(
+    most_liked_chapters = Chapter.objects.annotate(total_likes=Count("likes")).filter(manga=manga).order_by(
         "total_likes"
     )
     return render(
@@ -85,7 +86,7 @@ def chapter_list(request, manga_slug):
         raise Http404()
     #chapters = get_object_or_404(Chapter, manga__slug=manga_slug)
     # queryset1 = Manga.objects.filter(name=manga_slug).chapters
-    return render(request, "reader/chapter_list.html", {"chapters": chapters})
+    return render(request, "reader/chapter_list.html", {"chapters": chapters, 'manga_slug': manga_slug})
 
 
 class ChapterDetail(View):
