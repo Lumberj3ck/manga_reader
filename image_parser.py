@@ -103,8 +103,8 @@ def create_loop(chapter_links, site_url_split):
     for link in chapter_links:
         links = get_img_in_ch(link)
         folder_name = link.split(site_url_split)[1]
-        print(folder_name)
-        chapter_instance = create_chapter(folder_name)[0]
+        without_dots = folder_name.replace('.', '-')
+        chapter_instance = create_chapter(without_dots)[0]
         download_chapter_imgs(links, folder_name, chapter_instance)
     logging.info("Success")
 
