@@ -1,7 +1,7 @@
 from PIL import Image
 import os, logging, django
 
-os.environ["DJANGO_SETTINGS_MODULE"] = "manga_reader.settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "manga_reader.settings_prod"
 django.setup()
 from reader.models import Picture
 
@@ -43,7 +43,7 @@ def image_reducer(picture_inst:Picture):
         _image_reduce(picture_inst.img.path)
     except DoNotExistException:
         print('File do not exist : image_reducer')
-    picture_inst.medium_img = media_img_path
+    picture_inst.medium_img = medium_img_path
     picture_inst.save()
 
 def directories_walker():

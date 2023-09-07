@@ -36,7 +36,7 @@
 <div class="sm:ml-2 lg:ml-0">
 {% for manga in mangas %}
 <div class="border-2 border-black m-2 rounded-md sm:w-3/4 flex flex-row gap-3">
-	<img class="w-[150px] h-[200px] object-cover" src="{% static manga.poster.url %}" alt="">
+	<img class="w-[150px] h-[200px] object-cover" src="{{manga.poster.url }}" alt="">
   <div class="flex flex-col gap-2">
   <p class="text-[#6941c6] font-[500] text-base my-1">{{manga.name}} / {{manga.slug}}</p>
   <p class="text-gray-500 text-sm mb-3">{{manga.created|naturaltime}}</p>

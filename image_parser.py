@@ -6,7 +6,7 @@ from django.conf import settings
 from typing import List
 from requests import Response
 from image_size_reducer import image_reducer
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "manga_reader.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "manga_reader.settings_prod")
 django.setup()
 # settings.configure()
 from reader.models import *

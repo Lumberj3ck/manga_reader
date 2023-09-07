@@ -21,7 +21,7 @@ class Chapter(models.Model):
     name = models.CharField(
         max_length=200, verbose_name=_("Название главы"), unique=True
     )
-    chapter_number = models.FloatField(unique=True)
+    chapter_number = models.FloatField()
     ## name is unique hence i thought is would be redudant to save both of them slug and name
     # slug = models.SlugField(max_length=200, blank=True)
     manga = models.ForeignKey(
