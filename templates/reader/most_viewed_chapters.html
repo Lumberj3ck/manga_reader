@@ -7,16 +7,16 @@
 {% endblock %}
 
 {% block content %}
-<h1>{% trans 'Самые залайканые главы' %}</h1>
+<h1 class="mx-4 font-bold">{% trans 'Самые залайканые главы' %}</h1>
 {% for chapter in most_liked_chapters %}
-<div>
-<a href="{% url 'chapter_detail' manga_slug=chapter.manga.slug chapter_slug=chapter.name %}">{{chapter.name}}</a>
+<div class="mb-2">
+<a class="mx-4 text-[#6941c6] underline underline-offset-2 mb-2 font-semibold" href="{% url 'chapter_detail' manga_slug=chapter.manga.slug chapter_slug=chapter.name %}">{{chapter.name}}</a>
 </div>
 {% endfor %}
-<h1>{% trans 'Самые просматриваемые главы' %}</h1>
+<h1 class="mx-4 font-bold">{% trans 'Самые просматриваемые главы' %}</h1>
 {% for chapter in most_viewed_chapters %}
-<div>
-<a href="{% url 'chapter_detail' manga_slug=chapter.manga.slug chapter_slug=chapter.name %}">{{chapter.name}}</a>
+<div class="mb-2">
+<a class="mx-4 text-[#6941c6] underline underline-offset-2 mb-2 font-semibold" href="{% url 'chapter_detail' manga_slug=chapter.manga.slug chapter_slug=chapter.name %}">{{chapter.name}}</a>
 </div>
 {% endfor %}
 {% endblock %}

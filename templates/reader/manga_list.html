@@ -33,6 +33,7 @@
     {% endfor %}
 </ul>
 {% endif %}
+<div class="sm:ml-2 lg:ml-0">
 {% for manga in mangas %}
 <div class="border-2 border-black m-2 rounded-md sm:w-3/4 flex flex-row gap-3">
 	<img class="w-[150px] h-[200px] object-cover" src="{% static manga.poster.url %}" alt="">
@@ -45,4 +46,5 @@
   </div>
 </div>
 {% endfor %}
+</div>
 {% endblock %}
