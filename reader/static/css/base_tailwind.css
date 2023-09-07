@@ -1315,6 +1315,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   text-decoration-line: underline;
 }
 
+.underline-offset-2 {
+  text-underline-offset: 2px;
+}
+
 .opacity-80 {
   opacity: 0.8;
 }
