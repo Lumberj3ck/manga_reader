@@ -32,7 +32,7 @@ def landing_view(request):
 
 def most_viewed_chapters(request, manga_slug):
     """Gets chapter_ranking from redis and renders it in -views"""
-    most_viewed_chapters = r.zrange("chapter_ranking", 0, -1, desc=True)[:10]
+    most_viewed_chapters = r.zrange("chapter_ranking", 0, -1, desc=True)[:5]
     most_viewed_chapters = [
         chapter_b.decode("utf8") for chapter_b in most_viewed_chapters
     ]
@@ -41,7 +41,7 @@ def most_viewed_chapters(request, manga_slug):
     chapters.sort(key=lambda x: most_viewed_chapters.index(x.name))
     most_liked_chapters = Chapter.objects.annotate(total_likes=Count("likes")).filter(manga=manga).order_by(
         "total_likes"
-    )
+        )[:5]
     return render(
         request,
         "reader/most_viewed_chapters.html",
@@ -81,12 +81,14 @@ def chapter_action(request):
 
 
 def chapter_list(request, manga_slug):
-    chapters = Chapter.objects.filter(manga__slug=manga_slug)
+    manga = get_object_or_404(Manga, slug=manga_slug)
+    #chapters = Chapter.objects.filter(manga__slug=manga_slug)
+    chapters = Chapter.objects.filter(manga=manga)
     if not chapters:
         raise Http404()
     #chapters = get_object_or_404(Chapter, manga__slug=manga_slug)
     # queryset1 = Manga.objects.filter(name=manga_slug).chapters
-    return render(request, "reader/chapter_list.html", {"chapters": chapters, 'manga_slug': manga_slug})
+    return render(request, "reader/chapter_list.html", {"chapters": chapters, 'manga_slug': manga_slug, 'manga': manga})
 
 
 class ChapterDetail(View):

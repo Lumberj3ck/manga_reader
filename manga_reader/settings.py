@@ -26,11 +26,10 @@ AUTHENTICATION_BACKENDS = [
 SECRET_KEY = "django-insecure-gy-p5d*#$fso0fl!9&^e_=e^!8+%n*l-$d6r!$!3pcxrd^2ow%"
 MEDIA_ROOT = "./imgs"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 REDIS_DB = 0
-
 # LOGGING = {
 #     "version": 1,
 #     "handlers": {"console": {"class": "logging.StreamHandler"}},

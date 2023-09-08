@@ -774,6 +774,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-top: 1.5rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .box-content {
   box-sizing: content-box;
 }
@@ -913,6 +917,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .w-\[140px\] {
   width: 140px;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .min-w-max {
