@@ -24,6 +24,7 @@ urlpatterns = [
     path("rosetta/", include('rosetta.urls')),
     path("account/", include("account.urls")),
     path("actions/", include("user_actions.urls")),
+    path("__debug__/", include("debug_toolbar.urls")),
     path("", include("reader.urls")),
 ]
 

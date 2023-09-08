@@ -37,6 +37,9 @@ REDIS_DB = 0
 # }
 ALLOWED_HOSTS = []
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -48,12 +51,24 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "reader.apps.ReaderConfig",
+
     "rosetta",
     "parler",
+    "debug_toolbar",
+    "cachalot",
+
     "account.apps.AccountConfig",
     "django.contrib.humanize",
     "user_actions.apps.UserActionsConfig",
 ]
+
+CACHES = {
+    "default": {
+        "BACKEND": 'django_redis.cache.RedisCache',
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
+}
+
 PARLER_LANGUAGES = {
  None: (
  {'code': 'en'},
@@ -73,6 +88,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "manga_reader.urls"
@@ -101,7 +117,7 @@ WSGI_APPLICATION = "manga_reader.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": "manga_project",
         "USER": "lumberjack1",
         "PASSWORD": "h*99IgJdEc8*",
