@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-gy-p5d*#$fso0fl!9&^e_=e^!8+%n*l-$d6r!$!3pcxrd^2ow%
 MEDIA_ROOT = "./imgs"
 MEDIA_URL = "imgs/"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG =True 
 
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "login"
@@ -42,7 +42,7 @@ REDIS_DB = 0
 #     "handlers": {"console": {"class": "logging.StreamHandler"}},
 #     "loggers": {"django.db.backends": {"handlers": ["console"], "level": "DEBUG"}},
 # }
-ALLOWED_HOSTS = ["143.198.224.109"]
+ALLOWED_HOSTS = ["MangaLove.info.gf"]
 
 
 # Application definition

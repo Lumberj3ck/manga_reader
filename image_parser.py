@@ -42,6 +42,7 @@ def get_page(url:str):
 
 
 def get_img_in_ch(url:str):
+    print(url)
     resp = get_page(url)
     soup = bs4.BeautifulSoup(resp.text, "html.parser")
     imgs = soup.select(img_selector)
@@ -54,8 +55,8 @@ def write_into_file_and_save(response: Response, path_to_save, path_for_django, 
         with open(path_to_save, "wb") as file:
             file.write(response.content)
             print(".", end="", flush=True)
-        pic = Picture.objects.get_or_create(chapter=chapter_instance, img=path_for_django)
-        image_reducer(picture_inst=pic[0])
+    pic = Picture.objects.get_or_create(chapter=chapter_instance, img=path_for_django)
+    image_reducer(picture_inst=pic[0])
     logging.info('already downloaded')
 
 
@@ -70,6 +71,7 @@ def download_chapter_imgs(urls, output_folder, chapter_instance):
     folder_path = make_folder_if_not_exists(output_folder)
     logging.info(f"Started downloading {folder_path}")
     for ind, link in enumerate(urls, start=1):
+        print(link)
         response = get_page(link)
         picture_name = f"{ind}_img.jpg"
         path_for_django = os.path.join(output_folder, picture_name)
@@ -81,6 +83,7 @@ def download_chapter_imgs(urls, output_folder, chapter_instance):
 
 
 def get_chapter_links(url:str, selector:str, amount:int = "all") -> List[str]:
+    print(url)
     response = get_page(url)
     soup = bs4.BeautifulSoup(response.text, "html.parser")
     raw_ch_links = soup.select(selector)
@@ -110,8 +113,7 @@ def create_loop(chapter_links, site_url_split):
 
 def main_parser(url:str, selector:str, site_url_split:str, amount:int='all') -> None:
     chapter_links = get_chapter_links(url=url, selector=selector, amount=amount)
-    print(chapter_links)
-    create_loop(chapter_links, site_url_split)
+    create_loop(chapter_links[96:], site_url_split)
 
 if __name__ == "__main__":
     ## do not forget about amount and -10 in get_Chapter_link
