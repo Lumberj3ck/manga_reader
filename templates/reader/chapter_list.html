@@ -41,14 +41,14 @@
 </div>
 <div class="page_content" >
 <div class="p-2 m-2 font-semibold">
-  {% trans   'Dr. Stone is a Japanese manga series written by Riichiro Inagaki and illustrated by Boichi, serialized in Weekly Shōnen Jump since March 6, 2017, with the individual chapters collected and published by Shueisha into ten tankōbon volumes as of April 2019. Shueisha began to simul publish the series in English on the website and app Manga Plus since January 2019.' %}
+  {{manga.description}}
 </div>
 <div class="mx-4 text-[#6941c6] underline underline-offset-2 mb-2 font-semibold">
 <a href="{% url 'most_viewed_chapters' manga_slug=manga_slug %}">{% trans 'Самые читаемые главы' %}</a>
 </div>
 {% for chapter in chapters %}
     <div class="mx-4 mb-3">
-        <a class='font-semibold' style="color: #6941C6; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(0, 0, 0, 0.393);" href="{% url 'chapter_detail' manga_slug=manga_slug chapter_slug=chapter.name %}">{{chapter}}</a>
+        <a class='font-semibold' style="color: #6941C6; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(0, 0, 0, 0.393);" href="{% url 'chapter_detail' manga_slug=manga_slug chapter_slug=chapter.name %}">{{chapter.name}}</a>
     </div>
 {% endfor %}
 </div>

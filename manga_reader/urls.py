@@ -17,12 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
-
+from account.views import custom_404_page
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("admin/", admin.site.urls),
     path("rosetta/", include('rosetta.urls')),
     path("account/", include("account.urls")),
     path("actions/", include("user_actions.urls")),
+    path("__debug__/", include("debug_toolbar.urls")),
     path("", include("reader.urls")),
 ]
+
+handler404 = 'account.views.custom_404_page'

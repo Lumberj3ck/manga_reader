@@ -19,6 +19,8 @@ from django.core.files.base import ContentFile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 
+def custom_404_page(request, exception=None):
+    return render(request, '404.html', status=404)
 
 class UserSettings(View):
     template_name = "registration/user_settings.html"

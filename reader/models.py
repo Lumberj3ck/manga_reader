@@ -3,12 +3,13 @@ import os
 from django.db import models
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 
-
-class Manga(models.Model):
+class Manga(TranslatableModel):
     name = models.CharField(max_length=200, verbose_name=_("Название манги"))
-    description = models.TextField()
+    translations = TranslatedFields(
+        description = models.TextField())
     slug = models.SlugField(max_length=200, unique=True)
     poster = models.ImageField(upload_to='manga_poster/', blank=True)
     created = models.DateTimeField(auto_now_add=True)

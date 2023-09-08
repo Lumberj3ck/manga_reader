@@ -13,26 +13,26 @@ from reader.models import *
 
 
 logging.basicConfig(
-    level=logging.INFO,
-    filename="parser.log",
-    filemode="w",
-    format="%(asctime)s - %(levelname)s - %(message)s",
-)
+        level=logging.INFO,
+        filename="parser.log",
+        filemode="w",
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        )
 user_agents = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/95.0.1020.30 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
-    "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
-]
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/95.0.1020.30 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
+        "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+        ]
 
 headers = {
-    "User-Agent": random.choice(user_agents),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Connection": "Connection",
-    "cookie": "_gid=GA1.2.1125372524.1692948422; zone-cap-5050238=1%3B1692948427; _ga_1EBSXM5LQM=GS1.1.1692948422.3.1.1692948428.0.0.0; _ga=GA1.1.1727617779.1692773463",
-}
+        "User-Agent": random.choice(user_agents),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Connection": "Connection",
+        "cookie": "_gid=GA1.2.1125372524.1692948422; zone-cap-5050238=1%3B1692948427; _ga_1EBSXM5LQM=GS1.1.1692948422.3.1.1692948428.0.0.0; _ga=GA1.1.1727617779.1692773463",
+        }
 main_folder = "./imgs"
 manga_name = 'Attack on titan'
 img_selector = '.text-center img'
@@ -81,7 +81,6 @@ def download_chapter_imgs(urls, output_folder, chapter_instance):
         else:
             logging.warning(f"failed to download")
 
-
 def get_chapter_links(url:str, selector:str, amount:int = "all") -> List[str]:
     print(url)
     response = get_page(url)
@@ -106,8 +105,8 @@ def create_loop(chapter_links, site_url_split):
     for link in chapter_links:
         links = get_img_in_ch(link)
         folder_name = link.split(site_url_split)[1]
-        print(folder_name)
-        chapter_instance = create_chapter(folder_name)[0]
+        without_dots = folder_name.replace('.', '-')
+        chapter_instance = create_chapter(without_dots)[0]
         download_chapter_imgs(links, folder_name, chapter_instance)
     logging.info("Success")
 

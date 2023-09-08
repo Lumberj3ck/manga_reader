@@ -17,8 +17,8 @@
     {{error}}
     {% endfor %}
     </div>
-    <input class="input_custom" placeholder="username" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
-    <input class="input_custom" placeholder="password" type="password" name="password" autocomplete="current-password" required="" id="id_password">
+    <input class="input_custom" placeholder='{% trans "username or email" %}' type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+    <input class="input_custom" placeholder="{% trans 'password' %}" type="password" name="password" autocomplete="current-password" required="" id="id_password">
     <input type="hidden" name="next" value="{{next}}">
     <div class="another_ways">
     <a class="registration" href="{% url 'register' %}">{% trans 'Регистрация' %}</a>

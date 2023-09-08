@@ -56,11 +56,22 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "reader.apps.ReaderConfig",
     "rosetta",
+    "parler",
     "django.contrib.humanize",
     "account.apps.AccountConfig",
     "user_actions.apps.UserActionsConfig",
 ]
 
+PARLER_LANGUAGES = {
+ None: (
+ {'code': 'en'},
+ {'code': 'ru'},
+ ),
+ 'default': {
+ 'fallback': 'ru',
+ 'hide_untranslated': False,
+ }
+}
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",

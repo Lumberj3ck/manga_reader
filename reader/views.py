@@ -23,7 +23,7 @@ def contact(request):
 
 @login_required
 def bookmarks(request):
-    bookmarks = request.user.profile.bookmarks.all() 
+    bookmarks = request.user.profile.bookmarks.all().select_related('chapter', 'manga') 
     return render(request, 'reader/bookmarks.html', {'bookmarks': bookmarks})
 
 def landing_view(request):
@@ -32,16 +32,16 @@ def landing_view(request):
 
 def most_viewed_chapters(request, manga_slug):
     """Gets chapter_ranking from redis and renders it in -views"""
-    most_viewed_chapters = r.zrange("chapter_ranking", 0, -1, desc=True)[:10]
+    most_viewed_chapters = r.zrange("chapter_ranking", 0, -1, desc=True)[:5]
     most_viewed_chapters = [
         chapter_b.decode("utf8") for chapter_b in most_viewed_chapters
     ]
     manga = Manga.objects.get(slug=manga_slug)
-    chapters = list(Chapter.objects.filter(name__in=most_viewed_chapters, manga=manga))
+    chapters = list(Chapter.objects.filter(name__in=most_viewed_chapters, manga=manga).select_related('manga'))
     chapters.sort(key=lambda x: most_viewed_chapters.index(x.name))
     most_liked_chapters = Chapter.objects.annotate(total_likes=Count("likes")).filter(manga=manga).order_by(
         "total_likes"
-    )
+        ).select_related('manga')[:5]
     return render(
         request,
         "reader/most_viewed_chapters.html",
@@ -81,12 +81,11 @@ def chapter_action(request):
 
 
 def chapter_list(request, manga_slug):
-    chapters = Chapter.objects.filter(manga__slug=manga_slug)
+    manga = get_object_or_404(Manga, slug=manga_slug)
+    chapters = Chapter.objects.filter(manga=manga).values()
     if not chapters:
         raise Http404()
-    #chapters = get_object_or_404(Chapter, manga__slug=manga_slug)
-    # queryset1 = Manga.objects.filter(name=manga_slug).chapters
-    return render(request, "reader/chapter_list.html", {"chapters": chapters, 'manga_slug': manga_slug})
+    return render(request, "reader/chapter_list.html", {"chapters": chapters, 'manga_slug': manga_slug, 'manga': manga})
 
 
 class ChapterDetail(View):
@@ -119,22 +118,23 @@ class ChapterDetail(View):
         self.context[self.context_object_name] = self.current_chapter
         self.context['images'] = Picture.objects.filter(chapter=self.current_chapter).order_by('id')
         self.context["form"] = self.form_class()
-        self.context["comments"] = self.current_chapter.comment_set.order_by('-created_at').all()
+        self.context["comments"] = self.current_chapter.comment_set.order_by('-created_at').all().select_related('user__profile')
         self.context["total_views"] = self.total_views
 
     def get_next_previous_chapter(self) -> None:
         current_chapter_number = self.current_chapter.chapter_number
-        self.next = Chapter.objects.filter(chapter_number=current_chapter_number + 1)
+        self.next = Chapter.objects.filter(chapter_number=current_chapter_number + 1).select_related('manga')
         self.previous = Chapter.objects.filter(
             chapter_number=current_chapter_number - 1
-        )
+        ).select_related('manga')
 
     def update_views(self):
         self.total_views = r.incr(f"chapter:{self.current_chapter.name}:views")
         r.zincrby("chapter_ranking", 1, self.current_chapter.name)
 
     def get_chapter_object(self, chapter_slug):
-        self.current_chapter = get_object_or_404(self.model, name=chapter_slug)
+        #self.current_chapter = get_object_or_404(self.model, name=chapter_slug)
+        self.current_chapter = self.model.objects.select_related('manga').get(name=chapter_slug)
 
     def get(self, request, chapter_slug, manga_slug):
         self.get_chapter_object(chapter_slug)

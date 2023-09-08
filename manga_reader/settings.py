@@ -26,11 +26,10 @@ AUTHENTICATION_BACKENDS = [
 SECRET_KEY = "django-insecure-gy-p5d*#$fso0fl!9&^e_=e^!8+%n*l-$d6r!$!3pcxrd^2ow%"
 MEDIA_ROOT = "./imgs"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 REDIS_DB = 0
-
 # LOGGING = {
 #     "version": 1,
 #     "handlers": {"console": {"class": "logging.StreamHandler"}},
@@ -38,6 +37,9 @@ REDIS_DB = 0
 # }
 ALLOWED_HOSTS = []
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -49,12 +51,34 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "reader.apps.ReaderConfig",
+
     "rosetta",
+    "parler",
+    "debug_toolbar",
+    "cachalot",
+
     "account.apps.AccountConfig",
     "django.contrib.humanize",
     "user_actions.apps.UserActionsConfig",
 ]
 
+CACHES = {
+    "default": {
+        "BACKEND": 'django_redis.cache.RedisCache',
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
+}
+
+PARLER_LANGUAGES = {
+ None: (
+ {'code': 'en'},
+ {'code': 'ru'},
+ ),
+ 'default': {
+ 'fallback': 'ru',
+ 'hide_untranslated': False,
+ }
+}
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -64,6 +88,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "manga_reader.urls"
@@ -92,7 +117,7 @@ WSGI_APPLICATION = "manga_reader.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": "manga_project",
         "USER": "lumberjack1",
         "PASSWORD": "h*99IgJdEc8*",
