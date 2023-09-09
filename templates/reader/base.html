@@ -65,15 +65,15 @@ a,hr{color:inherit}progress,sub,sup{vertical-align:baseline}.m-0,blockquote,body
                   aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref style="background-color: #F4CD00;">
                   <li>
                     <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text  active:text-neutral-800 active:no-underline disabled:pointer-events-none"
-                      href='{% url "bookmarks" %}' data-te-dropdown-item-ref>Bookmarks</a>
+		       href='{% url "bookmarks" %}' data-te-dropdown-item-ref>{% trans 'Bookmarks' %}</a>
                   </li>
                   <li>
                     <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text   active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent  "
-                      href="{% url 'user_settings' %}" data-te-dropdown-item-ref>Settings</a>
+		       href="{% url 'user_settings' %}" data-te-dropdown-item-ref>{% trans 'Settings' %}</a>
                   </li>
                   <li>
                     <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal dropdown_text  active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 "
-                      href="{% url 'logout' %}" data-te-dropdown-item-ref>Log-out</a>
+		       href="{% url 'logout' %}" data-te-dropdown-item-ref>{% trans 'Log-out' %}</a>
                   </li>
                 </ul>
               </div>

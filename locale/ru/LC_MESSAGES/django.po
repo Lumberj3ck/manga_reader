@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-08 15:33+0000\n"
-"PO-Revision-Date: 2023-09-08 15:41+0000\n"
+"POT-Creation-Date: 2023-09-09 09:05+0000\n"
+"PO-Revision-Date: 2023-09-09 09:06+0000\n"
 "Last-Translator:   <alanuldashev@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,7 +20,6 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
 #: account/forms.py:13
-#| msgid "password"
 msgid "Old password"
 msgstr "предыдущий пароль"
 
@@ -65,7 +64,6 @@ msgid "Last name"
 msgstr "Фамилия"
 
 #: account/forms.py:76
-#| msgid "email"
 msgid "Email"
 msgstr "почта"
 
@@ -146,7 +144,7 @@ msgstr "Главы"
 msgid "Понравилось"
 msgstr ""
 
-#: reader/models.py:59 reader/models.py:73 templates/reader/base.html:116
+#: reader/models.py:59 reader/models.py:73 templates/reader/base.html:118
 #: templates/reader/site_navigation.html:6
 msgid "Глава"
 msgstr ""
@@ -155,24 +153,33 @@ msgstr ""
 msgid "Ничего не нашлось"
 msgstr ""
 
-#: templates/reader/base.html:42 templates/reader/base.html:136
+#: templates/reader/base.html:44 templates/reader/base.html:138
 #: templates/registration/login.html:12
 msgid "Login"
 msgstr "Войти"
 
-#: templates/reader/base.html:82 templates/reader/base.html:155
-msgid "Contact"
-msgstr "Контакты"
-
-#: templates/reader/base.html:148
+#: templates/reader/base.html:68 templates/reader/base.html:150
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: templates/reader/base.html:152
+#: templates/reader/base.html:72
+msgid "Settings"
+msgstr "Настройки"
+
+#: templates/reader/base.html:76
+#| msgid "Log-Out"
+msgid "Log-out"
+msgstr "Выйти"
+
+#: templates/reader/base.html:84 templates/reader/base.html:157
+msgid "Contact"
+msgstr "Контакты"
+
+#: templates/reader/base.html:154
 msgid "Manga"
 msgstr "Манга"
 
-#: templates/reader/base.html:167
+#: templates/reader/base.html:169
 msgid "Logout"
 msgstr "Выйти"
 
@@ -233,20 +240,20 @@ msgstr ""
 msgid "Oставить коммент"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:161
+#: templates/reader/chapter_detail.html:165
 msgid "Закладка создана!"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:164
+#: templates/reader/chapter_detail.html:168
 msgid "Пожалуйста войдите или зарегистрируйтесь на сайте"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:164
+#: templates/reader/chapter_detail.html:168
 #: templates/registration/login.html:28
 msgid "Войти"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:167
+#: templates/reader/chapter_detail.html:171
 msgid "Something went wrond. Please try again!"
 msgstr "Что то пошло не так, попробуйте снова!"
 
@@ -263,7 +270,7 @@ msgstr ""
 msgid "Данные"
 msgstr ""
 
-#: templates/reader/landing.html:23
+#: templates/reader/landing.html:23 templates/reader/new_landing.html:147
 msgid "Фанатский сайт для чтения любимой манги"
 msgstr ""
 
@@ -295,6 +302,10 @@ msgstr ""
 msgid "Самые просматриваемые главы"
 msgstr ""
 
+#: templates/reader/new_landing.html:149
+msgid "Этот сайт создан для приятного времяпрепровождения"
+msgstr ""
+
 #: templates/registration/logged_out.html:5
 msgid "Log-Out"
 msgstr "Выйти"
@@ -312,7 +323,6 @@ msgid "Log-in"
 msgstr "Войти"
 
 #: templates/registration/login.html:20
-#| msgid "username"
 msgid "username or email"
 msgstr "логин или почта"
 
@@ -411,9 +421,6 @@ msgstr ""
 "Кто-то запросил сброс пароля по email %(email)s. Перейдите по ссылке ниже:\n"
 
 #: templates/registration/password_reset_email.html:6
-#| msgid ""
-#| "\n"
-#| "Your username, in case you've forgotten: %(user.get_username)s\n"
 msgid "Your username, in case you've forgotten:"
 msgstr "Ваш логин, если вы забыли: %(user.get_username)s"
 
@@ -466,7 +473,6 @@ msgid "Настройки пользователя"
 msgstr ""
 
 #: templates/registration/user_settings.html:14
-#| msgid "password"
 msgid "Change password"
 msgstr "Пароль"
 
