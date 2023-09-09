@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-03 17:04+0000\n"
-"PO-Revision-Date: 2023-09-03 16:53+0000\n"
+"POT-Creation-Date: 2023-09-08 15:33+0000\n"
+"PO-Revision-Date: 2023-09-08 15:40+0000\n"
 "Last-Translator:   <alanuldashev@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,23 +19,55 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: account/forms.py:15
+#: account/forms.py:13
+msgid "Old password"
+msgstr ""
+
+#: account/forms.py:29
 msgid "Password"
 msgstr ""
 
-#: account/forms.py:16
+#: account/forms.py:29 templates/registration/login.html:21
+msgid "password"
+msgstr ""
+
+#: account/forms.py:30
 msgid "Repeat password"
 msgstr ""
 
-#: account/forms.py:25
+#: account/forms.py:30
+msgid "repeat password"
+msgstr ""
+
+#: account/forms.py:38
+msgid "username"
+msgstr ""
+
+#: account/forms.py:42
+msgid "email"
+msgstr ""
+
+#: account/forms.py:49
 msgid "Пароли не одинаковые"
 msgstr "Password does'not match"
 
-#: account/forms.py:33
+#: account/forms.py:57
 msgid "Данный email уже зарегистрирован"
 msgstr "Email have been already registered"
 
-#: account/forms.py:46
+#: account/forms.py:68
+msgid "First name"
+msgstr ""
+
+#: account/forms.py:72
+msgid "Last name"
+msgstr ""
+
+#: account/forms.py:76
+msgid "Email"
+msgstr ""
+
+#: account/forms.py:85
 msgid "Данный email уже зарегистрирован, если это вы, войдите"
 msgstr "Email have been already registered, if it is you , please login"
 
@@ -47,157 +79,174 @@ msgstr "Manga"
 msgid "Последняя глава"
 msgstr "Last chapter"
 
-#: account/models.py:18
+#: account/models.py:19
 msgid "Профиль"
 msgstr "Profile"
 
-#: account/models.py:27
+#: account/models.py:28
 msgid "Пользователь"
 msgstr "User"
 
-#: account/models.py:28
+#: account/models.py:29
 msgid "Выберите пользователя"
 msgstr "Choose user"
 
-#: account/models.py:31
+#: account/models.py:32
 msgid "Фото"
 msgstr "Photo"
 
-#: account/models.py:36
+#: account/models.py:37
 #, python-format
 msgid "Профиль пользователя %(username)s"
 msgstr "User %(username)s profile"
 
-#: account/views.py:31
+#: account/views.py:51
 msgid "Вы успешно зарегистрировались ✓"
 msgstr "You succesfuly registered ✓"
 
-#: account/views.py:32
+#: account/views.py:52
 msgid "Вы можете войти в аккаунт в меню"
 msgstr "You can login into your account"
 
-#: account/views.py:51
+#: account/views.py:72
 msgid "Вы успешно вошли в аккаунт ✓"
 msgstr "You have successfully logged in to your account ✓"
 
-#: account/views.py:54
+#: account/views.py:75
 msgid "Ваш аккаунт отключен"
 msgstr "Your account has been blocked"
 
-#: account/views.py:92
+#: account/views.py:124
 msgid "Изменения сохранены успешно"
 msgstr "Сhanges saved successfully"
 
-#: manga_reader/settings.py:133 manga_reader/settings_prod.py:132
+#: manga_reader/settings.py:155 manga_reader/settings_prod.py:154
 msgid "Russian"
 msgstr ""
 
-#: manga_reader/settings.py:134 manga_reader/settings_prod.py:133
+#: manga_reader/settings.py:156 manga_reader/settings_prod.py:155
 msgid "English"
 msgstr ""
 
-#: reader/models.py:9
+#: reader/models.py:10
 msgid "Название манги"
 msgstr "Mangas name"
 
-#: reader/models.py:19
+#: reader/models.py:23
 msgid "Название главы"
 msgstr "Chapters name"
 
-#: reader/models.py:25
+#: reader/models.py:29
 msgid "chapters"
 msgstr ""
 
-#: reader/models.py:30
+#: reader/models.py:34
 msgid "Понравилось"
 msgstr "Likes "
 
-#: reader/models.py:55 reader/models.py:69 templates/reader/base.html:101
+#: reader/models.py:59 reader/models.py:73 templates/reader/base.html:116
 #: templates/reader/site_navigation.html:6
 msgid "Глава"
 msgstr "Chapter"
 
-#: templates/reader/base.html:36 templates/reader/base.html:118
+#: templates/404.html:7
+msgid "Ничего не нашлось"
+msgstr "Nothing was found"
+
+#: templates/reader/base.html:42 templates/reader/base.html:136
+#: templates/registration/login.html:12
 msgid "Login"
 msgstr ""
 
-#: templates/reader/base.html:43 templates/reader/base.html:125
-msgid "Bookmarks"
-msgstr ""
-
-#: templates/reader/base.html:47 templates/reader/base.html:129
-msgid "Manga"
-msgstr ""
-
-#: templates/reader/base.html:59 templates/reader/base.html:144
-msgid "Logout"
-msgstr ""
-
-#: templates/reader/base.html:132
+#: templates/reader/base.html:82 templates/reader/base.html:155
 msgid "Contact"
 msgstr ""
 
-#: templates/reader/bookmarks.html:5 templates/reader/bookmarks.html:10
+#: templates/reader/base.html:148
+msgid "Bookmarks"
+msgstr ""
+
+#: templates/reader/base.html:152
+msgid "Manga"
+msgstr ""
+
+#: templates/reader/base.html:167
+msgid "Logout"
+msgstr ""
+
+#: templates/reader/bookmarks.html:6 templates/reader/bookmarks.html:12
 msgid "Ваши закладки"
 msgstr "Bookmarks"
+
+#: templates/reader/bookmarks.html:30
+msgid ""
+"У вас пока нет ни одной закладки. Начните читать и сделайте свою первую "
+"закладку!"
+msgstr ""
+"You do not have any bookmarks. Please start to read and make your first "
+"bookmark!"
 
 #: templates/reader/chapter_detail.html:7
 #, python-format
 msgid " Манга %(chapter.manga.name)s "
 msgstr "Manga %(chapter.manga.name)s"
 
-#: templates/reader/chapter_detail.html:19
-#: templates/reader/chapter_list.html:16 templates/reader/manga_list.html:15
+#: templates/reader/chapter_detail.html:20
+#: templates/reader/chapter_list.html:16 templates/reader/manga_list.html:16
 msgid "Home"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:29
-#: templates/reader/chapter_list.html:26 templates/reader/manga_list.html:21
+#: templates/reader/chapter_detail.html:30
+#: templates/reader/chapter_list.html:26 templates/reader/manga_list.html:22
 msgid "Mangas"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:39
+#: templates/reader/chapter_detail.html:40
 #: templates/reader/chapter_list.html:35
 msgid "Chapters"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:53
+#: templates/reader/chapter_detail.html:84
 #, python-format
 msgid " Previous %(previous.chapter_number)s "
 msgstr ""
 
-#: templates/reader/chapter_detail.html:56
+#: templates/reader/chapter_detail.html:87
 #, python-format
 msgid " Next %(next.chapter_number)s"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:58
+#: templates/reader/chapter_detail.html:89
 msgid "На страницу тайтла"
 msgstr "Title's page"
 
-#: templates/reader/chapter_detail.html:67
+#: templates/reader/chapter_detail.html:98
 #, python-format
 msgid " Like %(total_likes|pluralize)s "
 msgstr ""
 
-#: templates/reader/chapter_detail.html:86
+#: templates/reader/chapter_detail.html:117
 msgid "Комментарии"
 msgstr "Comments"
 
-#: templates/reader/chapter_detail.html:93
+#: templates/reader/chapter_detail.html:124
 msgid "Oставить коммент"
 msgstr "Leave a comment"
 
-#: templates/reader/chapter_detail.html:130
+#: templates/reader/chapter_detail.html:161
+msgid "Закладка создана!"
+msgstr "Bookmark created"
+
+#: templates/reader/chapter_detail.html:164
 msgid "Пожалуйста войдите или зарегистрируйтесь на сайте"
 msgstr "Please log in or register on the website"
 
-#: templates/reader/chapter_detail.html:130
-#: templates/registration/login.html:27
+#: templates/reader/chapter_detail.html:164
+#: templates/registration/login.html:28
 msgid "Войти"
 msgstr "Login"
 
-#: templates/reader/chapter_detail.html:133
+#: templates/reader/chapter_detail.html:167
 msgid "Something went wrond. Please try again!"
 msgstr ""
 
@@ -205,14 +254,10 @@ msgstr ""
 msgid "Главы"
 msgstr "Chapters"
 
-#: templates/reader/chapter_list.html:44
-msgid ""
-"Dr. Stone is a Japanese manga series written by Riichiro Inagaki and "
-"illustrated by Boichi, serialized in Weekly Shōnen Jump since March 6, 2017, "
-"with the individual chapters collected and published by Shueisha into ten "
-"tankōbon volumes as of April 2019. Shueisha began to simul publish the "
-"series in English on the website and app Manga Plus since January 2019."
-msgstr ""
+#: templates/reader/chapter_list.html:47
+#: templates/reader/most_viewed_chapters.html:6
+msgid "Самые читаемые главы"
+msgstr "The most viewed chapters"
 
 #: templates/reader/contact.html:5
 msgid "Данные"
@@ -230,17 +275,18 @@ msgstr "This site is created for a pleasant pastime"
 msgid "Начать читать прямо сейчас"
 msgstr "Start reading right now"
 
-#: templates/reader/manga_list.html:6
+#: templates/reader/manga_list.html:7
 msgid "Вся манга"
 msgstr "All mangas"
 
-#: templates/reader/manga_list.html:27
+#: templates/reader/manga_list.html:28
 msgid "Доступная манга :"
 msgstr "All manga"
 
-#: templates/reader/most_viewed_chapters.html:6
-msgid "Самые читаемые главы"
-msgstr "The most viewed chapters"
+#: templates/reader/manga_list.html:44 templates/reader/new_landing.html:153
+#| msgid "Начать читать прямо сейчас"
+msgid "Начать читать"
+msgstr "Start reading right "
 
 #: templates/reader/most_viewed_chapters.html:10
 msgid "Самые залайканые главы"
@@ -266,11 +312,15 @@ msgstr "You have logged out of your account"
 msgid "Log-in"
 msgstr ""
 
-#: templates/registration/login.html:23
+#: templates/registration/login.html:20
+msgid "username or email"
+msgstr ""
+
+#: templates/registration/login.html:24
 msgid "Регистрация"
 msgstr "Registration"
 
-#: templates/registration/login.html:24
+#: templates/registration/login.html:25
 msgid "Забыли пароль?"
 msgstr "Forget password?"
 
@@ -334,11 +384,11 @@ msgstr "change my password"
 
 #: templates/registration/password_reset_confirm.html:20
 msgid ""
-"Ссылка для востановления неверна, возможно из за по причине того что она уже "
-"была использована"
+"Ссылка для востановления неверна, возможно из за по причине того что она уже"
+" была использована"
 msgstr ""
-"The recovery link is incorrect, possibly due to the fact that it has already "
-"been used"
+"The recovery link is incorrect, possibly due to the fact that it has already"
+" been used"
 
 #: templates/registration/password_reset_done.html:5
 msgid "Письмо с инструкциями по восстановлению пароля отправлено"
@@ -348,35 +398,25 @@ msgstr "An email with instructions for password recovery has been sent"
 msgid ""
 "\n"
 "Письмо с инструкциями по восстановлению пароля отправлено\n"
-"Мы отправили вам инструкцию по установке нового пароля на указанный адрес "
-"электронной почты (если в нашей базе данных есть такой адрес). Вы должны "
-"получить ее в ближайшее время.\n"
+"Мы отправили вам инструкцию по установке нового пароля на указанный адрес электронной почты (если в нашей базе данных есть такой адрес). Вы должны получить ее в ближайшее время.\n"
 "\n"
-"Если вы не получили письмо, пожалуйста, убедитесь, что вы ввели адрес с "
-"которым Вы зарегистрировались, и проверьте папку со спамом.\n"
+"Если вы не получили письмо, пожалуйста, убедитесь, что вы ввели адрес с которым Вы зарегистрировались, и проверьте папку со спамом.\n"
 msgstr ""
 "\n"
 "An email with instructions for password recovery has been sent\n"
-"We have sent you instructions on how to set a new password to the specified "
-"email address (if there is such an address in our database). You should get "
-"it soon.\n"
+"We have sent you instructions on how to set a new password to the specified email address (if there is such an address in our database). You should get it soon.\n"
 "\n"
-"If you have not received the email, please make sure that you have entered "
-"the address you registered with and check the spam folder.\n"
+"If you have not received the email, please make sure that you have entered the address you registered with and check the spam folder.\n"
 
 #: templates/registration/password_reset_email.html:2
 #, python-format
 msgid ""
 "\n"
-"Someone asked for password reset for email %(email)s. Follow the link "
-"below: \n"
+"Someone asked for password reset for email %(email)s. Follow the link below: \n"
 msgstr ""
 
 #: templates/registration/password_reset_email.html:6
-#, python-format
-msgid ""
-"\n"
-"Your username, in case you've forgotten: %(user.get_username)s\n"
+msgid "Your username, in case you've forgotten:"
 msgstr ""
 
 #: templates/registration/password_reset_form.html:11
@@ -395,23 +435,7 @@ msgstr "Create an account"
 msgid "Зарегистрируйтесь с помощью формы ниже"
 msgstr "Please, register via form bellow"
 
-#: templates/registration/registration.html:26
-msgid "username"
-msgstr ""
-
-#: templates/registration/registration.html:27
-msgid "email"
-msgstr ""
-
-#: templates/registration/registration.html:28
-msgid "password"
-msgstr ""
-
-#: templates/registration/registration.html:29
-msgid "repeat password"
-msgstr ""
-
-#: templates/registration/registration.html:30
+#: templates/registration/registration.html:31
 msgid "Зарегистрироваться"
 msgstr "Register"
 
@@ -427,13 +451,30 @@ msgstr "You successfully registered"
 msgid "Войти в аккаунт"
 msgstr "Login into account"
 
-#: templates/registration/user_and_profile_edit.html:6
+#: templates/registration/user_and_profile_edit.html:7
 msgid "Редактировать пользовательские данные"
 msgstr "Edit user's data"
 
-#: templates/registration/user_and_profile_edit.html:19
+#: templates/registration/user_and_profile_edit.html:17
+msgid "You can choose your profile image and other options"
+msgstr ""
+
+#: templates/registration/user_and_profile_edit.html:28
 msgid "Сохранить данные"
 msgstr "Save changes"
+
+#: templates/registration/user_settings.html:7
+#| msgid "Выберите пользователя"
+msgid "Настройки пользователя"
+msgstr "User's settings"
+
+#: templates/registration/user_settings.html:14
+msgid "Change password"
+msgstr ""
+
+#: templates/registration/user_settings.html:15
+msgid "User's profile edit"
+msgstr ""
 
 #: templates/user_actions/search_results.html:6
 msgid "Вот что мы нашли по вашему запросу"
@@ -441,13 +482,103 @@ msgstr "Here's what we found for your query"
 
 #: templates/user_actions/search_results.html:11
 #, python-format
-msgid " Вот что нашлось по вашему запросу %(query)s "
+#| msgid " Вот что нашлось по вашему запросу %(query)s "
+msgid " Вот что нашлось по вашему запросу: %(query)s "
 msgstr "Here's what was found for your query %(query)string"
 
-#: templates/user_actions/search_results.html:23
+#: templates/user_actions/search_results.html:21
 #, python-format
 msgid " 'Ничего не найдено по вашему запросу' %(query)s "
 msgstr "Nothing was found for your query' %(query)string"
+
+#: user_actions/views.py:55
+msgid "Manga and chapter required parameters"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:420
+msgid "open('foo"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:424
+msgid "open(\"foo"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:428
+#, python-format
+msgid "%ls foo"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:563
+msgid "a[0]."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:570
+msgid "a[0].r"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:578
+msgid "a[0].from_"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:585
+msgid "assert str.star"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:592
+msgid "d['a b'].str"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1552
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1574
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1577
+msgid "do not suppress"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1553
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1565
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1568
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1571
+msgid "suppress all"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1554
+msgid "suppress all but a"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1555
+msgid "suppress all but c"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1603
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1606
+msgid "---"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1609
+msgid "--"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/panels.py:67
+#, python-format
+msgid "Last invalidation: %s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/templates/cachalot/panel.html:4
+#, python-format
+msgid "Database '%(db_alias)s'"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/templates/cachalot/panel.html:9
+msgid "Application"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/templates/cachalot/panel.html:10
+msgid "Model"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/templates/cachalot/panel.html:11
+msgid "Last invalidation"
+msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
@@ -508,8 +639,8 @@ msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/core/validators.py:267
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/core/validators.py:279
@@ -709,15 +840,15 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1489
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1497
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1502
@@ -736,8 +867,8 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1789
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1793
@@ -896,7 +1027,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: venv/lib/python3.10/site-packages/django/forms/boundfield.py:184
 msgid ":?.!"
 msgstr ""
@@ -946,7 +1078,8 @@ msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/forms/fields.py:625
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -1054,7 +1187,8 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/forms/models.py:1429
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/forms/models.py:1568
@@ -1514,10 +1648,10 @@ msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/views/csrf.py:127
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a "
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
 "rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
@@ -1569,8 +1703,8 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/views/generic/dates.py:652
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/views/generic/dates.py:692
@@ -1626,10 +1760,10 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" "
-"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
-"configured any URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:229

@@ -32,7 +32,7 @@ def landing_view(request):
 
 def most_viewed_chapters(request, manga_slug):
     """Gets chapter_ranking from redis and renders it in -views"""
-    most_viewed_chapters = r.zrange("chapter_ranking", 0, -1, desc=True)[:5]
+    most_viewed_chapters = r.zrange("chapter_ranking", 0, -1, desc=True)[:10]
     most_viewed_chapters = [
         chapter_b.decode("utf8") for chapter_b in most_viewed_chapters
     ]
@@ -40,7 +40,7 @@ def most_viewed_chapters(request, manga_slug):
     chapters = list(Chapter.objects.filter(name__in=most_viewed_chapters, manga=manga).select_related('manga'))
     chapters.sort(key=lambda x: most_viewed_chapters.index(x.name))
     most_liked_chapters = Chapter.objects.annotate(total_likes=Count("likes")).filter(manga=manga).order_by(
-        "total_likes"
+        "-total_likes"
         ).select_related('manga')[:5]
     return render(
         request,
@@ -123,9 +123,9 @@ class ChapterDetail(View):
 
     def get_next_previous_chapter(self) -> None:
         current_chapter_number = self.current_chapter.chapter_number
-        self.next = Chapter.objects.filter(chapter_number=current_chapter_number + 1).select_related('manga')
+        self.next = Chapter.objects.filter(chapter_number=current_chapter_number + 1, manga=self.current_chapter.manga).select_related('manga')
         self.previous = Chapter.objects.filter(
-            chapter_number=current_chapter_number - 1
+            chapter_number=current_chapter_number - 1, manga=self.current_chapter.manga
         ).select_related('manga')
 
     def update_views(self):

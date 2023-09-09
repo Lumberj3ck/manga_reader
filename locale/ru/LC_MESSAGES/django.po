@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-03 17:04+0000\n"
-"PO-Revision-Date: 2023-09-08 14:58+0000\n"
-"Last-Translator:  Алмаз <alanuldashev@gmail.com>\n"
+"POT-Creation-Date: 2023-09-08 15:33+0000\n"
+"PO-Revision-Date: 2023-09-08 15:41+0000\n"
+"Last-Translator:   <alanuldashev@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,23 +19,57 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: account/forms.py:15
+#: account/forms.py:13
+#| msgid "password"
+msgid "Old password"
+msgstr "предыдущий пароль"
+
+#: account/forms.py:29
 msgid "Password"
 msgstr "Пароль"
 
-#: account/forms.py:16
+#: account/forms.py:29 templates/registration/login.html:21
+msgid "password"
+msgstr "Пароль"
+
+#: account/forms.py:30
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
-#: account/forms.py:25
+#: account/forms.py:30
+msgid "repeat password"
+msgstr "Повторите пароль"
+
+#: account/forms.py:38
+msgid "username"
+msgstr "логин"
+
+#: account/forms.py:42
+msgid "email"
+msgstr "почта"
+
+#: account/forms.py:49
 msgid "Пароли не одинаковые"
 msgstr ""
 
-#: account/forms.py:33
+#: account/forms.py:57
 msgid "Данный email уже зарегистрирован"
 msgstr ""
 
-#: account/forms.py:46
+#: account/forms.py:68
+msgid "First name"
+msgstr "Имя"
+
+#: account/forms.py:72
+msgid "Last name"
+msgstr "Фамилия"
+
+#: account/forms.py:76
+#| msgid "email"
+msgid "Email"
+msgstr "почта"
+
+#: account/forms.py:85
 msgid "Данный email уже зарегистрирован, если это вы, войдите"
 msgstr ""
 
@@ -47,98 +81,109 @@ msgstr ""
 msgid "Последняя глава"
 msgstr " "
 
-#: account/models.py:18
+#: account/models.py:19
 msgid "Профиль"
 msgstr ""
 
-#: account/models.py:27
+#: account/models.py:28
 msgid "Пользователь"
 msgstr ""
 
-#: account/models.py:28
+#: account/models.py:29
 msgid "Выберите пользователя"
 msgstr ""
 
-#: account/models.py:31
+#: account/models.py:32
 msgid "Фото"
 msgstr ""
 
-#: account/models.py:36
+#: account/models.py:37
 #, python-format
 msgid "Профиль пользователя %(username)s"
 msgstr ""
 
-#: account/views.py:31
+#: account/views.py:51
 msgid "Вы успешно зарегистрировались ✓"
 msgstr ""
 
-#: account/views.py:32
+#: account/views.py:52
 msgid "Вы можете войти в аккаунт в меню"
 msgstr ""
 
-#: account/views.py:51
+#: account/views.py:72
 msgid "Вы успешно вошли в аккаунт ✓"
 msgstr ""
 
-#: account/views.py:54
+#: account/views.py:75
 msgid "Ваш аккаунт отключен"
 msgstr ""
 
-#: account/views.py:92
+#: account/views.py:124
 msgid "Изменения сохранены успешно"
 msgstr ""
 
-#: manga_reader/settings.py:133 manga_reader/settings_prod.py:132
+#: manga_reader/settings.py:155 manga_reader/settings_prod.py:154
 msgid "Russian"
 msgstr "Русский"
 
-#: manga_reader/settings.py:134 manga_reader/settings_prod.py:133
+#: manga_reader/settings.py:156 manga_reader/settings_prod.py:155
 msgid "English"
 msgstr "Английский"
 
-#: reader/models.py:9
+#: reader/models.py:10
 msgid "Название манги"
 msgstr ""
 
-#: reader/models.py:19
+#: reader/models.py:23
 msgid "Название главы"
 msgstr ""
 
-#: reader/models.py:25
+#: reader/models.py:29
 msgid "chapters"
 msgstr "Главы"
 
-#: reader/models.py:30
+#: reader/models.py:34
 msgid "Понравилось"
 msgstr ""
 
-#: reader/models.py:55 reader/models.py:69 templates/reader/base.html:101
+#: reader/models.py:59 reader/models.py:73 templates/reader/base.html:116
 #: templates/reader/site_navigation.html:6
 msgid "Глава"
 msgstr ""
 
-#: templates/reader/base.html:36 templates/reader/base.html:118
+#: templates/404.html:7
+msgid "Ничего не нашлось"
+msgstr ""
+
+#: templates/reader/base.html:42 templates/reader/base.html:136
+#: templates/registration/login.html:12
 msgid "Login"
 msgstr "Войти"
 
-#: templates/reader/base.html:43 templates/reader/base.html:125
-msgid "Bookmarks"
-msgstr "Закладки"
-
-#: templates/reader/base.html:47 templates/reader/base.html:129
-msgid "Manga"
-msgstr "Манга"
-
-#: templates/reader/base.html:59 templates/reader/base.html:144
-msgid "Logout"
-msgstr "Выйти"
-
-#: templates/reader/base.html:132
+#: templates/reader/base.html:82 templates/reader/base.html:155
 msgid "Contact"
 msgstr "Контакты"
 
-#: templates/reader/bookmarks.html:5 templates/reader/bookmarks.html:10
+#: templates/reader/base.html:148
+msgid "Bookmarks"
+msgstr "Закладки"
+
+#: templates/reader/base.html:152
+msgid "Manga"
+msgstr "Манга"
+
+#: templates/reader/base.html:167
+msgid "Logout"
+msgstr "Выйти"
+
+#: templates/reader/bookmarks.html:6 templates/reader/bookmarks.html:12
 msgid "Ваши закладки"
+msgstr ""
+
+#: templates/reader/bookmarks.html:30
+msgid ""
+"У вас пока нет ни одной закладки. Начните читать и сделайте свою первую "
+"закладку!"
 msgstr ""
 
 #: templates/reader/chapter_detail.html:7
@@ -146,58 +191,62 @@ msgstr ""
 msgid " Манга %(chapter.manga.name)s "
 msgstr ""
 
-#: templates/reader/chapter_detail.html:19
-#: templates/reader/chapter_list.html:16 templates/reader/manga_list.html:15
+#: templates/reader/chapter_detail.html:20
+#: templates/reader/chapter_list.html:16 templates/reader/manga_list.html:16
 msgid "Home"
 msgstr "Главная"
 
-#: templates/reader/chapter_detail.html:29
-#: templates/reader/chapter_list.html:26 templates/reader/manga_list.html:21
+#: templates/reader/chapter_detail.html:30
+#: templates/reader/chapter_list.html:26 templates/reader/manga_list.html:22
 msgid "Mangas"
 msgstr "Манги"
 
-#: templates/reader/chapter_detail.html:39
+#: templates/reader/chapter_detail.html:40
 #: templates/reader/chapter_list.html:35
 msgid "Chapters"
 msgstr "Главы"
 
-#: templates/reader/chapter_detail.html:53
+#: templates/reader/chapter_detail.html:84
 #, python-format
 msgid " Previous %(previous.chapter_number)s "
 msgstr "Предыдущая %(previous.chapter_number)s"
 
-#: templates/reader/chapter_detail.html:56
+#: templates/reader/chapter_detail.html:87
 #, python-format
 msgid " Next %(next.chapter_number)s"
 msgstr "Следущая %(next.chapter_number)s"
 
-#: templates/reader/chapter_detail.html:58
+#: templates/reader/chapter_detail.html:89
 msgid "На страницу тайтла"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:67
+#: templates/reader/chapter_detail.html:98
 #, python-format
 msgid " Like %(total_likes|pluralize)s "
 msgstr "Лайк%(total_likes|pluralize)s"
 
-#: templates/reader/chapter_detail.html:86
+#: templates/reader/chapter_detail.html:117
 msgid "Комментарии"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:93
+#: templates/reader/chapter_detail.html:124
 msgid "Oставить коммент"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:130
+#: templates/reader/chapter_detail.html:161
+msgid "Закладка создана!"
+msgstr ""
+
+#: templates/reader/chapter_detail.html:164
 msgid "Пожалуйста войдите или зарегистрируйтесь на сайте"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:130
-#: templates/registration/login.html:27
+#: templates/reader/chapter_detail.html:164
+#: templates/registration/login.html:28
 msgid "Войти"
 msgstr ""
 
-#: templates/reader/chapter_detail.html:133
+#: templates/reader/chapter_detail.html:167
 msgid "Something went wrond. Please try again!"
 msgstr "Что то пошло не так, попробуйте снова!"
 
@@ -205,20 +254,10 @@ msgstr "Что то пошло не так, попробуйте снова!"
 msgid "Главы"
 msgstr ""
 
-#: templates/reader/chapter_list.html:44
-msgid ""
-"Dr. Stone is a Japanese manga series written by Riichiro Inagaki and "
-"illustrated by Boichi, serialized in Weekly Shōnen Jump since March 6, 2017,"
-" with the individual chapters collected and published by Shueisha into ten "
-"tankōbon volumes as of April 2019. Shueisha began to simul publish the "
-"series in English on the website and app Manga Plus since January 2019."
+#: templates/reader/chapter_list.html:47
+#: templates/reader/most_viewed_chapters.html:6
+msgid "Самые читаемые главы"
 msgstr ""
-"\"Доктор Стоун\" - японская серия манги, написанная Риитиро Инагаки и "
-"проиллюстрированная Бойчи, публикуемая в еженедельнике Shōnen Jump с 6 марта"
-" 2017 года, отдельные главы собраны и опубликованы Shueisha в десяти томах "
-"танкобон по состоянию на апрель 2019 года. Shueisha начала одновременно "
-"публиковать сериал на английском языке на веб-сайте и в приложении Manga "
-"Plus с января 2019 года."
 
 #: templates/reader/contact.html:5
 msgid "Данные"
@@ -236,16 +275,16 @@ msgstr ""
 msgid "Начать читать прямо сейчас"
 msgstr ""
 
-#: templates/reader/manga_list.html:6
+#: templates/reader/manga_list.html:7
 msgid "Вся манга"
 msgstr ""
 
-#: templates/reader/manga_list.html:27
+#: templates/reader/manga_list.html:28
 msgid "Доступная манга :"
 msgstr ""
 
-#: templates/reader/most_viewed_chapters.html:6
-msgid "Самые читаемые главы"
+#: templates/reader/manga_list.html:44 templates/reader/new_landing.html:153
+msgid "Начать читать"
 msgstr ""
 
 #: templates/reader/most_viewed_chapters.html:10
@@ -272,11 +311,16 @@ msgstr ""
 msgid "Log-in"
 msgstr "Войти"
 
-#: templates/registration/login.html:23
+#: templates/registration/login.html:20
+#| msgid "username"
+msgid "username or email"
+msgstr "логин или почта"
+
+#: templates/registration/login.html:24
 msgid "Регистрация"
 msgstr ""
 
-#: templates/registration/login.html:24
+#: templates/registration/login.html:25
 msgid "Забыли пароль?"
 msgstr ""
 
@@ -367,13 +411,11 @@ msgstr ""
 "Кто-то запросил сброс пароля по email %(email)s. Перейдите по ссылке ниже:\n"
 
 #: templates/registration/password_reset_email.html:6
-#, python-format
-msgid ""
-"\n"
-"Your username, in case you've forgotten: %(user.get_username)s\n"
-msgstr ""
-"\n"
-"Ваш логин, если вы забыли: %(user.get_username)s\n"
+#| msgid ""
+#| "\n"
+#| "Your username, in case you've forgotten: %(user.get_username)s\n"
+msgid "Your username, in case you've forgotten:"
+msgstr "Ваш логин, если вы забыли: %(user.get_username)s"
 
 #: templates/registration/password_reset_form.html:11
 msgid "Для востановления пароля введите ваш Email"
@@ -391,23 +433,7 @@ msgstr ""
 msgid "Зарегистрируйтесь с помощью формы ниже"
 msgstr ""
 
-#: templates/registration/registration.html:26
-msgid "username"
-msgstr "логин"
-
-#: templates/registration/registration.html:27
-msgid "email"
-msgstr "почта"
-
-#: templates/registration/registration.html:28
-msgid "password"
-msgstr "Пароль"
-
-#: templates/registration/registration.html:29
-msgid "repeat password"
-msgstr "Повторите пароль"
-
-#: templates/registration/registration.html:30
+#: templates/registration/registration.html:31
 msgid "Зарегистрироваться"
 msgstr ""
 
@@ -423,13 +449,30 @@ msgstr ""
 msgid "Войти в аккаунт"
 msgstr ""
 
-#: templates/registration/user_and_profile_edit.html:6
+#: templates/registration/user_and_profile_edit.html:7
 msgid "Редактировать пользовательские данные"
 msgstr ""
 
-#: templates/registration/user_and_profile_edit.html:19
+#: templates/registration/user_and_profile_edit.html:17
+msgid "You can choose your profile image and other options"
+msgstr "Вы можете выбрать фото своего профиля"
+
+#: templates/registration/user_and_profile_edit.html:28
 msgid "Сохранить данные"
 msgstr ""
+
+#: templates/registration/user_settings.html:7
+msgid "Настройки пользователя"
+msgstr ""
+
+#: templates/registration/user_settings.html:14
+#| msgid "password"
+msgid "Change password"
+msgstr "Пароль"
+
+#: templates/registration/user_settings.html:15
+msgid "User's profile edit"
+msgstr "Профиль пользователя"
 
 #: templates/user_actions/search_results.html:6
 msgid "Вот что мы нашли по вашему запросу"
@@ -437,12 +480,101 @@ msgstr ""
 
 #: templates/user_actions/search_results.html:11
 #, python-format
-msgid " Вот что нашлось по вашему запросу %(query)s "
+msgid " Вот что нашлось по вашему запросу: %(query)s "
 msgstr ""
 
-#: templates/user_actions/search_results.html:23
+#: templates/user_actions/search_results.html:21
 #, python-format
 msgid " 'Ничего не найдено по вашему запросу' %(query)s "
+msgstr ""
+
+#: user_actions/views.py:55
+msgid "Manga and chapter required parameters"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:420
+msgid "open('foo"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:424
+msgid "open(\"foo"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:428
+#, python-format
+msgid "%ls foo"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:563
+msgid "a[0]."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:570
+msgid "a[0].r"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:578
+msgid "a[0].from_"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:585
+msgid "assert str.star"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:592
+msgid "d['a b'].str"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1552
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1574
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1577
+msgid "do not suppress"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1553
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1565
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1568
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1571
+msgid "suppress all"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1554
+msgid "suppress all but a"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1555
+msgid "suppress all but c"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1603
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1606
+msgid "---"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/IPython/core/tests/test_completer.py:1609
+msgid "--"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/panels.py:67
+#, python-format
+msgid "Last invalidation: %s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/templates/cachalot/panel.html:4
+#, python-format
+msgid "Database '%(db_alias)s'"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/templates/cachalot/panel.html:9
+msgid "Application"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/templates/cachalot/panel.html:10
+msgid "Model"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/cachalot/templates/cachalot/panel.html:11
+msgid "Last invalidation"
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
@@ -1654,6 +1786,20 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid ""
+#~ "Dr. Stone is a Japanese manga series written by Riichiro Inagaki and "
+#~ "illustrated by Boichi, serialized in Weekly Shōnen Jump since March 6, 2017,"
+#~ " with the individual chapters collected and published by Shueisha into ten "
+#~ "tankōbon volumes as of April 2019. Shueisha began to simul publish the "
+#~ "series in English on the website and app Manga Plus since January 2019."
+#~ msgstr ""
+#~ "\"Доктор Стоун\" - японская серия манги, написанная Риитиро Инагаки и "
+#~ "проиллюстрированная Бойчи, публикуемая в еженедельнике Shōnen Jump с 6 марта"
+#~ " 2017 года, отдельные главы собраны и опубликованы Shueisha в десяти томах "
+#~ "танкобон по состоянию на апрель 2019 года. Shueisha начала одновременно "
+#~ "публиковать сериал на английском языке на веб-сайте и в приложении Manga "
+#~ "Plus с января 2019 года."
 
 #~ msgid "Like"
 #~ msgstr "Лайк"

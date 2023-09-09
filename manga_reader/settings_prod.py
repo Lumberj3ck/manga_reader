@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-gy-p5d*#$fso0fl!9&^e_=e^!8+%n*l-$d6r!$!3pcxrd^2ow%
 MEDIA_ROOT = "./imgs"
 MEDIA_URL = "imgs/"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True 
+DEBUG =False
 
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "login"
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "reader.apps.ReaderConfig",
     "rosetta",
     "parler",
+    "cachalot",
     "django.contrib.humanize",
     "account.apps.AccountConfig",
     "user_actions.apps.UserActionsConfig",
@@ -71,6 +72,12 @@ PARLER_LANGUAGES = {
  'fallback': 'ru',
  'hide_untranslated': False,
  }
+}
+CACHES = {
+    "default": {
+        "BACKEND": 'django_redis.cache.RedisCache',
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
 }
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -109,7 +116,7 @@ WSGI_APPLICATION = "manga_reader.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": "manga_project",
         "USER": "lumberjack",
         "PASSWORD": "h*99IgJdEc8*",
