@@ -1,4 +1,4 @@
-#Project description
+# Project description
 📖 Extensive Manga Library: Platform where people can read their favorite manga.
 
 📚 Chapter Bookmarks: Users can bookmark and save their progress within manga chapters, making it easy to pick up where they left off.
@@ -13,7 +13,7 @@
 
 🔒 User Profiles: Users can create profiles, customize avatars, and keep track of their reading history.
 
-##Technologies Used:
+## Technologies Used:
 
 Frontend: HTML5, CSS3, JavaScript
 Backend: Django
