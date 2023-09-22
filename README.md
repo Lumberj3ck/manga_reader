@@ -15,7 +15,10 @@
 
 ## Technologies Used:
 
-Frontend: HTML5, CSS3, JavaScript
+Frontend: HTML5, CSS3, JavaScript 
+
 Backend: Django
+
 Database: PostgreSQL
+
 Deployment: AWS
