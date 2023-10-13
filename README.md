@@ -1,5 +1,5 @@
 # Project description
-[Contribution guidelines for this project](reader/static/favicons/favicon)
+![Contribution guidelines for this project](https://github.com/Lumberj3ck/new_manga_reader/blob/main/reader/static/favicons/android-chrome-192x192.png)
 📖 Extensive Manga Library: Platform where people can read their favorite manga.
 
 📚 Chapter Bookmarks: Users can bookmark and save their progress within manga chapters, making it easy to pick up where they left off.
