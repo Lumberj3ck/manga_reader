@@ -1,5 +1,5 @@
 # Project description
-![Contribution guidelines for this project](https://github.com/Lumberj3ck/new_manga_reader/blob/main/reader/static/favicons/android-chrome-192x192.png)  
+![Project picture](https://github.com/Lumberj3ck/new_manga_reader/blob/main/reader/static/favicons/android-chrome-192x192.png)  
 
 📖 Extensive Manga Library: Platform where people can read their favorite manga.
 
