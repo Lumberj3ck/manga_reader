@@ -42,7 +42,7 @@ REDIS_DB = 0
 #     "handlers": {"console": {"class": "logging.StreamHandler"}},
 #     "loggers": {"django.db.backends": {"handlers": ["console"], "level": "DEBUG"}},
 # }
-ALLOWED_HOSTS = ["MangaLove.info.gf"]
+ALLOWED_HOSTS = ["MangaLove.info.gf", "mangalove.site", "www.mangalove.site"]
 
 
 # Application definition
