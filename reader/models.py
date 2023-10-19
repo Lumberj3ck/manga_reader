@@ -58,11 +58,11 @@ class Picture(models.Model):
         on_delete=models.CASCADE,
         verbose_name=_("Глава"),
     )
-    img = models.ImageField(upload_to=upload_to)
-    medium_img = models.ImageField(upload_to=upload_to_medium, max_length=200)
+    img = models.URLField()
+    medium_img = models.URLField(blank=True)
 
     def __str__(self):
-        return self.img.name
+        return self.img
 
 
 class Comment(models.Model):

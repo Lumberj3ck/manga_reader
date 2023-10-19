@@ -118,6 +118,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "manga_project",
+        # "NAME": "manga_project1",
         "USER": "lumberjack",
         "PASSWORD": "h*99IgJdEc8*",
         "HOST": "localhost",
