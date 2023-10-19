@@ -62,18 +62,17 @@
 <div class='mt-6'> 
     <div class="content_block">
 {% for picture in images %}
-<!-- <img class="{% if forloop.counter > 2 %}lazy{% endif %} manga_img" {% if forloop.counter > 2 %}data-{% endif %}src="{{ picture.img.url }}"  alt="{{picture.img.name}}" data-srcset="{{ picture.medium_img.url }} 650px" data-sizes="(max-width: 650px) 650px"> -->
 {% if forloop.counter > 2 %}
 <picture>
-  <source media="(max-width: 640px)" data-srcset="{{ picture.medium_img.url }}" />
-  <source media="(min-width: 641px)" data-srcset="{{picture.img.url}}" />
-  <img alt="{{picture.img.name}}" class="lazy" data-src="{{picture.img.url}}" />
+  <source media="(max-width: 640px)" data-srcset="{{picture.medium_img}}" />
+  <source media="(min-width: 641px)" data-srcset="{{picture.img}}" />
+  <img alt="{{picture.img.name}}" class="lazy" data-src="{{picture.img}}" />
 </picture>
 {% else %}
 <picture>
-  <source media="(max-width: 640px)" srcset="{{ picture.medium_img.url }}" />
-  <source media="(min-width: 641px)" srcset="{{picture.img.url}}" />
-  <img alt="{{picture.img.name}}" data-src="{{picture.img.url}}" />
+  <source media="(max-width: 640px)" srcset="{{ picture.medium_img}}" />
+  <source media="(min-width: 641px)" srcset="{{picture.img}}" />
+  <img alt="{{picture.img.name}}" data-src="{{picture.img}}" />
 </picture>
 {% endif %}
 {% endfor %}

@@ -1,4 +1,6 @@
-import boto3, os, django
+import boto3, os, django, dotenv
+
+dotenv.load_dotenv()
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "manga_reader.settings_prod")
 django.setup()
@@ -44,10 +46,8 @@ def get_img_url(folder_name):
 
 def save_to_db(img_path, medium_img_path):
     names = img_path.split('/')
-    print(names[-3])
     manga_inst = Manga.objects.get(slug=names[-3]) 
     chapter_inst = Chapter.objects.get(name=names[-2], manga=manga_inst) 
-    print('Started saving to db')
     Picture.objects.get_or_create(chapter=chapter_inst, img=img_path, medium_img=medium_img_path)
     
 
@@ -71,7 +71,7 @@ for root, dirs, files in os.walk("imgs"):
             medium_imgs[url] = get_img_url(folder_name)
         
     else:
-        print(medium_imgs.items())
+        print('Saving chapter' , medium_imgs)
         for img_path, medium_img_path in medium_imgs.items():
             save_to_db(img_path, medium_img_path)
 

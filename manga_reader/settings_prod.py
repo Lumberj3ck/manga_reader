@@ -117,7 +117,7 @@ WSGI_APPLICATION = "manga_reader.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "manga_project",
+        "NAME": "manga_project1",
         # "NAME": "manga_project1",
         "USER": "lumberjack",
         "PASSWORD": "h*99IgJdEc8*",
