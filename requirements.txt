@@ -2,6 +2,8 @@ asgiref==3.7.2
 asttokens==2.2.1
 backcall==0.2.0
 beautifulsoup4==4.12.2
+boto3==1.28.66
+botocore==1.31.66
 bs4==0.0.1
 cachalot==1.5.0
 certifi==2023.7.22
@@ -19,6 +21,7 @@ executing==1.2.0
 idna==3.4
 ipython==8.15.0
 jedi==0.19.0
+jmespath==1.0.1
 jsonpickle==3.0.2
 matplotlib-inline==0.1.6
 parso==0.8.3
@@ -29,9 +32,11 @@ prompt-toolkit==3.0.39
 psycopg2==2.9.7
 pure-eval==0.2.2
 Pygments==2.16.1
+python-dateutil==2.8.2
 python-slugify==8.0.1
 redis==5.0.0
 requests==2.31.0
+s3transfer==0.7.0
 six==1.16.0
 soupsieve==2.4.1
 sqlparse==0.4.4
