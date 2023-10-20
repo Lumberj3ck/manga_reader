@@ -8,6 +8,6 @@ from reader.models import Picture
 
 for pict in Picture.objects.all():
     print(pict.img)
-    pict_number = re.search(r'(?<=img_)(\d+)', pict.img)[0]
+    pict_number = re.search(r'(\d+)(?=_img)', pict.img)[0]
     pict.picture_number = pict_number
     pict.save()
