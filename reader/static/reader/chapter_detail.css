@@ -14,7 +14,7 @@
     width: 95%;
 }
 .nav_buttons{
-background: var(--Gradient, linear-gradient(26deg, #53389E 8.33%, #6941C6 91.67%)); 
+background: #6941C6; 
 color: #F4CD00;
 }
 

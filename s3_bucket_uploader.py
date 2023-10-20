@@ -51,8 +51,17 @@ def save_to_db(img_path, medium_img_path):
     Picture.objects.get_or_create(chapter=chapter_inst, img=img_path, medium_img=medium_img_path)
     
 
+ind = 0
 for root, dirs, files in os.walk("imgs"):
     medium_imgs = {}
+    ind += 1
+    #if '18.5' not in root:
+    #    continue
+    #else:
+    #    print(ind, root)
+    #    break
+    if ind < 283:
+        continue
     for img in files:
         if "shingeki" in root:
             manga_name = 'attack_on_titan'
@@ -71,7 +80,7 @@ for root, dirs, files in os.walk("imgs"):
             medium_imgs[url] = get_img_url(folder_name)
         
     else:
-        print('Saving chapter' , medium_imgs)
+        print(f'Saving chapter {ind}' , root)
         for img_path, medium_img_path in medium_imgs.items():
             save_to_db(img_path, medium_img_path)
 
