@@ -52,6 +52,7 @@ def upload_to_medium(instance, filename):
 
 
 class Picture(models.Model):
+    picture_number = models.IntegerField(null=True)
     chapter = models.ForeignKey(
         "Chapter",
         related_name="images",
