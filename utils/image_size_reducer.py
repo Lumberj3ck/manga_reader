@@ -1,5 +1,11 @@
 from PIL import Image
-import os, logging, django, io
+import os, logging, django, io, sys
+from pathlib import Path
+
+# Add the parent directory (manga_reader) to the sys.path
+current_dir = Path(__file__).resolve().parent
+parent_dir = current_dir.parent
+sys.path.append(str(parent_dir))
 
 os.environ["DJANGO_SETTINGS_MODULE"] = "manga_reader.settings_prod"
 django.setup()
