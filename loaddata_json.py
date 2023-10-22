@@ -1,4 +1,4 @@
-import json, django
+import json, django, os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "manga_reader.settings_prod")
 django.setup()
