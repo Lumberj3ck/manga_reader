@@ -1,0 +1,527 @@
+{
+    "chapters": [
+        {
+            "name": "ao-ashi-manga-chapter-1",
+            "chapter_number": 1,
+            "images": [
+                {
+                    "picture_number": 0,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/0_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/0_img_medium.jpg"
+                },
+                {
+                    "picture_number": 1,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/1_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/1_img_medium.jpg"
+                },
+                {
+                    "picture_number": 2,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/2_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/2_img_medium.jpg"
+                },
+                {
+                    "picture_number": 3,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/3_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/3_img_medium.jpg"
+                },
+                {
+                    "picture_number": 4,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/4_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/4_img_medium.jpg"
+                },
+                {
+                    "picture_number": 5,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/5_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/5_img_medium.jpg"
+                },
+                {
+                    "picture_number": 6,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/6_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/6_img_medium.jpg"
+                },
+                {
+                    "picture_number": 7,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/7_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/7_img_medium.jpg"
+                },
+                {
+                    "picture_number": 8,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/8_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/8_img_medium.jpg"
+                },
+                {
+                    "picture_number": 9,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/9_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/9_img_medium.jpg"
+                },
+                {
+                    "picture_number": 10,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/10_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/10_img_medium.jpg"
+                },
+                {
+                    "picture_number": 11,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/11_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/11_img_medium.jpg"
+                },
+                {
+                    "picture_number": 12,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/12_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/12_img_medium.jpg"
+                },
+                {
+                    "picture_number": 13,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/13_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/13_img_medium.jpg"
+                },
+                {
+                    "picture_number": 14,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/14_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/14_img_medium.jpg"
+                },
+                {
+                    "picture_number": 15,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/15_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/15_img_medium.jpg"
+                },
+                {
+                    "picture_number": 16,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/16_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/16_img_medium.jpg"
+                },
+                {
+                    "picture_number": 17,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/17_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/17_img_medium.jpg"
+                },
+                {
+                    "picture_number": 18,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/18_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/18_img_medium.jpg"
+                },
+                {
+                    "picture_number": 19,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/19_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/19_img_medium.jpg"
+                },
+                {
+                    "picture_number": 20,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/20_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/20_img_medium.jpg"
+                },
+                {
+                    "picture_number": 21,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/21_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/21_img_medium.jpg"
+                },
+                {
+                    "picture_number": 22,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/22_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/22_img_medium.jpg"
+                },
+                {
+                    "picture_number": 23,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/23_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/23_img_medium.jpg"
+                },
+                {
+                    "picture_number": 24,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/24_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/24_img_medium.jpg"
+                },
+                {
+                    "picture_number": 25,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/25_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/25_img_medium.jpg"
+                },
+                {
+                    "picture_number": 26,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/26_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/26_img_medium.jpg"
+                },
+                {
+                    "picture_number": 27,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/27_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/27_img_medium.jpg"
+                },
+                {
+                    "picture_number": 28,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/28_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/28_img_medium.jpg"
+                },
+                {
+                    "picture_number": 29,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/29_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/29_img_medium.jpg"
+                },
+                {
+                    "picture_number": 30,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/30_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/30_img_medium.jpg"
+                },
+                {
+                    "picture_number": 31,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/31_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/31_img_medium.jpg"
+                },
+                {
+                    "picture_number": 32,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/32_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/32_img_medium.jpg"
+                },
+                {
+                    "picture_number": 33,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/33_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/33_img_medium.jpg"
+                },
+                {
+                    "picture_number": 34,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/34_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/34_img_medium.jpg"
+                },
+                {
+                    "picture_number": 35,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/35_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/35_img_medium.jpg"
+                },
+                {
+                    "picture_number": 36,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/36_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/36_img_medium.jpg"
+                },
+                {
+                    "picture_number": 37,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/37_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/37_img_medium.jpg"
+                },
+                {
+                    "picture_number": 38,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/38_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/38_img_medium.jpg"
+                },
+                {
+                    "picture_number": 39,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/39_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/39_img_medium.jpg"
+                },
+                {
+                    "picture_number": 40,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/40_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/40_img_medium.jpg"
+                },
+                {
+                    "picture_number": 41,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/41_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/41_img_medium.jpg"
+                },
+                {
+                    "picture_number": 42,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/42_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/42_img_medium.jpg"
+                },
+                {
+                    "picture_number": 43,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/43_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/43_img_medium.jpg"
+                },
+                {
+                    "picture_number": 44,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/44_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/44_img_medium.jpg"
+                },
+                {
+                    "picture_number": 45,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/45_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/45_img_medium.jpg"
+                },
+                {
+                    "picture_number": 46,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/46_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/46_img_medium.jpg"
+                },
+                {
+                    "picture_number": 47,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/47_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/47_img_medium.jpg"
+                },
+                {
+                    "picture_number": 48,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/48_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/48_img_medium.jpg"
+                },
+                {
+                    "picture_number": 49,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/49_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/49_img_medium.jpg"
+                },
+                {
+                    "picture_number": 50,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/50_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/50_img_medium.jpg"
+                },
+                {
+                    "picture_number": 51,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/51_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/51_img_medium.jpg"
+                },
+                {
+                    "picture_number": 52,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/52_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/52_img_medium.jpg"
+                },
+                {
+                    "picture_number": 53,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/53_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/53_img_medium.jpg"
+                },
+                {
+                    "picture_number": 54,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/54_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/54_img_medium.jpg"
+                },
+                {
+                    "picture_number": 55,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/55_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/55_img_medium.jpg"
+                },
+                {
+                    "picture_number": 56,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/56_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/56_img_medium.jpg"
+                },
+                {
+                    "picture_number": 57,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/57_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/57_img_medium.jpg"
+                },
+                {
+                    "picture_number": 58,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/58_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/58_img_medium.jpg"
+                },
+                {
+                    "picture_number": 59,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/59_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/59_img_medium.jpg"
+                },
+                {
+                    "picture_number": 60,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/60_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-1/60_img_medium.jpg"
+                }
+            ]
+        },
+        {
+            "name": "ao-ashi-manga-chapter-2",
+            "chapter_number": 2,
+            "images": [
+                {
+                    "picture_number": 0,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/0_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/0_img_medium.jpg"
+                },
+                {
+                    "picture_number": 1,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/1_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/1_img_medium.jpg"
+                },
+                {
+                    "picture_number": 2,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/2_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/2_img_medium.jpg"
+                },
+                {
+                    "picture_number": 3,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/3_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/3_img_medium.jpg"
+                },
+                {
+                    "picture_number": 4,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/4_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/4_img_medium.jpg"
+                },
+                {
+                    "picture_number": 5,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/5_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/5_img_medium.jpg"
+                },
+                {
+                    "picture_number": 6,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/6_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/6_img_medium.jpg"
+                },
+                {
+                    "picture_number": 7,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/7_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/7_img_medium.jpg"
+                },
+                {
+                    "picture_number": 8,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/8_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/8_img_medium.jpg"
+                },
+                {
+                    "picture_number": 9,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/9_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/9_img_medium.jpg"
+                },
+                {
+                    "picture_number": 10,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/10_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/10_img_medium.jpg"
+                },
+                {
+                    "picture_number": 11,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/11_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/11_img_medium.jpg"
+                },
+                {
+                    "picture_number": 12,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/12_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/12_img_medium.jpg"
+                },
+                {
+                    "picture_number": 13,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/13_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/13_img_medium.jpg"
+                },
+                {
+                    "picture_number": 14,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/14_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/14_img_medium.jpg"
+                },
+                {
+                    "picture_number": 15,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/15_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/15_img_medium.jpg"
+                },
+                {
+                    "picture_number": 16,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/16_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/16_img_medium.jpg"
+                },
+                {
+                    "picture_number": 17,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/17_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/17_img_medium.jpg"
+                },
+                {
+                    "picture_number": 18,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/18_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/18_img_medium.jpg"
+                },
+                {
+                    "picture_number": 19,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/19_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/19_img_medium.jpg"
+                },
+                {
+                    "picture_number": 20,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/20_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/20_img_medium.jpg"
+                },
+                {
+                    "picture_number": 21,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/21_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/21_img_medium.jpg"
+                },
+                {
+                    "picture_number": 22,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/22_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/22_img_medium.jpg"
+                },
+                {
+                    "picture_number": 23,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/23_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/23_img_medium.jpg"
+                },
+                {
+                    "picture_number": 24,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/24_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/24_img_medium.jpg"
+                },
+                {
+                    "picture_number": 25,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/25_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/25_img_medium.jpg"
+                },
+                {
+                    "picture_number": 26,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/26_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/26_img_medium.jpg"
+                },
+                {
+                    "picture_number": 27,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/27_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/27_img_medium.jpg"
+                },
+                {
+                    "picture_number": 28,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/28_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/28_img_medium.jpg"
+                },
+                {
+                    "picture_number": 29,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/29_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/29_img_medium.jpg"
+                },
+                {
+                    "picture_number": 30,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/30_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/30_img_medium.jpg"
+                },
+                {
+                    "picture_number": 31,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/31_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/31_img_medium.jpg"
+                },
+                {
+                    "picture_number": 32,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/32_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/32_img_medium.jpg"
+                },
+                {
+                    "picture_number": 33,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/33_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/33_img_medium.jpg"
+                },
+                {
+                    "picture_number": 34,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/34_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/34_img_medium.jpg"
+                },
+                {
+                    "picture_number": 35,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/35_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/35_img_medium.jpg"
+                },
+                {
+                    "picture_number": 36,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/36_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/36_img_medium.jpg"
+                },
+                {
+                    "picture_number": 37,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/37_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/37_img_medium.jpg"
+                },
+                {
+                    "picture_number": 38,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/38_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/38_img_medium.jpg"
+                },
+                {
+                    "picture_number": 39,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/39_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/39_img_medium.jpg"
+                },
+                {
+                    "picture_number": 40,
+                    "picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/40_img.jpg",
+                    "medium_picture_url": "https://d27xvdd6r1e956.cloudfront.net/ao_ashi/ao-ashi-manga-chapter-2/40_img_medium.jpg"
+                }
+            ]
+        }
+    ],
+    "manga_name": "aoashi"
+}
