@@ -62,7 +62,7 @@ site_url = 'https://d27xvdd6r1e956.cloudfront.net/'
 chapter_links = get_chapter_links("https://w3.ao-ashi-manga.com/", chapter_selector)
 chapters = []
 
-for chapter_link in chapter_links[:2]:
+for chapter_link in chapter_links[::]:
     logging.info(f"Started parsing")
     img_links = get_img_in_ch(chapter_link, img_selector)
     chapter_name = parse_chapter(chapter_link)
