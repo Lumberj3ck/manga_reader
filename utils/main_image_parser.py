@@ -73,7 +73,7 @@ for chapter_link in chapter_links[::]:
     chapter_inst = Chapter(name=chapter_name, images=chapter_images)
     chapters.append(chapter_inst)
 
-manga = Manga(chapters=chapters, manga_name="aoashi")
+manga = Manga(chapters=chapters, manga_name=manga_name)
 json_dict = asdict(manga)
 with open('db_chapters.json', 'w') as file:
     json.dump(json_dict, file)
