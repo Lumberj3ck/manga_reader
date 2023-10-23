@@ -1,8 +1,8 @@
 services:
-  nginx:
+  mangalove_nginx:
     build: ./nginx
     ports:
-      - 80:80
+      - 81:80
     volumes:
       - static_files:/home/app/static
 
@@ -15,10 +15,10 @@ services:
     ports:
       - 5432:5432
     depends_on:
-      - nginx 
+      - mangalove_nginx 
 # _&D*3gJi##v&9_b
 # .#rU-f%5dS%xY+N
-  backend:
+  backend_mangalove:
     build: .
     volumes:
       - static_files:/home/app/static
