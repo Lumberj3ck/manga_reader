@@ -20,4 +20,4 @@ COPY nginx.conf /etc/nginx/conf.d
 
 
 # }
-# ssh -i C:\Users\Lumberjack\Downloads\lumberjack_key.pem azureuser@20.115.97.168
+#  ssh -i C:\Users\Lumberjack\Downloads\lumberjack_key.pem azureuser@20.115.97.168
