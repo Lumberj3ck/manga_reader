@@ -35,15 +35,14 @@ DEBUG = bool(int(os.environ.get('DEBUG', default=0)))
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "login"
 LOGOUT_URL = "logout"
-REDIS_HOST = "localhost"
-REDIS_PORT = 6379
-REDIS_DB = 0
+REDIS_HOST = os.environ.get('REDIS_HOST', default='localhost') 
+REDIS_PORT = os.environ.get('REDIS_PORT', default=6379) 
+REDIS_DB = os.environ.get('REDIS_DB', default=0)
 # LOGGING = {
 #     "version": 1,
 #     "handlers": {"console": {"class": "logging.StreamHandler"}},
 #     "loggers": {"django.db.backends": {"handlers": ["console"], "level": "DEBUG"}},
 # }
-# ALLOWED_HOSTS = ["MangaLove.info.gf", "mangalove.site", "www.mangalove.site"]
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', default='localhost').split(' ') 
 
 # Application definition
