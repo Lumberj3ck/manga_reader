@@ -29,6 +29,15 @@ services:
       - 8000
     command: gunicorn manga_reader.wsgi:application --bind 0.0.0.0:8000
 
+  cache:
+    image: redis
+    restart: always
+    ports:
+      - '6379:6379'
+    # command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes: 
+      - cache:/data
+
 
 # run this only one time, whenever else it would be saved in volume pg_data
 #exec python manage.py migrate
@@ -38,4 +47,5 @@ services:
 volumes:
   pg_data:
   static_files:
+  cache:
   # venv:
