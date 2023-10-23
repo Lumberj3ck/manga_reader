@@ -1,0 +1,41 @@
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    volumes:
+      - static_files:/home/app/static
+
+  db:
+    image: postgres 
+    env_file:
+      - .env.prod 
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    depends_on:
+      - nginx 
+# _&D*3gJi##v&9_b
+# .#rU-f%5dS%xY+N
+  backend:
+    build: .
+    volumes:
+      - static_files:/home/app/static
+      # - venv:/home/app/venv
+    env_file:
+      - .env.prod
+    expose:
+      - 8000
+    command: gunicorn manga_reader.wsgi:application --bind 0.0.0.0:8000
+
+
+# run this only one time, whenever else it would be saved in volume pg_data
+#exec python manage.py migrate
+# run python parsers
+# can also be helpfull python manage.py loaddata dump_data ( delete contenttypes if needed) 
+
+volumes:
+  pg_data:
+  static_files:
+  # venv:

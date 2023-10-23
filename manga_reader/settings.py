@@ -29,7 +29,8 @@ SECRET_KEY = "django-insecure-gy-p5d*#$fso0fl!9&^e_=e^!8+%n*l-$d6r!$!3pcxrd^2ow%
 MEDIA_ROOT = "./imgs"
 MEDIA_URL = "imgs/"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
+# DEBUG =False
+DEBUG = bool(int(os.environ.get('DEBUG', default=0)))
 
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "login"
@@ -42,8 +43,8 @@ REDIS_DB = 0
 #     "handlers": {"console": {"class": "logging.StreamHandler"}},
 #     "loggers": {"django.db.backends": {"handlers": ["console"], "level": "DEBUG"}},
 # }
-ALLOWED_HOSTS = ["MangaLove.info.gf", "mangalove.site", "www.mangalove.site"]
-
+# ALLOWED_HOSTS = ["MangaLove.info.gf", "mangalove.site", "www.mangalove.site"]
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', default='localhost').split(' ') 
 
 # Application definition
 
@@ -114,18 +115,29 @@ WSGI_APPLICATION = "manga_reader.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "manga_project",
+#         # "NAME": "manga_project1",
+#         "USER": "lumberjack",
+#         "PASSWORD": "h*99IgJdEc8*",
+#         "HOST": "localhost",
+#         "PORT": "",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "manga_project1",
-        # "NAME": "manga_project1",
-        "USER": "lumberjack",
-        "PASSWORD": "h*99IgJdEc8*",
-        "HOST": "localhost",
-        "PORT": "",
+    'default': {
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_DB', default='cinema_project'),
+        'USER': os.environ.get('POSTGRES_USER', default='lumberjack'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', default='h*99igjdec8*'),
+        'HOST': os.environ.get('DATABASE_HOST', default='db'),
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

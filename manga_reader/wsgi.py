@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'manga_reader.settings_prod'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'manga_reader.settings'
 
 application = get_wsgi_application()
