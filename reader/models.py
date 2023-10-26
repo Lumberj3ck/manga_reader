@@ -11,7 +11,8 @@ class Manga(TranslatableModel):
     translations = TranslatedFields(
         description = models.TextField())
     slug = models.SlugField(max_length=200, unique=True)
-    poster = models.ImageField(upload_to='manga_poster/', blank=True)
+    # poster = models.ImageField(upload_to='manga_poster/', blank=True)
+    poster = models.URLField()
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

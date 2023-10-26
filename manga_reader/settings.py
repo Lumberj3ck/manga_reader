@@ -76,7 +76,7 @@ PARLER_LANGUAGES = {
 CACHES = {
     "default": {
         "BACKEND": 'django_redis.cache.RedisCache',
-        "LOCATION": "redis://redis:6379",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}",
     }
 }
 MIDDLEWARE = [
@@ -130,10 +130,10 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', default='cinema_project'),
-        'USER': os.environ.get('POSTGRES_USER', default='lumberjack'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', default='h*99igjdec8*'),
-        'HOST': os.environ.get('DATABASE_HOST', default='db'),
+        'NAME': os.environ.get('POSTGRES_DB', default='manga_project'),
+        'USER': os.environ.get('POSTGRES_USER', default='lumberjack1'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', default='h*99IgJdEc8*'),
+        'HOST': os.environ.get('DATABASE_HOST', default='localhost'),
         'PORT': '',
     }
 }
