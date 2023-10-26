@@ -76,7 +76,7 @@ PARLER_LANGUAGES = {
 CACHES = {
     "default": {
         "BACKEND": 'django_redis.cache.RedisCache',
-        "LOCATION": "redis://0.0.0.0:6379",
+        "LOCATION": "redis://redis:6379",
     }
 }
 MIDDLEWARE = [

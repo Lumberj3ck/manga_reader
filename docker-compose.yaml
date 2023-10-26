@@ -1,8 +1,10 @@
 services:
   mangalove_nginx:
     build: ./nginx
-    ports:
-      - 81:80
+    #    ports:
+    #  - 81:80
+    expose:
+      - 80
     volumes:
       - static_files:/home/app/static
 
@@ -29,7 +31,7 @@ services:
       - 8000
     command: gunicorn manga_reader.wsgi:application --bind 0.0.0.0:8000
 
-  cache:
+  redis:
     image: redis
     restart: always
     ports:
