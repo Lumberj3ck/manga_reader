@@ -36,7 +36,7 @@
 <div class="sm:ml-2 lg:ml-0">
 {% for manga in mangas %}
 <div class="border-2 border-black m-2 rounded-md sm:w-3/4 flex flex-row gap-3">
-  <img class="w-[140px] h-[180px] m-2 object-cover" src="{{ manga.poster.url }}" alt="" style='-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2); -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2); box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);'>
+  <img class="w-[140px] h-[180px] m-2 object-cover" src="{{ manga.poster }}" alt="" style='-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2); -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2); box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);'>
   <div class="flex flex-col gap-2">
   <p class="text-[#6941c6] font-[500] text-base my-1">{{manga.name}} / {{manga.slug}}</p>
   <p class="text-gray-500 text-sm mb-3">{{manga.created|naturaltime}}</p>
