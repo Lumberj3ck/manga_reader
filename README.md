@@ -1,7 +1,7 @@
 # Project description
 ![Project picture](https://github.com/Lumberj3ck/new_manga_reader/blob/main/reader/static/favicons/android-chrome-192x192.png)  
 
-[Project demo](http://mangalove.site/)  
+[Project online](http://mangalove.site/)  
 📖 Extensive Manga Library: Platform where people can read their favorite manga.
 
 📚 Chapter Bookmarks: Users can bookmark and save their progress within manga chapters, making it easy to pick up where they left off.
