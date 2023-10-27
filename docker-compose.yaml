@@ -9,8 +9,8 @@ services:
       - static_files:/home/app/static
       - imgs:/home/app/imgs
 
-      - /etc/letsencrypt/ssl/fullchain.pem:/etc/nginx/ssl/fullchain
-      - /etc/letsencrypt/ssl/privkey.pem:/etc/nginx/ssl/privkey
+      - /etc/letsencrypt/ssl/fullchain.pem:/etc/nginx/ssl/fullchain.pem
+      - /etc/letsencrypt/ssl/privkey.pem:/etc/nginx/ssl/privkey.pem
       - /etc/nginx/snippets/self-signed.conf:/etc/nginx/snippets/self-signed.conf
       - /etc/nginx/snippets/ssl-params.conf /etc/nginx/snippets/ssl-params.conf
 
