@@ -9,17 +9,6 @@ services:
       - static_files:/home/app/static
       - imgs:/home/app/imgs
 
-      # - /etc/letsencrypt/ssl/fullchain.pem:/etc/nginx/ssl/fullchain.pem
-      # - /etc/letsencrypt/ssl/privkey.pem:/etc/nginx/ssl/privkey.pem
-
-      - /etc/ssl/certs/nginx-selfsigned.crt:/etc/ssl/certs/nginx-selfsigned.crt
-      - /etc/ssl/private/nginx-selfsigned.key:/etc/ssl/private/nginx-selfsigned.key
-
-      - /etc/snippets/self-signed.conf:/etc/snippets/self-signed.conf
-      - /etc/snippets/ssl-params.conf:/etc/snippets/ssl-params.conf
-
-
-
   db:
     image: postgres 
     env_file:
@@ -30,14 +19,12 @@ services:
       - 5432:5432
     depends_on:
       - mangalove_nginx 
-# _&D*3gJi##v&9_b
-# .#rU-f%5dS%xY+N
+
   backend_mangalove:
     build: .
     volumes:
       - static_files:/home/app/static
       - imgs:/home/app/imgs
-      # - venv:/home/app/venv
     env_file:
       - .env.prod
     expose:
@@ -51,15 +38,9 @@ services:
       - '6379:6379'
     env_file:
       - .env.prod
-    # command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
     volumes: 
       - cache:/data
 
-
-# run this only one time, whenever else it would be saved in volume pg_data
-#exec python manage.py migrate
-# run python parsers
-# can also be helpfull python manage.py loaddata dump_data ( delete contenttypes if needed) 
 
 volumes:
   pg_data:

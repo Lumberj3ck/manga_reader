@@ -1,6 +1,9 @@
 FROM nginx
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d
+COPY ssl/my-site.crt /etc/ssl/certs/my-site.crt
+COPY ssl/my-site.key /etc/ssl/private/my-site.key
+
 
 # COPY /etc/letsencrypt/ssl/fullchain.pem /etc/nginx/ssl/fullchain  
 # COPY /etc/letsencrypt/ssl/privkey.pem /etc/nginx/ssl/privkey
