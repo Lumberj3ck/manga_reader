@@ -8,8 +8,6 @@ services:
     volumes:
       - static_files:/home/app/static
       - imgs:/home/app/imgs
-      - /etc/letsencrypt/ssl/fullchain.pem:/etc/nginx/ssl/fullchain.pem
-      - /etc/letsencrypt/ssl/privkey.pem:/etc/nginx/ssl/privkey.pem
 
 
   db:
