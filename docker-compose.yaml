@@ -16,7 +16,7 @@ services:
       - /etc/ssl/private/nginx-selfsigned.key:/etc/ssl/private/nginx-selfsigned.key
 
       - /etc/nginx/snippets/self-signed.conf:/etc/nginx/snippets/self-signed.conf
-      - /etc/nginx/snippets/ssl-params.conf /etc/nginx/snippets/ssl-params.conf
+      - /etc/nginx/snippets/ssl-params.conf:/etc/nginx/snippets/ssl-params.conf
 
 
 
