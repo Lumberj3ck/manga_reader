@@ -7,6 +7,7 @@ services:
       - 80
     volumes:
       - static_files:/home/app/static
+      - imgs:/home/app/imgs
 
   db:
     image: postgres 
@@ -24,6 +25,7 @@ services:
     build: .
     volumes:
       - static_files:/home/app/static
+      - imgs:/home/app/imgs
       # - venv:/home/app/venv
     env_file:
       - .env.prod
@@ -52,3 +54,4 @@ volumes:
   pg_data:
   static_files:
   cache:
+  imgs:
