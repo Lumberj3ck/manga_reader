@@ -9,7 +9,7 @@
 {% block content %}
 {% if chapters or second_chapters %}
 <div class='ml-3 w-max'>{% blocktrans %} Вот что нашлось по вашему запросу: {{query}} {% endblocktrans %}</div>
-<div class='ml-3'>
+<div class='ml-3' style="display: flex; flex-direction: column; margin-top: 5px;">
 {% for chapter in chapters %}
 <a class='font-semibold' style="color: #6941C6;" href="{% url 'chapter_detail' manga_slug=chapter.manga.slug chapter_slug=chapter.name %}">{{chapter}}</a>
 {% endfor %}
