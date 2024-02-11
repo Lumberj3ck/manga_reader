@@ -1,13 +1,33 @@
 services:
   mangalove_nginx:
     build: ./nginx
-    #    ports:
-    #  - 81:80
-    expose:
-      - 80
+    ports:
+      - 80:80
+      - 443:443
+        #expose:
+        #- 80
     volumes:
       - static_files:/home/app/static
       - imgs:/home/app/imgs
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+    #image: nginx:latest
+    #command: rm /etc/nginx/conf.d/default.conf
+    #ports:
+    #- 80:80
+    #- 443:443
+    #restart: always
+    #volumes:
+    #- ./nginx/nginx.conf/:/etc/nginx/conf.d/:ro
+    #- ./certbot/www:/var/www/certbot/:ro
+    #- static_files:/home/app/static
+    #- imgs:/home/app/imgs
 
   db:
     image: postgres 
