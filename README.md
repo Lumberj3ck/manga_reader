@@ -48,5 +48,5 @@ Check the cloudflare for dns and change it for new server ip
   ```
  CREATE EXTENSION pg_trgm;
   ```
-(Check the ssl guide](https://github.com/Lumberj3ck/SSL-on-Nginx/tree/main)
+[Check the ssl guide](https://github.com/Lumberj3ck/SSL-on-Nginx/tree/main)
 Now set up is done
