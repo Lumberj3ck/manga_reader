@@ -4,6 +4,8 @@
 
 [Visit Manga Love](https://mangalove.site/)
 
+![manga_love-ezgif com-video-to-gif-converter](https://github.com/Lumberj3ck/manga_reader/assets/103587817/6905404e-b780-46cd-bce4-7a908870b007)
+
 ## Description
 
 Manga Love is an simple manga library, providing readers with a platform to explore, read, and enjoy their favorite manga series. With a user-friendly interface and a wide selection of titles, Manga Love aims to be the go-to destination for manga lovers.
